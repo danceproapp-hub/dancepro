@@ -1,0 +1,25 @@
+export const ROLE_OPTIONS = [
+  { value: "leader", label: "Leader" },
+  { value: "follower", label: "Follower" },
+  { value: "both", label: "Both" },
+] as const;
+
+export const LEVEL_OPTIONS = [
+  { value: "beginner", label: "Beginner" },
+  { value: "intermediate", label: "Intermediate" },
+  { value: "advanced", label: "Advanced" },
+  { value: "competitive", label: "Competitive" },
+  { value: "professional", label: "Professional" },
+] as const;
+
+export const LOOKING_FOR_OPTIONS = [
+  "Competition partner",
+  "Practice partner",
+  "Social dance partner",
+  "Professional partner",
+  "Performance partner",
+  "Coach",
+  "Other",
+] as const;
+
+export const REFERRAL_STORAGE_KEY = "dancepro_ref";
