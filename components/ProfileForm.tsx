@@ -11,25 +11,12 @@ import {
   ROLE_OPTIONS,
 } from "@/lib/waitlistOptions";
 import { isSocialOnly } from "@/lib/danceStyles";
-import { updateWaitlistProfile } from "@/lib/supabase";
+import { updateWaitlistProfile, type WaitlistProfile } from "@/lib/supabase";
 
-interface ProfileState {
-  city: string;
-  country: string;
-  role: string;
-  level: string;
-  lookingFor: string[];
-  divisions: string[];
+interface Errors {
+  location?: string;
+  role?: string;
 }
-
-const INITIAL_STATE: ProfileState = {
-  city: "",
-  country: "",
-  role: "",
-  level: "",
-  lookingFor: [],
-  divisions: [],
-};
 
 function toggleValue(list: string[], value: string): string[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
@@ -38,14 +25,17 @@ function toggleValue(list: string[], value: string): string[] {
 export function ProfileForm({
   code,
   styles,
+  profile,
+  complete,
 }: {
   code: string;
   styles: string[];
+  profile: WaitlistProfile;
+  complete: boolean;
 }) {
   // Social Dance has no competitive circuit. A dancer who picked only that
-  // can't compete at all, so the competitive levels and the competition
-  // partner option are both withheld — which also takes the division
-  // question with it, since that hangs off the competition option.
+  // can't compete, so they describe themselves by level and are never
+  // offered a competition partner.
   const socialOnly = isSocialOnly(styles);
   const levelOptions = socialOnly
     ? LEVEL_OPTIONS.filter((o) => !COMPETITIVE_ONLY_LEVELS.includes(o.value))
@@ -54,14 +44,27 @@ export function ProfileForm({
     ? LOOKING_FOR_OPTIONS.filter((o) => o !== COMPETITION_PARTNER_OPTION)
     : LOOKING_FOR_OPTIONS;
 
-  const [form, setForm] = useState<ProfileState>(INITIAL_STATE);
+  const [form, setForm] = useState<WaitlistProfile>(profile);
+  const [saved, setSaved] = useState<WaitlistProfile>(profile);
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
+  const [justSaved, setJustSaved] = useState(false);
+  const [errors, setErrors] = useState<Errors>({});
   const [error, setError] = useState<string | null>(null);
+
+  const hasProfile = complete || Boolean(saved.city && saved.role);
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+
+    // Without these two the entry tells us nothing, and saving silently
+    // did nothing at all before — it just claimed success.
+    const next: Errors = {};
+    if (!form.city.trim()) next.location = "Add your city so we can match you locally.";
+    if (!form.role) next.role = "Pick the role you dance.";
+    setErrors(next);
+    if (Object.keys(next).length > 0) return;
+
     setSaving(true);
     setError(null);
 
@@ -71,47 +74,82 @@ export function ProfileForm({
         city: form.city.trim(),
         country: form.country,
         role: form.role,
-        level: form.level,
+        level: socialOnly ? form.level : "",
         lookingFor: form.lookingFor,
-        divisions: form.divisions,
+        divisions: socialOnly ? [] : form.divisions,
       });
-      setSaved(true);
+      setSaved(form);
+      setJustSaved(true);
+      setOpen(false);
     } catch {
       setError("Couldn't save that just now. Please try again in a moment.");
+    } finally {
       setSaving(false);
     }
   }
 
-  if (saved) {
-    return (
-      <div className="w-full rounded-2xl border border-gold/40 bg-ink-raised p-6 text-center sm:p-8">
-        <p className="font-serif text-xl text-paper">Thank you.</p>
-        <p className="mt-2 text-sm text-paper-dim">
-          Your dance details are saved. We'll use them to line up your first
-          matches before launch.
-        </p>
-      </div>
-    );
-  }
-
-  if (!open) {
+  // Nothing saved yet, and not currently editing.
+  if (!open && !hasProfile) {
     return (
       <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 text-center sm:p-8">
         <h2 className="font-serif text-xl text-paper">
           Want your first matches ready at launch?
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
-          Add where you dance, your role and your level, and we'll have
-          compatible partners lined up the day you get access. Takes about a
-          minute.
+          Add where you dance, your role and what you're looking for, and we'll
+          have compatible partners lined up the day you get access. Takes about
+          a minute.
         </p>
         <button
           type="button"
           onClick={() => setOpen(true)}
           className="mt-5 rounded-full border border-gold/60 px-6 py-2.5 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
         >
-          Add my dance details
+          Add my details
         </button>
+      </div>
+    );
+  }
+
+  // Saved, and not currently editing: show it back, with a way in.
+  if (!open && hasProfile) {
+    const standard = socialOnly
+      ? LEVEL_OPTIONS.find((o) => o.value === saved.level)?.label
+      : saved.divisions.join(", ");
+    const roleLabel = ROLE_OPTIONS.find((o) => o.value === saved.role)?.label;
+
+    return (
+      <div
+        className={`w-full rounded-2xl border bg-ink-raised p-6 text-left sm:p-8 ${
+          justSaved ? "border-gold/40" : "border-line"
+        }`}
+      >
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 className="font-serif text-xl text-paper">
+            {justSaved ? "Saved." : "Your details"}
+          </h2>
+          <button
+            type="button"
+            onClick={() => {
+              setJustSaved(false);
+              setOpen(true);
+            }}
+            className="text-sm text-gold underline-offset-4 transition hover:underline"
+          >
+            Edit my details
+          </button>
+        </div>
+
+        <dl className="mt-4 flex flex-col gap-2 text-sm">
+          <Row label="Dance styles" value={styles.join(", ")} />
+          <Row
+            label="Location"
+            value={[saved.city, saved.country].filter(Boolean).join(", ")}
+          />
+          <Row label="Role" value={roleLabel} />
+          <Row label={socialOnly ? "Level" : "Division"} value={standard} />
+          <Row label="Looking for" value={saved.lookingFor.join(", ")} />
+        </dl>
       </div>
     );
   }
@@ -121,14 +159,21 @@ export function ProfileForm({
       onSubmit={handleSubmit}
       className="flex w-full flex-col gap-6 rounded-2xl border border-line bg-ink-raised p-6 text-left sm:p-8"
     >
-      <LocationInput
-        value={{ city: form.city, country: form.country }}
-        onChange={(next) =>
-          setForm({ ...form, city: next.city, country: next.country })
-        }
-      />
+      <div className="flex flex-col gap-2">
+        <LocationInput
+          value={{ city: form.city, country: form.country }}
+          onChange={(next) =>
+            setForm({ ...form, city: next.city, country: next.country })
+          }
+        />
+        {errors.location && (
+          <p className="text-sm text-red-400" role="alert">
+            {errors.location}
+          </p>
+        )}
+      </div>
 
-      <Field label="Role">
+      <Field label="Role" error={errors.role}>
         <div className="flex flex-wrap gap-3" role="radiogroup" aria-label="Role">
           {ROLE_OPTIONS.map((option) => (
             <label
@@ -153,9 +198,7 @@ export function ProfileForm({
         </div>
       </Field>
 
-      {/* A dancer's standard, asked in whichever vocabulary fits them:
-          social dancers have a level, competitive dancers have a division.
-          Both describe who the dancer is, so both are always shown. */}
+      {/* A dancer's standard, in whichever vocabulary fits them. */}
       {socialOnly ? (
         <Field label="Level">
           <select
@@ -216,28 +259,59 @@ export function ProfileForm({
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={saving}
-        className="rounded-full bg-gold px-8 py-3.5 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim disabled:opacity-60"
-      >
-        {saving ? "Saving..." : "Save my details"}
-      </button>
+      <div className="flex flex-wrap gap-3">
+        <button
+          type="submit"
+          disabled={saving}
+          className="flex-1 rounded-full bg-gold px-8 py-3.5 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim disabled:opacity-60"
+        >
+          {saving ? "Saving..." : "Save my details"}
+        </button>
+        {hasProfile && (
+          <button
+            type="button"
+            onClick={() => {
+              setForm(saved);
+              setErrors({});
+              setOpen(false);
+            }}
+            className="rounded-full border border-line px-6 py-3.5 text-sm text-paper-dim transition hover:border-gold/60 hover:text-paper"
+          >
+            Cancel
+          </button>
+        )}
+      </div>
     </form>
+  );
+}
+
+function Row({ label, value }: { label: string; value?: string }) {
+  return (
+    <div className="flex flex-wrap gap-x-3 border-b border-line/60 pb-2 last:border-0">
+      <dt className="min-w-32 text-paper-dim">{label}</dt>
+      <dd className="text-paper">{value || <span className="text-paper-dim">—</span>}</dd>
+    </div>
   );
 }
 
 function Field({
   label,
+  error,
   children,
 }: {
   label: string;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
     <div className="flex flex-col gap-2">
       <span className="text-sm text-paper-dim">{label}</span>
       {children}
+      {error && (
+        <p className="text-sm text-red-400" role="alert">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

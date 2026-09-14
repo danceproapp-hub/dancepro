@@ -18,12 +18,22 @@ export function getSupabaseClient(): SupabaseClient {
   return client;
 }
 
+export interface WaitlistProfile {
+  city: string;
+  country: string;
+  role: string;
+  level: string;
+  lookingFor: string[];
+  divisions: string[];
+}
+
 export interface WaitlistStatus {
   position: number;
   total: number;
   referrals: number;
   profileComplete: boolean;
   styles: string[];
+  profile: WaitlistProfile;
 }
 
 export async function joinWaitlist(input: {
@@ -83,6 +93,14 @@ export async function getWaitlistStatus(code: string): Promise<WaitlistStatus | 
     referrals: Number(row.referrals),
     profileComplete: Boolean(row.profile_complete),
     styles: (row.styles ?? []) as string[],
+    profile: {
+      city: (row.city ?? "") as string,
+      country: (row.country ?? "") as string,
+      role: (row.role ?? "") as string,
+      level: (row.level ?? "") as string,
+      lookingFor: (row.looking_for ?? []) as string[],
+      divisions: (row.competition_divisions ?? []) as string[],
+    },
   };
 }
 
