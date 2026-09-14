@@ -48,7 +48,6 @@ export function ProfileForm({
   const [saved, setSaved] = useState<WaitlistProfile>(profile);
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [justSaved, setJustSaved] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [error, setError] = useState<string | null>(null);
 
@@ -79,7 +78,6 @@ export function ProfileForm({
         divisions: socialOnly ? [] : form.divisions,
       });
       setSaved(form);
-      setJustSaved(true);
       setOpen(false);
     } catch {
       setError("Couldn't save that just now. Please try again in a moment.");
@@ -111,45 +109,22 @@ export function ProfileForm({
     );
   }
 
-  // Saved, and not currently editing: show it back, with a way in.
+  // Saved, and not currently editing.
   if (!open && hasProfile) {
-    const standard = socialOnly
-      ? LEVEL_OPTIONS.find((o) => o.value === saved.level)?.label
-      : saved.divisions.join(", ");
-    const roleLabel = ROLE_OPTIONS.find((o) => o.value === saved.role)?.label;
-
     return (
-      <div
-        className={`w-full rounded-2xl border bg-ink-raised p-6 text-left sm:p-8 ${
-          justSaved ? "border-gold/40" : "border-line"
-        }`}
-      >
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="font-serif text-xl text-paper">
-            {justSaved ? "Saved." : "Your details"}
-          </h2>
-          <button
-            type="button"
-            onClick={() => {
-              setJustSaved(false);
-              setOpen(true);
-            }}
-            className="text-sm text-gold underline-offset-4 transition hover:underline"
-          >
-            Edit my details
-          </button>
-        </div>
-
-        <dl className="mt-4 flex flex-col gap-2 text-sm">
-          <Row label="Dance styles" value={styles.join(", ")} />
-          <Row
-            label="Location"
-            value={[saved.city, saved.country].filter(Boolean).join(", ")}
-          />
-          <Row label="Role" value={roleLabel} />
-          <Row label={socialOnly ? "Level" : "Division"} value={standard} />
-          <Row label="Looking for" value={saved.lookingFor.join(", ")} />
-        </dl>
+      <div className="w-full rounded-2xl border border-gold/40 bg-ink-raised p-6 text-center sm:p-8">
+        <p className="font-serif text-xl text-paper">Thank you.</p>
+        <p className="mt-2 text-sm text-paper-dim">
+          Your dance details are saved. We'll use them to line up your first
+          matches before launch.
+        </p>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="mt-4 text-sm text-gold underline-offset-4 transition hover:underline"
+        >
+          Edit my details
+        </button>
       </div>
     );
   }
@@ -282,15 +257,6 @@ export function ProfileForm({
         )}
       </div>
     </form>
-  );
-}
-
-function Row({ label, value }: { label: string; value?: string }) {
-  return (
-    <div className="flex flex-wrap gap-x-3 border-b border-line/60 pb-2 last:border-0">
-      <dt className="min-w-32 text-paper-dim">{label}</dt>
-      <dd className="text-paper">{value || <span className="text-paper-dim">—</span>}</dd>
-    </div>
   );
 }
 
