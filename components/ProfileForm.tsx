@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { DANCE_STYLES } from "@/lib/danceStyles";
 import { LocationInput } from "@/components/LocationInput";
 import {
   LEVEL_OPTIONS,
@@ -13,7 +12,6 @@ import { updateWaitlistProfile } from "@/lib/supabase";
 interface ProfileState {
   city: string;
   country: string;
-  styles: string[];
   role: string;
   level: string;
   lookingFor: string[];
@@ -22,7 +20,6 @@ interface ProfileState {
 const INITIAL_STATE: ProfileState = {
   city: "",
   country: "",
-  styles: [],
   role: "",
   level: "",
   lookingFor: [],
@@ -51,7 +48,6 @@ export function ProfileForm({ code }: { code: string }) {
         country: form.country,
         role: form.role,
         level: form.level,
-        styles: form.styles,
         lookingFor: form.lookingFor,
       });
       setSaved(true);
@@ -80,8 +76,9 @@ export function ProfileForm({ code }: { code: string }) {
           Want your first matches ready at launch?
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
-          Tell us what you dance and we'll have compatible partners lined up
-          the day you get access. Takes about a minute, and it's optional.
+          Add where you dance, your role and your level, and we'll have
+          compatible partners lined up the day you get access. Takes about a
+          minute, and it's optional.
         </p>
         <button
           type="button"
@@ -105,21 +102,6 @@ export function ProfileForm({ code }: { code: string }) {
           setForm({ ...form, city: next.city, country: next.country })
         }
       />
-
-      <Field label="Dance styles">
-        <div className="flex flex-wrap gap-2">
-          {DANCE_STYLES.map((style) => (
-            <Chip
-              key={style.name}
-              label={style.name}
-              active={form.styles.includes(style.name)}
-              onClick={() =>
-                setForm({ ...form, styles: toggleValue(form.styles, style.name) })
-              }
-            />
-          ))}
-        </div>
-      </Field>
 
       <Field label="Role">
         <div className="flex flex-wrap gap-3" role="radiogroup" aria-label="Role">

@@ -28,12 +28,14 @@ export interface WaitlistStatus {
 export async function joinWaitlist(input: {
   firstName: string;
   email: string;
+  styles: string[];
   ref: string | null;
 }): Promise<string> {
   const supabase = getSupabaseClient();
   const { data, error } = await supabase.rpc("join_waitlist", {
     p_first_name: input.firstName,
     p_email: input.email,
+    p_styles: input.styles,
     p_ref: input.ref,
   });
 
@@ -47,7 +49,6 @@ export async function updateWaitlistProfile(input: {
   country: string;
   role: string;
   level: string;
-  styles: string[];
   lookingFor: string[];
 }): Promise<void> {
   const supabase = getSupabaseClient();
@@ -57,7 +58,6 @@ export async function updateWaitlistProfile(input: {
     p_country: input.country,
     p_role: input.role,
     p_level: input.level,
-    p_styles: input.styles,
     p_looking_for: input.lookingFor,
   });
 

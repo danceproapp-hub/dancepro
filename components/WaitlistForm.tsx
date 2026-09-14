@@ -3,15 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { REFERRAL_STORAGE_KEY } from "@/lib/waitlistOptions";
+import { DANCE_STYLES } from "@/lib/danceStyles";
 import { joinWaitlist } from "@/lib/supabase";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+interface Errors {
+  firstName?: string;
+  email?: string;
+  styles?: string;
+}
 
 export function WaitlistForm() {
   const router = useRouter();
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
-  const [errors, setErrors] = useState<{ firstName?: string; email?: string }>({});
+  const [styles, setStyles] = useState<string[]>([]);
+  const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const refCodeRef = useRef<string | null>(null);
@@ -30,11 +38,12 @@ export function WaitlistForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const next: { firstName?: string; email?: string } = {};
+    const next: Errors = {};
     if (!firstName.trim()) next.firstName = "First name is required.";
     if (!email.trim()) next.email = "Email is required.";
     else if (!EMAIL_PATTERN.test(email.trim()))
       next.email = "Enter a valid email address.";
+    if (styles.length === 0) next.styles = "Pick at least one style.";
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -46,6 +55,7 @@ export function WaitlistForm() {
       const code = await joinWaitlist({
         firstName: firstName.trim(),
         email: email.trim(),
+        styles,
         ref: refCodeRef.current,
       });
       router.push(`/welcome?code=${encodeURIComponent(code)}`);
@@ -97,6 +107,41 @@ export function WaitlistForm() {
         {errors.email && (
           <p className="text-sm text-red-400" role="alert">
             {errors.email}
+          </p>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <span className="text-sm text-paper-dim">What do you dance?</span>
+        <div className="flex flex-wrap gap-2">
+          {DANCE_STYLES.map((style) => {
+            const active = styles.includes(style.name);
+            return (
+              <button
+                key={style.name}
+                type="button"
+                aria-pressed={active}
+                onClick={() =>
+                  setStyles(
+                    active
+                      ? styles.filter((s) => s !== style.name)
+                      : [...styles, style.name]
+                  )
+                }
+                className={`rounded-full border px-4 py-2 text-sm transition ${
+                  active
+                    ? "border-gold bg-gold text-ink"
+                    : "border-line text-paper-dim hover:border-gold/60"
+                }`}
+              >
+                {style.name}
+              </button>
+            );
+          })}
+        </div>
+        {errors.styles && (
+          <p className="text-sm text-red-400" role="alert">
+            {errors.styles}
           </p>
         )}
       </div>
