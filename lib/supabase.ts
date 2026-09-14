@@ -23,6 +23,7 @@ export interface WaitlistStatus {
   total: number;
   referrals: number;
   profileComplete: boolean;
+  styles: string[];
 }
 
 export async function joinWaitlist(input: {
@@ -81,6 +82,7 @@ export async function getWaitlistStatus(code: string): Promise<WaitlistStatus | 
     total: Number(row.total),
     referrals: Number(row.referrals),
     profileComplete: Boolean(row.profile_complete),
+    styles: (row.styles ?? []) as string[],
   };
 }
 

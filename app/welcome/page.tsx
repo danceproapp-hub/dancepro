@@ -51,6 +51,7 @@ export default async function WelcomePage({
     total: number;
     referrals: number;
     profileComplete: boolean;
+    styles: string[];
   } | null = null;
 
   if (code) {
@@ -99,7 +100,9 @@ export default async function WelcomePage({
         </p>
       </div>
 
-      {!status.profileComplete && <ProfileForm code={code} />}
+      {!status.profileComplete && (
+        <ProfileForm code={code} styles={status.styles} />
+      )}
 
       <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 sm:p-8">
         <h2 className="mb-3 font-serif text-xl text-paper">Move up the list</h2>

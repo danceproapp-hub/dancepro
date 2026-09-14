@@ -9,6 +9,7 @@ import {
   LOOKING_FOR_OPTIONS,
   ROLE_OPTIONS,
 } from "@/lib/waitlistOptions";
+import { isSocialOnly } from "@/lib/danceStyles";
 import { updateWaitlistProfile } from "@/lib/supabase";
 
 interface ProfileState {
@@ -33,7 +34,23 @@ function toggleValue(list: string[], value: string): string[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
 
-export function ProfileForm({ code }: { code: string }) {
+export function ProfileForm({
+  code,
+  styles,
+}: {
+  code: string;
+  styles: string[];
+}) {
+  // Social Dance has no competitive circuit, so a dancer who picked only
+  // that is never a professional competitor and is never seeking one.
+  const socialOnly = isSocialOnly(styles);
+  const levelOptions = socialOnly
+    ? LEVEL_OPTIONS.filter((o) => o.value !== "professional")
+    : LEVEL_OPTIONS;
+  const divisionOptions = socialOnly
+    ? COMPETITION_DIVISION_OPTIONS.filter((o) => o !== "Professional")
+    : COMPETITION_DIVISION_OPTIONS;
+
   const [form, setForm] = useState<ProfileState>(INITIAL_STATE);
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -83,7 +100,7 @@ export function ProfileForm({ code }: { code: string }) {
         <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
           Add where you dance, your role and your level, and we'll have
           compatible partners lined up the day you get access. Takes about a
-          minute, and it's optional.
+          minute.
         </p>
         <button
           type="button"
@@ -141,7 +158,7 @@ export function ProfileForm({ code }: { code: string }) {
           aria-label="Level"
         >
           <option value="">Select your level</option>
-          {LEVEL_OPTIONS.map((option) => (
+          {levelOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -176,7 +193,7 @@ export function ProfileForm({ code }: { code: string }) {
       {form.lookingFor.includes(COMPETITION_PARTNER_OPTION) && (
         <Field label="Which division?">
           <div className="flex flex-wrap gap-2">
-            {COMPETITION_DIVISION_OPTIONS.map((option) => (
+            {divisionOptions.map((option) => (
               <Chip
                 key={option}
                 label={option}
