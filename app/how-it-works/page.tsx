@@ -23,7 +23,7 @@ const STEPS = [
   {
     title: "Set your styles, role, and level",
     description:
-      "Be specific. Leader, follower, or both. Beginner through professional. International Latin or Argentine Tango. The more precise your profile, the better your matches.",
+      "Be specific. Leader, follower, or both. Beginner through professional. International Latin or Argentine Tango. The more precise your profile, the better the dancers you find.",
   },
   {
     title: "Search for compatible dancers, or get discovered",
@@ -33,7 +33,7 @@ const STEPS = [
   {
     title: "Send a connection request",
     description:
-      "Reach out directly and professionally, the same way you would on a professional network — no cold DMs into a stranger's inbox.",
+      "Reach out directly and professionally. They can see what you dance and what you're looking for before they answer.",
   },
   {
     title: "They accept",

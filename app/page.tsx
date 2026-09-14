@@ -57,7 +57,7 @@ const BENEFITS = [
   },
   {
     title: "Early access",
-    description: "Into the platform before it opens to the public.",
+    description: "Into DancePro before it opens to everyone else.",
   },
   {
     title: "Special launch pricing",
@@ -68,8 +68,8 @@ const BENEFITS = [
     description: "Founding member meetups and DancePro-hosted socials.",
   },
   {
-    title: "A vote on what we build first",
-    description: "Founding members help decide the feature roadmap.",
+    title: "A say in what comes next",
+    description: "What founding members ask for gets built first.",
   },
 ];
 
@@ -139,7 +139,7 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-3xl px-6 py-24">
         <Reveal>
-          <Eyebrow>The idea</Eyebrow>
+          <Eyebrow>What it's like</Eyebrow>
           <h2 className="mb-6 font-serif text-3xl text-paper sm:text-4xl">
             Imagine finding your partner in an afternoon.
           </h2>
@@ -158,7 +158,7 @@ export default async function HomePage() {
               a practice schedule and picked a competition to aim for together.
             </p>
             <p>
-              That's the whole idea: the dancers who match what you're looking
+              That's DancePro: the dancers who fit what you're looking
               for, in one place, there for the same reason you are.
             </p>
           </div>

@@ -21,7 +21,7 @@ const PERKS = [
   },
   {
     title: "Early access",
-    description: "First access to the platform, ahead of the general public launch.",
+    description: "First access to DancePro, ahead of everyone else.",
   },
   {
     title: "Special launch pricing",
@@ -31,12 +31,12 @@ const PERKS = [
   {
     title: "Exclusive events",
     description:
-      "Founding member meetups, socials, and early previews of features before anyone else sees them.",
+      "Founding member meetups, socials, and a first look at what's coming before anyone else sees it.",
   },
   {
-    title: "A vote on what gets built first",
+    title: "A say in what comes next",
     description:
-      "Founding members shape the roadmap directly — which features ship first is decided with your input, not just ours.",
+      "What founding members ask for gets built first. You tell us what the network needs.",
   },
 ];
 
@@ -60,9 +60,9 @@ export default function FoundingMembersPage() {
         </h2>
         <p>
           Founding members shape what DancePro becomes — the cities it's
-          strongest in, the styles best represented, the features that ship
-          first. Join now and you're not just on the network, you're part of
-          the reason it's worth being on.
+          strongest in, the styles best represented, what gets built next.
+          Join now and you're not just on the network, you're part of the
+          reason it's worth being on.
         </p>
         <p>
           You'll be among the first profiles other dancers see when they
@@ -91,8 +91,8 @@ export default function FoundingMembersPage() {
         <p>
           Founding member status closes the day DancePro opens to the public —
           it isn't something you can earn after the fact. Launch pricing, the
-          badge, and the feature vote all belong to this group and this group
-          only. Everyone who joins afterwards starts from zero.
+          badge, and the say in what gets built all belong to this group and
+          this group only. Everyone who joins afterwards starts from zero.
         </p>
       </div>
 
