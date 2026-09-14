@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Reveal } from "@/components/Reveal";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "Founding Members",
@@ -40,7 +42,9 @@ const PERKS = [
 
 export default function FoundingMembersPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20">
+    <div className="mx-auto max-w-3xl px-6 py-24">
+      <Reveal>
+      <Eyebrow>The program</Eyebrow>
       <h1 className="mb-4 font-serif text-4xl text-paper sm:text-5xl">
         The founding member program
       </h1>
@@ -48,6 +52,7 @@ export default function FoundingMembersPage() {
         We're building the first 1,000 members of DancePro before we build the
         app. Here's what that means, and what you get for joining early.
       </p>
+      </Reveal>
 
       <div className="mb-16 flex flex-col gap-4 text-paper-dim">
         <h2 className="mb-2 font-serif text-2xl text-paper">
@@ -74,7 +79,7 @@ export default function FoundingMembersPage() {
         </h2>
         <div className="grid gap-8 sm:grid-cols-2">
           {PERKS.map((perk) => (
-            <div key={perk.title} className="border-l border-gold/40 pl-5">
+            <div key={perk.title} className="border-l border-gold/40 pl-5 transition-all duration-500 hover:border-gold hover:pl-6">
               <h3 className="mb-1 text-paper">{perk.title}</h3>
               <p className="text-sm text-paper-dim">{perk.description}</p>
             </div>
@@ -97,7 +102,7 @@ export default function FoundingMembersPage() {
       <div className="text-center">
         <a
           href="/#join"
-          className="inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition hover:bg-gold-dim"
+          className="inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)]"
         >
           Join the Founding Members
         </a>

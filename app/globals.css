@@ -12,6 +12,8 @@
   --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -35,4 +37,88 @@ h3 {
 ::selection {
   background-color: var(--color-gold);
   color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Entrance + scroll reveal */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glow-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 0.16;
+    transform: none;
+  }
+}
+
+.enter {
+  opacity: 0;
+  animation: rise 0.9s var(--ease-out-soft) forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s var(--ease-out-soft),
+    transform 0.8s var(--ease-out-soft);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-glow {
+  opacity: 0;
+  animation: glow-in 1.8s var(--ease-out-soft) 0.1s forwards;
+}
+
+/* Hairline rule that fades out at both ends */
+.rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in srgb, var(--color-gold) 45%, transparent),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .enter,
+  .hero-glow {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-glow {
+    opacity: 0.16;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

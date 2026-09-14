@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
+import { Eyebrow } from "@/components/Eyebrow";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -47,31 +49,37 @@ const STEPS = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-20">
-      <h1 className="mb-4 font-serif text-4xl text-paper sm:text-5xl">
-        How DancePro works
-      </h1>
-      <p className="mb-14 text-lg text-paper-dim">
-        DancePro is a professional network for dancers, not a dating app. Every
-        part of it is built around finding the right partner for your training
-        and competition goals.
-      </p>
+    <div className="mx-auto max-w-3xl px-6 py-24">
+      <Reveal>
+        <Eyebrow>How it works</Eyebrow>
+        <h1 className="mb-4 font-serif text-4xl text-paper sm:text-5xl">
+          How DancePro works
+        </h1>
+        <p className="mb-14 text-lg text-paper-dim">
+          DancePro is a professional network for dancers, not a dating app. Every
+          part of it is built around finding the right partner for your training
+          and competition goals.
+        </p>
+      </Reveal>
 
       <ol className="flex flex-col gap-10">
         {STEPS.map((step, index) => (
-          <li key={step.title} className="flex gap-6">
-            <span className="font-serif text-3xl text-gold">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <h2 className="mb-2 text-xl text-paper">{step.title}</h2>
-              <p className="text-paper-dim">{step.description}</p>
-            </div>
-          </li>
+          <Reveal key={step.title} delay={index * 70}>
+            <li className="group flex gap-6">
+              <span className="font-serif text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-0.5">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h2 className="mb-2 text-xl text-paper">{step.title}</h2>
+                <p className="leading-relaxed text-paper-dim">{step.description}</p>
+              </div>
+            </li>
+          </Reveal>
         ))}
       </ol>
 
-      <div className="mt-16 rounded-2xl border border-gold/40 bg-ink-raised p-6 sm:p-8">
+      <Reveal>
+      <div className="mt-16 rounded-2xl border border-gold/40 bg-ink-raised p-6 transition-colors duration-500 hover:border-gold/70 sm:p-8">
         <p className="font-serif text-lg text-paper">
           DancePro is a professional network for dancers, not a dating app.
         </p>
@@ -81,10 +89,11 @@ export default function HowItWorksPage() {
           needs.
         </p>
       </div>
+      </Reveal>
 
       <Link
         href="/#join"
-        className="mt-12 inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition hover:bg-gold-dim"
+        className="mt-12 inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)]"
       >
         Join the Founding Members
       </Link>
