@@ -112,7 +112,9 @@ export function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm text-paper-dim">What do you dance?</span>
+        <span className="text-sm text-paper-dim">
+          Dance styles <span className="opacity-60">— pick any that apply</span>
+        </span>
         <div className="flex flex-wrap gap-2">
           {DANCE_STYLES.map((style) => {
             const active = styles.includes(style.name);
