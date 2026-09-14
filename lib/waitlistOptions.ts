@@ -16,9 +16,9 @@ export const LOOKING_FOR_OPTIONS = [
   "Competition partner",
   "Practice partner",
   "Social dance partner",
-  "Professional partner",
   "Performance partner",
   "Coach",
+  "Students to teach",
   "Other",
 ] as const;
 
