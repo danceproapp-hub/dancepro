@@ -52,6 +52,16 @@ export const DANCE_STYLES: DanceStyleInfo[] = [
     description:
       "Salsa, Bachata, Merengue and the rest of the social floor — danced for the night out rather than the scoresheet, led and followed on the spot.",
   },
+  {
+    name: "Other",
+    // Treated as competitive on purpose: "Other" often means West Coast
+    // Swing, Zouk or Country, which all have circuits. Wrongly hiding the
+    // competition options would be worse than showing an unused one.
+    category: "Other",
+    competitive: true,
+    description:
+      "West Coast Swing, Zouk, Country Two-Step and anything else you partner up for. Tell us what you dance when you join.",
+  },
 ];
 
 export const SOCIAL_DANCE = "Social Dance";
