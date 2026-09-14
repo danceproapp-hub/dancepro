@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     template: "%s | DancePro",
   },
   description:
-    "The professional network connecting ballroom and Latin dancers worldwide. Join the founding members building the network before the app launches.",
+    "The professional network for ballroom and Latin dancers — partners, coaching, competitions, and a marketplace for shoes, dresses, and gowns. Join the founding members.",
   openGraph: {
     title: "DancePro — Find Your Next Dance Partner",
     description:
-      "The professional network connecting ballroom and Latin dancers worldwide.",
+      "The professional network for ballroom and Latin dancers. Partners, coaching, competitions, and the marketplace — all in one place.",
     siteName: "DancePro",
     type: "website",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DancePro — Find Your Next Dance Partner",
     description:
-      "The professional network connecting ballroom and Latin dancers worldwide.",
+      "The professional network for ballroom and Latin dancers. Partners, coaching, competitions, and the marketplace — all in one place.",
   },
 };
 

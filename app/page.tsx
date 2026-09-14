@@ -110,8 +110,8 @@ export default async function HomePage() {
             className="enter max-w-2xl text-lg text-paper-dim sm:text-xl"
             style={{ animationDelay: "240ms" }}
           >
-            The professional network connecting ballroom and Latin dancers
-            worldwide.
+            The professional network for ballroom and Latin dancers. Partners,
+            coaching, competitions, and the marketplace — all in one place.
           </p>
 
           <a
