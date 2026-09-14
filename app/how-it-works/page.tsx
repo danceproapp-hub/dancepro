@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/Eyebrow";
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "How DancePro connects ballroom and Latin dancers: build a profile, search or get discovered, connect, and message — a professional network, not a dating app.",
+    "How DancePro connects ballroom and Latin dancers: build a profile, search or get discovered, send a connection request, and message inside the app.",
   openGraph: {
     title: "How DancePro Works",
     description:
@@ -56,9 +56,8 @@ export default function HowItWorksPage() {
           How DancePro works
         </h1>
         <p className="mb-14 text-lg text-paper-dim">
-          DancePro is a professional network for dancers, not a dating app. Every
-          part of it is built around finding the right partner for your training
-          and competition goals.
+          Every part of DancePro is built around one thing: finding the right
+          partner for your training and competition goals.
         </p>
       </Reveal>
 
@@ -77,19 +76,6 @@ export default function HowItWorksPage() {
           </Reveal>
         ))}
       </ol>
-
-      <Reveal>
-      <div className="mt-16 rounded-2xl border border-gold/40 bg-ink-raised p-6 transition-colors duration-500 hover:border-gold/70 sm:p-8">
-        <p className="font-serif text-lg text-paper">
-          DancePro is a professional network for dancers, not a dating app.
-        </p>
-        <p className="mt-2 text-sm text-paper-dim">
-          No romantic framing, no swiping, no "matches." Just a faster way to
-          find the partner your training or competition schedule actually
-          needs.
-        </p>
-      </div>
-      </Reveal>
 
       <Link
         href="/#join"

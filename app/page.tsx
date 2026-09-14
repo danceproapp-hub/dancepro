@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 const HOW_IT_WORKS_STEPS = [
   {
     title: "Create your profile",
-    description: "Your styles, role, level, and where you dance — built for dancers, not a dating bio.",
+    description: "Your styles, role, level, and where you dance — everything a partner actually needs to know.",
   },
   {
     title: "Search or get discovered",
@@ -19,7 +19,7 @@ const HOW_IT_WORKS_STEPS = [
   },
   {
     title: "Connect",
-    description: "Send a connection request. They accept. No noise, no cold DMs into the void.",
+    description: "Send a connection request. They accept. Connections are mutual, so every conversation starts with a yes.",
   },
   {
     title: "Message inside the app",
@@ -116,30 +116,27 @@ export default async function HomePage() {
 
       <section className="mx-auto max-w-3xl px-6 py-24">
         <Reveal>
-          <Eyebrow>The problem</Eyebrow>
+          <Eyebrow>The idea</Eyebrow>
           <h2 className="mb-6 font-serif text-3xl text-paper sm:text-4xl">
-            Right now, finding a partner means luck.
+            Imagine finding your partner in an afternoon.
           </h2>
         </Reveal>
         <Reveal delay={100}>
           <div className="flex flex-col gap-4 text-paper-dim">
             <p>
-              Dancers looking for a partner are scattered across studios, cities,
-              countries, Facebook groups, Instagram DMs, and word of mouth. There is
-              no single place to look, so most searches depend on who happens to
-              know who.
+              You open DancePro and search for exactly what you need: your style,
+              your level, the role you dance, near your studio or anywhere in the
+              world. Real dancers come back — each one already showing what they
+              dance and the kind of partnership they're after.
             </p>
             <p>
-              That works occasionally, inside a single studio or a local scene. It
-              breaks down the moment you need something more specific: a partner at
-              your level, in your discipline, willing to travel for competitions, or
-              simply based in a city you are moving to.
+              You send a connection request to the ones who fit. They accept, and
+              the conversation starts in the app. By the weekend you've agreed on
+              a practice schedule and picked a competition to aim for together.
             </p>
             <p>
-              DancePro is building the place that search should have happened all
-              along — a professional network built specifically for ballroom and
-              Latin dancing, not a general social feed or a dating app repurposed for
-              dancers.
+              That's the whole idea: the dancers who match what you're looking
+              for, in one place, there for the same reason you are.
             </p>
           </div>
         </Reveal>
