@@ -5,6 +5,7 @@ import { LocationInput } from "@/components/LocationInput";
 import {
   COMPETITION_DIVISION_OPTIONS,
   COMPETITION_PARTNER_OPTION,
+  COMPETITIVE_ONLY_LEVELS,
   LEVEL_OPTIONS,
   LOOKING_FOR_OPTIONS,
   ROLE_OPTIONS,
@@ -42,12 +43,12 @@ export function ProfileForm({
   styles: string[];
 }) {
   // Social Dance has no competitive circuit. A dancer who picked only that
-  // can't compete at all, so neither a competition partner nor a
-  // professional level is offered — which also means the division question
-  // never appears, since it hangs off the competition option.
+  // can't compete at all, so the competitive levels and the competition
+  // partner option are both withheld — which also takes the division
+  // question with it, since that hangs off the competition option.
   const socialOnly = isSocialOnly(styles);
   const levelOptions = socialOnly
-    ? LEVEL_OPTIONS.filter((o) => o.value !== "professional")
+    ? LEVEL_OPTIONS.filter((o) => !COMPETITIVE_ONLY_LEVELS.includes(o.value))
     : LEVEL_OPTIONS;
   const lookingForOptions = socialOnly
     ? LOOKING_FOR_OPTIONS.filter((o) => o !== COMPETITION_PARTNER_OPTION)

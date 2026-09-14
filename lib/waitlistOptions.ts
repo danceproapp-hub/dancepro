@@ -18,9 +18,12 @@ export const LOOKING_FOR_OPTIONS = [
   "Social dance partner",
   "Performance partner",
   "Coach",
-  "Students to teach",
+  "Students",
   "Other",
 ] as const;
+
+// Levels that only mean something on a competitive circuit.
+export const COMPETITIVE_ONLY_LEVELS = ["competitive", "professional"];
 
 // Only asked when "Competition partner" is selected.
 export const COMPETITION_PARTNER_OPTION = "Competition partner";
