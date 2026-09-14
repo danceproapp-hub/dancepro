@@ -112,9 +112,7 @@ export function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm text-paper-dim">
-          Dance styles <span className="opacity-60">— pick any that apply</span>
-        </span>
+        <span className="text-sm text-paper-dim">Dance styles</span>
         <div className="flex flex-wrap gap-2">
           {DANCE_STYLES.map((style) => {
             const active = styles.includes(style.name);
@@ -163,7 +161,7 @@ export function WaitlistForm() {
       </button>
 
       <p className="text-center text-xs text-paper-dim">
-        Takes ten seconds. You can add your dance details after.
+        Takes ten seconds. You can add your details after.
       </p>
     </form>
   );
