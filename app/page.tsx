@@ -207,7 +207,7 @@ export default async function HomePage() {
               Join the founding members
             </h2>
             <p className="mt-3 text-sm text-paper-dim">
-              One thousand dancers. Then we build the app.
+              Reserve your place before we open to the public.
             </p>
           </div>
         </Reveal>
