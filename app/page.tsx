@@ -27,6 +27,29 @@ const HOW_IT_WORKS_STEPS = [
   },
 ];
 
+const PILLARS = [
+  {
+    title: "Partner search",
+    description:
+      "Find a competition, practice, or social partner by style, level, role, and where they dance.",
+  },
+  {
+    title: "Marketplace",
+    description:
+      "Shoes, dresses, and practice wear. Dancers list their own competition gowns for sale or for rent, the way the community already trades them.",
+  },
+  {
+    title: "Coaching",
+    description:
+      "Instructors list what they teach and where. Students find them by style, level, and city.",
+  },
+  {
+    title: "Competitions",
+    description:
+      "See what's coming up, who's going, and what you're training toward.",
+  },
+];
+
 const BENEFITS = [
   {
     title: "Founding Member badge",
@@ -140,6 +163,33 @@ export default async function HomePage() {
             </p>
           </div>
         </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 py-24">
+        <Reveal>
+          <Eyebrow>More than a partner search</Eyebrow>
+          <h2 className="mb-6 font-serif text-3xl text-paper sm:text-4xl">
+            The whole dance world, in one place.
+          </h2>
+          <p className="mb-12 max-w-2xl text-paper-dim">
+            Finding a partner is where DancePro starts, not where it ends. It's
+            a network for everything a dancer needs.
+          </p>
+        </Reveal>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {PILLARS.map((pillar, index) => (
+            <Reveal key={pillar.title} delay={index * 80}>
+              <div className="h-full rounded-xl border border-line p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-ink-raised">
+                <h3 className="mb-2 font-serif text-xl text-gold">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-paper-dim">
+                  {pillar.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto max-w-4xl px-6 py-24">
