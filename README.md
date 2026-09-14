@@ -4,6 +4,8 @@ A professional networking and partner-finding platform for ballroom and
 DanceSport dancers. This repository is the marketing site and founding
 member waitlist that comes before the iOS app.
 
+**Live:** https://dancepro.vercel.app
+
 ## Stack
 
 - Next.js (App Router) + TypeScript
@@ -27,21 +29,31 @@ then:
 npm run dev
 ```
 
-The site runs at `http://localhost:3000`.
+The site runs at `http://localhost:3000`. Without `.env.local` the pages
+still render, but the signup form will fail on submit.
 
 ## Environment variables
 
-Both variables are public by design — the Supabase anon key is safe to ship
-to the browser because every write goes through security-definer RPC
-functions, and the waitlist table itself has no anonymous read/write/delete
-policy (see the migration below).
+Both variables are public by design — the Supabase publishable key is safe
+to ship to the browser because every write goes through security-definer
+RPC functions, and the waitlist table itself has no anonymous
+read/write/delete policy (see the migration below).
 
 | Variable | Description |
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase project's anon/public API key |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase publishable key (`sb_publishable_…`) or legacy `anon` JWT |
+
+Both key formats work with `@supabase/supabase-js`. Prefer the shorter
+`sb_publishable_…` key: it is the current Supabase default, it rotates
+independently, and being ~46 characters it is far less likely to be
+silently truncated when pasted into a hosting dashboard.
 
 Never commit a `service_role` key anywhere in this repo.
+
+> These are inlined into the client bundle at **build time**, not read at
+> runtime. After changing either value in Vercel you must redeploy **with
+> the build cache disabled**, or the old value stays compiled in.
 
 ## Database setup
 
@@ -59,10 +71,10 @@ Or paste the file's contents into the Supabase SQL editor and run it once.
 
 ### Why the RLS setup matters
 
-The anon key ships to the browser, so anyone can call Supabase directly with
-it. `waitlist_signups` has **no** anonymous `select`, `update`, or `delete`
-policy — the only way in or out for anonymous clients is through three
-`security definer` functions:
+The publishable key ships to the browser, so anyone can call Supabase
+directly with it. `waitlist_signups` has **no** anonymous `select`,
+`update`, or `delete` policy — the only way in or out for anonymous
+clients is through three `security definer` functions:
 
 - `join_waitlist(...)` — inserts a signup and returns a referral code. If the
   email already exists, it returns that signup's existing code instead of
@@ -75,6 +87,10 @@ policy — the only way in or out for anonymous clients is through three
 The client code never runs `select` against `waitlist_signups` — check
 [`lib/supabase.ts`](lib/supabase.ts).
 
+Supabase's database linter will flag `waitlist_signups` as "RLS enabled, no
+policy" and flag the three functions as anon-callable. Both are intentional
+and are the point of this design, not problems to fix.
+
 ## Pages
 
 - `/` — landing page and waitlist signup form
@@ -83,7 +99,11 @@ The client code never runs `select` against `waitlist_signups` — check
 - `/dance-styles` — supported dance styles (also an SEO surface)
 - `/founding-members` — the founding member program
 
+The homepage's "Join N dancers already on the list" line stays hidden until
+there are at least 25 signups.
+
 ## Deployment
 
-Import this repository into Vercel and set the two environment variables
-above in the project settings. No other configuration is required.
+The Vercel project is linked to this repository, so every push to `main`
+deploys automatically. The two environment variables above are configured
+in the Vercel project settings.
