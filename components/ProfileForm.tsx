@@ -96,7 +96,7 @@ export function ProfileForm({
         <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
           Add where you dance, your role and what you're looking for, and we'll
           have compatible partners lined up the day you get access. Takes about
-          a minute.
+          15 seconds.
         </p>
         <button
           type="button"
