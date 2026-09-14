@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { COUNTRIES } from "@/lib/countries";
 import { DANCE_STYLES } from "@/lib/danceStyles";
+import { LocationInput } from "@/components/LocationInput";
 import {
   LEVEL_OPTIONS,
   LOOKING_FOR_OPTIONS,
@@ -99,40 +99,12 @@ export function ProfileForm({ code }: { code: string }) {
       onSubmit={handleSubmit}
       className="flex w-full flex-col gap-6 rounded-2xl border border-line bg-ink-raised p-6 text-left sm:p-8"
     >
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="city" className="text-sm text-paper-dim">
-            City
-          </label>
-          <input
-            id="city"
-            type="text"
-            autoComplete="address-level2"
-            value={form.city}
-            onChange={(e) => setForm({ ...form, city: e.target.value })}
-            className={inputClass}
-          />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <label htmlFor="country" className="text-sm text-paper-dim">
-            Country
-          </label>
-          <select
-            id="country"
-            value={form.country}
-            onChange={(e) => setForm({ ...form, country: e.target.value })}
-            className={inputClass}
-          >
-            <option value="">Select a country</option>
-            {COUNTRIES.map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+      <LocationInput
+        value={{ city: form.city, country: form.country }}
+        onChange={(next) =>
+          setForm({ ...form, city: next.city, country: next.country })
+        }
+      />
 
       <Field label="Dance styles">
         <div className="flex flex-wrap gap-2">
