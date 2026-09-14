@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { ReferralLinkBox } from "@/components/ReferralLinkBox";
+import { ProfileForm } from "@/components/ProfileForm";
 import { getWaitlistStatus } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
@@ -45,7 +46,12 @@ export default async function WelcomePage({
 }) {
   const { code } = await searchParams;
 
-  let status: { position: number; total: number; referrals: number } | null = null;
+  let status: {
+    position: number;
+    total: number;
+    referrals: number;
+    profileComplete: boolean;
+  } | null = null;
 
   if (code) {
     try {
@@ -92,6 +98,8 @@ export default async function WelcomePage({
           list so far.
         </p>
       </div>
+
+      {!status.profileComplete && <ProfileForm code={code} />}
 
       <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 sm:p-8">
         <h2 className="mb-3 font-serif text-xl text-paper">Move up the list</h2>
