@@ -12,7 +12,7 @@ export const DANCE_STYLES: DanceStyleInfo[] = [
     name: "International Latin",
     category: "International",
     description:
-      "Cha Cha, Samba, Rumba, Paso Doble, and Jive — the five-dance Latin standard danced under WDSF and World DanceSport rules, built on sharp technique and rhythmic precision.",
+      "Cha Cha, Samba, Rumba, Paso Doble, and Jive — the five-dance Latin standard danced under WDSF competition rules, built on sharp technique and rhythmic precision.",
   },
   {
     name: "International Standard",

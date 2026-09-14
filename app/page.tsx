@@ -87,7 +87,7 @@ export default async function HomePage() {
             className="enter max-w-2xl text-lg text-paper-dim sm:text-xl"
             style={{ animationDelay: "240ms" }}
           >
-            The professional network connecting ballroom and DanceSport dancers
+            The professional network connecting ballroom and Latin dancers
             worldwide.
           </p>
 
@@ -138,7 +138,7 @@ export default async function HomePage() {
             <p>
               DancePro is building the place that search should have happened all
               along — a professional network built specifically for ballroom and
-              DanceSport, not a general social feed or a dating app repurposed for
+              Latin dancing, not a general social feed or a dating app repurposed for
               dancers.
             </p>
           </div>

@@ -6,11 +6,11 @@ import { Eyebrow } from "@/components/Eyebrow";
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "How DancePro connects ballroom and DanceSport dancers: build a profile, search or get discovered, connect, and message — a professional network, not a dating app.",
+    "How DancePro connects ballroom and Latin dancers: build a profile, search or get discovered, connect, and message — a professional network, not a dating app.",
   openGraph: {
     title: "How DancePro Works",
     description:
-      "How DancePro connects ballroom and DanceSport dancers: build a profile, search or get discovered, connect, and message.",
+      "How DancePro connects ballroom and Latin dancers: build a profile, search or get discovered, connect, and message.",
   },
 };
 

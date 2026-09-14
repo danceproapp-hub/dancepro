@@ -1,7 +1,7 @@
 # DancePro — Founding Members Waitlist
 
 A professional networking and partner-finding platform for ballroom and
-DanceSport dancers. This repository is the marketing site and founding
+Latin dancers. This repository is the marketing site and founding
 member waitlist that comes before the iOS app.
 
 **Live:** https://dancepro.vercel.app

@@ -59,7 +59,7 @@ export default async function OpengraphImage() {
             fontFamily: "Helvetica, Arial, sans-serif",
           }}
         >
-          The professional network for ballroom &amp; DanceSport dancers
+          The professional network for ballroom &amp; Latin dancers
         </div>
 
         <div
