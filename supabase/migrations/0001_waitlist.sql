@@ -76,7 +76,8 @@ exception when unique_violation then
 end; $$;
 
 create or replace function public.waitlist_status(p_code text)
-returns table (position bigint, total bigint, referrals bigint)
+-- "position" must be quoted: it is a reserved word in Postgres.
+returns table ("position" bigint, total bigint, referrals bigint)
 language sql security definer set search_path = public as $$
   select
     (select count(*) from waitlist_signups w2 where w2.created_at <= w.created_at),
