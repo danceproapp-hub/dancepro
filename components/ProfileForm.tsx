@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { LocationInput } from "@/components/LocationInput";
 import {
+  COMPETITION_DIVISION_OPTIONS,
+  COMPETITION_PARTNER_OPTION,
   LEVEL_OPTIONS,
   LOOKING_FOR_OPTIONS,
   ROLE_OPTIONS,
@@ -15,6 +17,7 @@ interface ProfileState {
   role: string;
   level: string;
   lookingFor: string[];
+  divisions: string[];
 }
 
 const INITIAL_STATE: ProfileState = {
@@ -23,6 +26,7 @@ const INITIAL_STATE: ProfileState = {
   role: "",
   level: "",
   lookingFor: [],
+  divisions: [],
 };
 
 function toggleValue(list: string[], value: string): string[] {
@@ -49,6 +53,7 @@ export function ProfileForm({ code }: { code: string }) {
         role: form.role,
         level: form.level,
         lookingFor: form.lookingFor,
+        divisions: form.divisions,
       });
       setSaved(true);
     } catch {
@@ -151,16 +156,42 @@ export function ProfileForm({ code }: { code: string }) {
               key={option}
               label={option}
               active={form.lookingFor.includes(option)}
-              onClick={() =>
+              onClick={() => {
+                const lookingFor = toggleValue(form.lookingFor, option);
                 setForm({
                   ...form,
-                  lookingFor: toggleValue(form.lookingFor, option),
-                })
-              }
+                  lookingFor,
+                  // Divisions only apply to competition, so drop them if
+                  // that is no longer what they're after.
+                  divisions: lookingFor.includes(COMPETITION_PARTNER_OPTION)
+                    ? form.divisions
+                    : [],
+                });
+              }}
             />
           ))}
         </div>
       </Field>
+
+      {form.lookingFor.includes(COMPETITION_PARTNER_OPTION) && (
+        <Field label="Which division?">
+          <div className="flex flex-wrap gap-2">
+            {COMPETITION_DIVISION_OPTIONS.map((option) => (
+              <Chip
+                key={option}
+                label={option}
+                active={form.divisions.includes(option)}
+                onClick={() =>
+                  setForm({
+                    ...form,
+                    divisions: toggleValue(form.divisions, option),
+                  })
+                }
+              />
+            ))}
+          </div>
+        </Field>
+      )}
 
       {error && (
         <p role="alert" className="text-sm text-red-400">

@@ -22,4 +22,13 @@ export const LOOKING_FOR_OPTIONS = [
   "Other",
 ] as const;
 
+// Only asked when "Competition partner" is selected.
+export const COMPETITION_PARTNER_OPTION = "Competition partner";
+
+export const COMPETITION_DIVISION_OPTIONS = [
+  "Amateur",
+  "Pro-Am",
+  "Professional",
+] as const;
+
 export const REFERRAL_STORAGE_KEY = "dancepro_ref";

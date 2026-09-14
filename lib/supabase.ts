@@ -50,6 +50,7 @@ export async function updateWaitlistProfile(input: {
   role: string;
   level: string;
   lookingFor: string[];
+  divisions: string[];
 }): Promise<void> {
   const supabase = getSupabaseClient();
   const { error } = await supabase.rpc("update_waitlist_profile", {
@@ -59,6 +60,7 @@ export async function updateWaitlistProfile(input: {
     p_role: input.role,
     p_level: input.level,
     p_looking_for: input.lookingFor,
+    p_divisions: input.divisions,
   });
 
   if (error) throw error;
