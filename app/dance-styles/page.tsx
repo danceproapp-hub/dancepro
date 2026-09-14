@@ -19,7 +19,7 @@ const CATEGORIES: { key: DanceStyleCategory; label: string; blurb: string }[] = 
   {
     key: "International",
     label: "International Style",
-    blurb: "The WDSF competitive standard danced worldwide.",
+    blurb: "The international competitive standard danced worldwide.",
   },
   {
     key: "American",
