@@ -36,7 +36,7 @@ const PILLARS = [
   {
     title: "Marketplace",
     description:
-      "Shoes, dresses, and practice wear. Dancers list their own competition gowns for sale or for rent, the way the community already trades them.",
+      "Competition gowns listed by other dancers for sale or for rent, alongside new shoes, dresses, and practice wear from the brands you already dance in.",
   },
   {
     title: "Coaching",
