@@ -41,15 +41,17 @@ export function ProfileForm({
   code: string;
   styles: string[];
 }) {
-  // Social Dance has no competitive circuit, so a dancer who picked only
-  // that is never a professional competitor and is never seeking one.
+  // Social Dance has no competitive circuit. A dancer who picked only that
+  // can't compete at all, so neither a competition partner nor a
+  // professional level is offered — which also means the division question
+  // never appears, since it hangs off the competition option.
   const socialOnly = isSocialOnly(styles);
   const levelOptions = socialOnly
     ? LEVEL_OPTIONS.filter((o) => o.value !== "professional")
     : LEVEL_OPTIONS;
-  const divisionOptions = socialOnly
-    ? COMPETITION_DIVISION_OPTIONS.filter((o) => o !== "Professional")
-    : COMPETITION_DIVISION_OPTIONS;
+  const lookingForOptions = socialOnly
+    ? LOOKING_FOR_OPTIONS.filter((o) => o !== COMPETITION_PARTNER_OPTION)
+    : LOOKING_FOR_OPTIONS;
 
   const [form, setForm] = useState<ProfileState>(INITIAL_STATE);
   const [open, setOpen] = useState(false);
@@ -168,7 +170,7 @@ export function ProfileForm({
 
       <Field label="Looking for">
         <div className="flex flex-wrap gap-2">
-          {LOOKING_FOR_OPTIONS.map((option) => (
+          {lookingForOptions.map((option) => (
             <Chip
               key={option}
               label={option}
@@ -193,7 +195,7 @@ export function ProfileForm({
       {form.lookingFor.includes(COMPETITION_PARTNER_OPTION) && (
         <Field label="Which division?">
           <div className="flex flex-wrap gap-2">
-            {divisionOptions.map((option) => (
+            {COMPETITION_DIVISION_OPTIONS.map((option) => (
               <Chip
                 key={option}
                 label={option}
