@@ -153,9 +153,10 @@ export function ProfileForm({
         </div>
       </Field>
 
-      {/* Competitive dancers describe themselves by division instead, so
-          level is only asked of social-only dancers. */}
-      {socialOnly && (
+      {/* A dancer's standard, asked in whichever vocabulary fits them:
+          social dancers have a level, competitive dancers have a division.
+          Both describe who the dancer is, so both are always shown. */}
+      {socialOnly ? (
         <Field label="Level">
           <select
             value={form.level}
@@ -171,34 +172,8 @@ export function ProfileForm({
             ))}
           </select>
         </Field>
-      )}
-
-      <Field label="Looking for">
-        <div className="flex flex-wrap gap-2">
-          {lookingForOptions.map((option) => (
-            <Chip
-              key={option}
-              label={option}
-              active={form.lookingFor.includes(option)}
-              onClick={() => {
-                const lookingFor = toggleValue(form.lookingFor, option);
-                setForm({
-                  ...form,
-                  lookingFor,
-                  // Divisions only apply to competition, so drop them if
-                  // that is no longer what they're after.
-                  divisions: lookingFor.includes(COMPETITION_PARTNER_OPTION)
-                    ? form.divisions
-                    : [],
-                });
-              }}
-            />
-          ))}
-        </div>
-      </Field>
-
-      {form.lookingFor.includes(COMPETITION_PARTNER_OPTION) && (
-        <Field label="Which division?">
+      ) : (
+        <Field label="Your division">
           <div className="flex flex-wrap gap-2">
             {COMPETITION_DIVISION_OPTIONS.map((option) => (
               <Chip
@@ -216,6 +191,24 @@ export function ProfileForm({
           </div>
         </Field>
       )}
+
+      <Field label="Looking for">
+        <div className="flex flex-wrap gap-2">
+          {lookingForOptions.map((option) => (
+            <Chip
+              key={option}
+              label={option}
+              active={form.lookingFor.includes(option)}
+              onClick={() =>
+                setForm({
+                  ...form,
+                  lookingFor: toggleValue(form.lookingFor, option),
+                })
+              }
+            />
+          ))}
+        </div>
+      </Field>
 
       {error && (
         <p role="alert" className="text-sm text-red-400">

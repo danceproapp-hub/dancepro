@@ -25,7 +25,7 @@ export const LOOKING_FOR_OPTIONS = [
 // Levels that only mean something on a competitive circuit.
 export const COMPETITIVE_ONLY_LEVELS = ["competitive", "professional"];
 
-// Only asked when "Competition partner" is selected.
+// Withheld from social-only dancers, who have no circuit to enter.
 export const COMPETITION_PARTNER_OPTION = "Competition partner";
 
 // Age divisions first, then status. They are separate axes — a Junior is
