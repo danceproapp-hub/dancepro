@@ -56,18 +56,17 @@ export default function FoundingMembersPage() {
 
       <div className="mb-16 flex flex-col gap-4 text-paper-dim">
         <h2 className="mb-2 font-serif text-2xl text-paper">
-          Why the community comes first
+          What being first actually means
         </h2>
         <p>
-          Most networks fail for one reason: they open to everyone at once and
-          nobody is there yet. We're doing this in the opposite order. The
-          founding members come first, so that the moment DancePro opens there
-          are already real dancers on it worth connecting to.
+          Founding members shape what DancePro becomes — the cities it's
+          strongest in, the styles best represented, the features that ship
+          first. Join now and you're not just on the network, you're part of
+          the reason it's worth being on.
         </p>
         <p>
-          Every founding member is part of the network itself, not a name on a
-          list. You'll be among the first profiles other dancers see, in a
-          community shaped around the people who showed up early.
+          You'll be among the first profiles other dancers see when they
+          arrive, with a badge that never gets handed out again.
         </p>
       </div>
 
