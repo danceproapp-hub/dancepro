@@ -28,7 +28,11 @@ export const COMPETITIVE_ONLY_LEVELS = ["competitive", "professional"];
 // Only asked when "Competition partner" is selected.
 export const COMPETITION_PARTNER_OPTION = "Competition partner";
 
+// Age divisions first, then status. They are separate axes — a Junior is
+// also an Amateur — so this is deliberately multi-select.
 export const COMPETITION_DIVISION_OPTIONS = [
+  "Junior",
+  "Youth",
   "Amateur",
   "Pro-Am",
   "Professional",

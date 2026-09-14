@@ -153,21 +153,25 @@ export function ProfileForm({
         </div>
       </Field>
 
-      <Field label="Level">
-        <select
-          value={form.level}
-          onChange={(e) => setForm({ ...form, level: e.target.value })}
-          className={inputClass}
-          aria-label="Level"
-        >
-          <option value="">Select your level</option>
-          {levelOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </Field>
+      {/* Competitive dancers describe themselves by division instead, so
+          level is only asked of social-only dancers. */}
+      {socialOnly && (
+        <Field label="Level">
+          <select
+            value={form.level}
+            onChange={(e) => setForm({ ...form, level: e.target.value })}
+            className={inputClass}
+            aria-label="Level"
+          >
+            <option value="">Select your level</option>
+            {levelOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </Field>
+      )}
 
       <Field label="Looking for">
         <div className="flex flex-wrap gap-2">
