@@ -16,6 +16,62 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/*
+ * Instrument Serif and DM Sans ship Latin only, so Cyrillic and CJK pages
+ * would otherwise fall back to Times New Roman. The script is stamped on
+ * <html> by the locale layout.
+ *
+ * Each stack still LEADS with the Latin brand faces: fallback is per-glyph,
+ * so the DANCEPRO wordmark and the untranslated discipline names keep the
+ * brand type on every page, and only the glyphs Instrument Serif lacks fall
+ * through to the script-specific face.
+ */
+[data-script="cyrillic"] {
+  --font-serif: var(--font-instrument-serif), var(--font-playfair), Georgia,
+    "Times New Roman", serif;
+  --font-sans: var(--font-dm-sans), var(--font-manrope), -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/*
+ * CJK deliberately uses the reader's own system faces rather than a
+ * webfont: a full Chinese or Japanese family is megabytes, and the
+ * platform Mincho/Song and Gothic/Hei faces are excellent and render
+ * instantly. The serif tradition still carries the display character.
+ */
+[data-script="sc"] {
+  --font-serif: var(--font-instrument-serif), "Songti SC",
+    "Source Han Serif SC", "Noto Serif CJK SC", SimSun, serif;
+  --font-sans: var(--font-dm-sans), "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+}
+
+[data-script="jp"] {
+  --font-serif: var(--font-instrument-serif), "Hiragino Mincho ProN",
+    "Yu Mincho", YuMincho, "Source Han Serif JP", "Noto Serif CJK JP", serif;
+  --font-sans: var(--font-dm-sans), "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, "Source Han Sans JP",
+    sans-serif;
+}
+
+/*
+ * The Latin display serif is set very tight; CJK and Cyrillic both need
+ * that relaxed, and CJK reads better with a little more line height.
+ */
+[data-script="sc"] h1,
+[data-script="sc"] h2,
+[data-script="jp"] h1,
+[data-script="jp"] h2,
+[data-script="cyrillic"] h1,
+[data-script="cyrillic"] h2 {
+  letter-spacing: -0.01em;
+}
+
+[data-script="sc"] p,
+[data-script="jp"] p {
+  line-height: 1.85;
+}
+
 html {
   scroll-behavior: smooth;
 }

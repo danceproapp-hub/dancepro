@@ -50,11 +50,17 @@ export function SiteHeader({
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <LanguageSwitcher locale={locale} label={t.language.label} />
+          {/*
+            Hidden on phones: translated labels like "Dołącz do listy" wrap to
+            two lines next to the language control at 375px, and the hero's
+            own call to action sits just below anyway. The language control
+            has no such duplicate, so it is the one that stays.
+          */}
           <Link
             href={`/${locale}#join`}
-            className="rounded-full border border-gold/60 px-5 py-2 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+            className="hidden whitespace-nowrap rounded-full border border-gold/60 px-5 py-2 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink sm:inline-block"
           >
             {t.nav.joinWaitlist}
           </Link>
