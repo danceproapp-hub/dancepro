@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { REFERRAL_STORAGE_KEY } from "@/lib/waitlistOptions";
 import { DANCE_STYLES } from "@/lib/danceStyles";
 import { joinWaitlist } from "@/lib/supabase";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -14,7 +15,15 @@ interface Errors {
   styles?: string;
 }
 
-export function WaitlistForm() {
+export function WaitlistForm({
+  locale,
+  t,
+}: {
+  locale: Locale;
+  // Only this slice, so the rest of the dictionary stays on the server
+  // instead of riding along in the RSC payload.
+  t: Dictionary["signup"];
+}) {
   const router = useRouter();
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -39,11 +48,11 @@ export function WaitlistForm() {
     event.preventDefault();
 
     const next: Errors = {};
-    if (!firstName.trim()) next.firstName = "First name is required.";
-    if (!email.trim()) next.email = "Email is required.";
+    if (!firstName.trim()) next.firstName = t.errName;
+    if (!email.trim()) next.email = t.errEmail;
     else if (!EMAIL_PATTERN.test(email.trim()))
-      next.email = "Enter a valid email address.";
-    if (styles.length === 0) next.styles = "Pick at least one style.";
+      next.email = t.errEmailInvalid;
+    if (styles.length === 0) next.styles = t.errStyles;
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -58,11 +67,9 @@ export function WaitlistForm() {
         styles,
         ref: refCodeRef.current,
       });
-      router.push(`/welcome?code=${encodeURIComponent(code)}`);
+      router.push(`/${locale}/welcome?code=${encodeURIComponent(code)}`);
     } catch {
-      setFormError(
-        "Something went wrong submitting the form. Please try again in a moment."
-      );
+      setFormError(t.errGeneric);
       setSubmitting(false);
     }
   }
@@ -75,7 +82,7 @@ export function WaitlistForm() {
     >
       <div className="flex flex-col gap-2">
         <label htmlFor="firstName" className="text-sm text-paper-dim">
-          First name
+          {t.firstName}
         </label>
         <input
           id="firstName"
@@ -94,7 +101,7 @@ export function WaitlistForm() {
 
       <div className="flex flex-col gap-2">
         <label htmlFor="email" className="text-sm text-paper-dim">
-          Email
+          {t.email}
         </label>
         <input
           id="email"
@@ -112,7 +119,7 @@ export function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm text-paper-dim">Dance styles</span>
+        <span className="text-sm text-paper-dim">{t.danceStyles}</span>
         <div className="flex flex-wrap gap-2">
           {DANCE_STYLES.map((style) => {
             const active = styles.includes(style.name);
@@ -157,12 +164,10 @@ export function WaitlistForm() {
         disabled={submitting}
         className="mt-1 rounded-full bg-gold px-8 py-4 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)] disabled:opacity-60"
       >
-        {submitting ? "Joining..." : "Join the Founding Members"}
+        {submitting ? t.submitting : t.submit}
       </button>
 
-      <p className="text-center text-xs text-paper-dim">
-        Takes ten seconds. You can add your details after.
-      </p>
+      <p className="text-center text-xs text-paper-dim">{t.footnote}</p>
     </form>
   );
 }

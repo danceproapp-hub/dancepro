@@ -1,21 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import mark from "@/public/mark.png";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
-const NAV_LINKS = [
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/dance-styles", label: "Dance Styles" },
-  { href: "/founding-members", label: "Founding Members" },
-];
+export function SiteHeader({
+  locale,
+  t,
+}: {
+  locale: Locale;
+  t: Dictionary;
+}) {
+  const navLinks = [
+    { href: `/${locale}/how-it-works`, label: t.nav.howItWorks },
+    { href: `/${locale}/dance-styles`, label: t.nav.danceStyles },
+    { href: `/${locale}/founding-members`, label: t.nav.foundingMembers },
+  ];
 
-export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-ink/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
-          href="/"
+          href={`/${locale}`}
           className="group flex items-center gap-2.5"
-          aria-label="DancePro home"
+          aria-label={t.nav.home}
         >
           <Image
             src={mark}
@@ -31,7 +39,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -42,12 +50,15 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/#join"
-          className="rounded-full border border-gold/60 px-5 py-2 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
-        >
-          Join Waitlist
-        </Link>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher locale={locale} label={t.language.label} />
+          <Link
+            href={`/${locale}#join`}
+            className="rounded-full border border-gold/60 px-5 py-2 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+          >
+            {t.nav.joinWaitlist}
+          </Link>
+        </div>
       </div>
     </header>
   );

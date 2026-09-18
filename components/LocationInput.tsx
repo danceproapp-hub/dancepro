@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 export interface LocationValue {
   city: string;
@@ -25,9 +26,13 @@ interface GeocodeResult {
 export function LocationInput({
   value,
   onChange,
+  locale,
+  t,
 }: {
   value: LocationValue;
   onChange: (next: LocationValue) => void;
+  locale: Locale;
+  t: Dictionary["profile"];
 }) {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
@@ -57,7 +62,9 @@ export function LocationInput({
     const timer = setTimeout(async () => {
       setLoading(true);
       try {
-        const url = `${ENDPOINT}?name=${encodeURIComponent(term)}&count=6&language=en&format=json`;
+        const url = `${ENDPOINT}?name=${encodeURIComponent(
+          term
+        )}&count=6&language=${locale}&format=json`;
         const res = await fetch(url, { signal: controller.signal });
         const data = (await res.json()) as { results?: GeocodeResult[] };
 
@@ -83,7 +90,7 @@ export function LocationInput({
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query]);
+  }, [query, locale]);
 
   function choose(s: Suggestion) {
     onChange({ city: s.city, country: s.country });
@@ -101,7 +108,7 @@ export function LocationInput({
   return (
     <div className="flex flex-col gap-2" ref={boxRef}>
       <label htmlFor="location" className="text-sm text-paper-dim">
-        Location
+        {t.location}
       </label>
 
       <div className="relative">
@@ -109,7 +116,7 @@ export function LocationInput({
           id="location"
           type="text"
           autoComplete="off"
-          placeholder="Start typing your city"
+          placeholder={t.locationPlaceholder}
           value={open || !selectedLabel ? query : selectedLabel}
           onFocus={() => {
             setOpen(true);
@@ -127,12 +134,14 @@ export function LocationInput({
         {open && query.trim().length >= 2 && (
           <ul className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-line bg-ink-raised shadow-xl">
             {loading && suggestions.length === 0 && (
-              <li className="px-4 py-3 text-sm text-paper-dim">Searching...</li>
+              <li className="px-4 py-3 text-sm text-paper-dim">
+                {t.locationSearching}
+              </li>
             )}
 
             {!loading && suggestions.length === 0 && (
               <li className="px-4 py-3 text-sm text-paper-dim">
-                No match — we'll use what you typed.
+                {t.locationNoMatch}
               </li>
             )}
 

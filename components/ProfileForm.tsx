@@ -12,6 +12,7 @@ import {
 } from "@/lib/waitlistOptions";
 import { isSocialOnly } from "@/lib/danceStyles";
 import { updateWaitlistProfile, type WaitlistProfile } from "@/lib/supabase";
+import type { ProfileFormDictionary, Locale } from "@/lib/i18n";
 
 interface Errors {
   location?: string;
@@ -27,11 +28,15 @@ export function ProfileForm({
   styles,
   profile,
   complete,
+  locale,
+  t,
 }: {
   code: string;
   styles: string[];
   profile: WaitlistProfile;
   complete: boolean;
+  locale: Locale;
+  t: ProfileFormDictionary;
 }) {
   // Social Dance has no competitive circuit. A dancer who picked only that
   // can't compete, so they describe themselves by level and are never
@@ -59,8 +64,8 @@ export function ProfileForm({
     // Without these two the entry tells us nothing, and saving silently
     // did nothing at all before — it just claimed success.
     const next: Errors = {};
-    if (!form.city.trim()) next.location = "Add your city so we can match you locally.";
-    if (!form.role) next.role = "Pick the role you dance.";
+    if (!form.city.trim()) next.location = t.profile.errLocation;
+    if (!form.role) next.role = t.profile.errRole;
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
@@ -80,7 +85,7 @@ export function ProfileForm({
       setSaved(form);
       setOpen(false);
     } catch {
-      setError("Couldn't save that just now. Please try again in a moment.");
+      setError(t.profile.errGeneric);
     } finally {
       setSaving(false);
     }
@@ -90,20 +95,16 @@ export function ProfileForm({
   if (!open && !hasProfile) {
     return (
       <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 text-center sm:p-8">
-        <h2 className="font-serif text-xl text-paper">
-          Want your first matches ready at launch?
-        </h2>
+        <h2 className="font-serif text-xl text-paper">{t.profile.inviteTitle}</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
-          Add where you dance, your role and what you're looking for, and we'll
-          have compatible partners lined up the day you get access. Takes about
-          15 seconds.
+          {t.profile.inviteBody}
         </p>
         <button
           type="button"
           onClick={() => setOpen(true)}
           className="mt-5 rounded-full border border-gold/60 px-6 py-2.5 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
         >
-          Add my details
+          {t.profile.inviteCta}
         </button>
       </div>
     );
@@ -113,17 +114,14 @@ export function ProfileForm({
   if (!open && hasProfile) {
     return (
       <div className="w-full rounded-2xl border border-gold/40 bg-ink-raised p-6 text-center sm:p-8">
-        <p className="font-serif text-xl text-paper">Thank you.</p>
-        <p className="mt-2 text-sm text-paper-dim">
-          Your dance details are saved. We'll use them to line up your first
-          matches before launch.
-        </p>
+        <p className="font-serif text-xl text-paper">{t.profile.savedTitle}</p>
+        <p className="mt-2 text-sm text-paper-dim">{t.profile.savedBody}</p>
         <button
           type="button"
           onClick={() => setOpen(true)}
           className="mt-4 text-sm text-gold underline-offset-4 transition hover:underline"
         >
-          Edit my details
+          {t.profile.editCta}
         </button>
       </div>
     );
@@ -140,6 +138,8 @@ export function ProfileForm({
           onChange={(next) =>
             setForm({ ...form, city: next.city, country: next.country })
           }
+          locale={locale}
+          t={t.profile}
         />
         {errors.location && (
           <p className="text-sm text-red-400" role="alert">
@@ -148,8 +148,12 @@ export function ProfileForm({
         )}
       </div>
 
-      <Field label="Role" error={errors.role}>
-        <div className="flex flex-wrap gap-3" role="radiogroup" aria-label="Role">
+      <Field label={t.profile.role} error={errors.role}>
+        <div
+          className="flex flex-wrap gap-3"
+          role="radiogroup"
+          aria-label={t.profile.role}
+        >
           {ROLE_OPTIONS.map((option) => (
             <label
               key={option.value}
@@ -167,7 +171,7 @@ export function ProfileForm({
                 onChange={() => setForm({ ...form, role: option.value })}
                 className="sr-only"
               />
-              {option.label}
+              {t.roles[option.value]}
             </label>
           ))}
         </div>
@@ -175,23 +179,23 @@ export function ProfileForm({
 
       {/* A dancer's standard, in whichever vocabulary fits them. */}
       {socialOnly ? (
-        <Field label="Level">
+        <Field label={t.profile.level}>
           <select
             value={form.level}
             onChange={(e) => setForm({ ...form, level: e.target.value })}
             className={inputClass}
-            aria-label="Level"
+            aria-label={t.profile.level}
           >
-            <option value="">Select your level</option>
+            <option value="">{t.profile.levelPlaceholder}</option>
             {levelOptions.map((option) => (
               <option key={option.value} value={option.value}>
-                {option.label}
+                {t.levels[option.value]}
               </option>
             ))}
           </select>
         </Field>
       ) : (
-        <Field label="Your division">
+        <Field label={t.profile.division}>
           <div className="flex flex-wrap gap-2">
             {COMPETITION_DIVISION_OPTIONS.map((option) => (
               <Chip
@@ -210,12 +214,12 @@ export function ProfileForm({
         </Field>
       )}
 
-      <Field label="Looking for">
+      <Field label={t.profile.lookingFor}>
         <div className="flex flex-wrap gap-2">
           {lookingForOptions.map((option) => (
             <Chip
               key={option}
-              label={option}
+              label={t.lookingFor[option]}
               active={form.lookingFor.includes(option)}
               onClick={() =>
                 setForm({
@@ -240,7 +244,7 @@ export function ProfileForm({
           disabled={saving}
           className="flex-1 rounded-full bg-gold px-8 py-3.5 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim disabled:opacity-60"
         >
-          {saving ? "Saving..." : "Save my details"}
+          {saving ? t.profile.saving : t.profile.save}
         </button>
         {hasProfile && (
           <button
@@ -252,7 +256,7 @@ export function ProfileForm({
             }}
             className="rounded-full border border-line px-6 py-3.5 text-sm text-paper-dim transition hover:border-gold/60 hover:text-paper"
           >
-            Cancel
+            {t.profile.cancel}
           </button>
         )}
       </div>

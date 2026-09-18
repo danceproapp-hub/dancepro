@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 
-export function ReferralLinkBox({ link }: { link: string }) {
+export function ReferralLinkBox({
+  link,
+  copyLabel,
+  copiedLabel,
+}: {
+  link: string;
+  copyLabel: string;
+  copiedLabel: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
@@ -28,7 +36,7 @@ export function ReferralLinkBox({ link }: { link: string }) {
         onClick={handleCopy}
         className="shrink-0 rounded-full bg-gold px-5 py-2 text-sm font-medium text-ink transition hover:bg-gold-dim"
       >
-        {copied ? "Copied!" : "Copy link"}
+        {copied ? copiedLabel : copyLabel}
       </button>
     </div>
   );
