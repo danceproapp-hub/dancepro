@@ -144,8 +144,12 @@ export const en = {
     metaDescription: "You're on the DancePro founding members waitlist.",
     youreIn: "You're in",
     position: "You are #{position}.",
-    totalOne: "1 dancer has joined the founding members list so far.",
-    totalMany: "{total} dancers have joined the founding members list so far.",
+    total: {
+      one: "1 dancer has joined the founding members list so far.",
+      few: "{total} dancers have joined the founding members list so far.",
+      many: "{total} dancers have joined the founding members list so far.",
+      other: "{total} dancers have joined the founding members list so far.",
+    },
     moveUp: "Move up the list",
     copyLink: "Copy link",
     copied: "Copied!",
@@ -166,8 +170,7 @@ export const en = {
       "You've referred {referred} and unlocked priority access at launch. {remaining} more for VIP founding status.",
     tierMsgMax:
       "You've referred {referred} and earned VIP founding status. Thank you for building this with us.",
-    dancerOne: "dancer",
-    dancerMany: "dancers",
+    dancers: { one: "dancer", few: "dancers", many: "dancers", other: "dancers" },
   },
   howItWorks: {
     metaTitle: "How It Works",

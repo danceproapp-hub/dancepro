@@ -151,9 +151,12 @@ export const de: Dictionary = {
       "Du stehst auf der Warteliste für DancePro-Gründungsmitglieder.",
     youreIn: "Du bist dabei",
     position: "Du bist #{position}.",
-    totalOne: "1 Tänzer ist bisher auf der Liste der Gründungsmitglieder.",
-    totalMany:
-      "{total} Tänzer sind bisher auf der Liste der Gründungsmitglieder.",
+    total: {
+      one: "1 Tänzer ist bisher auf der Liste der Gründungsmitglieder.",
+      few: "{total} Tänzer sind bisher auf der Liste der Gründungsmitglieder.",
+      many: "{total} Tänzer sind bisher auf der Liste der Gründungsmitglieder.",
+      other: "{total} Tänzer sind bisher auf der Liste der Gründungsmitglieder.",
+    },
     moveUp: "Rücke auf der Liste vor",
     copyLink: "Link kopieren",
     copied: "Kopiert!",
@@ -173,8 +176,7 @@ export const de: Dictionary = {
       "Du hast {referred} empfohlen und den vorrangigen Zugang zum Start freigeschaltet. Noch {remaining} für den VIP-Gründungsstatus.",
     tierMsgMax:
       "Du hast {referred} empfohlen und dir den VIP-Gründungsstatus verdient. Danke, dass du das mit uns aufbaust.",
-    dancerOne: "Tänzer",
-    dancerMany: "Tänzer",
+    dancers: { one: "Tänzer", few: "Tänzer", many: "Tänzer", other: "Tänzer" },
   },
   howItWorks: {
     metaTitle: "So funktioniert's",

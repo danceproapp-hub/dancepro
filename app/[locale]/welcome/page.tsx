@@ -9,8 +9,10 @@ import {
   fill,
   getDictionary,
   isLocale,
+  plural,
   profileFormDictionary,
   type Dictionary,
+  type Locale,
 } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
@@ -29,11 +31,14 @@ export async function generateMetadata({
   };
 }
 
-function tierMessage(referrals: number, t: Dictionary): string {
-  // Each tier's copy names its own remaining count, so the sentence reads
-  // naturally in languages that inflect differently around numbers.
-  const dancers = (n: number) =>
-    `${n} ${n === 1 ? t.welcome.dancerOne : t.welcome.dancerMany}`;
+function tierMessage(
+  referrals: number,
+  locale: Locale,
+  t: Dictionary
+): string {
+  // Russian, Ukrainian and Polish need three plural forms, not two, so the
+  // noun is picked by the locale's own rules rather than by n === 1.
+  const dancers = (n: number) => `${n} ${plural(locale, n, t.welcome.dancers)}`;
 
   if (referrals < 3) {
     return fill(t.welcome.tierMsgToFirst, {
@@ -114,11 +119,9 @@ export default async function WelcomePage({
           {fill(t.welcome.position, { position: status.position })}
         </h1>
         <p className="mt-3 text-paper-dim">
-          {status.total === 1
-            ? t.welcome.totalOne
-            : fill(t.welcome.totalMany, {
-                total: status.total.toLocaleString(locale),
-              })}
+          {fill(plural(locale, status.total, t.welcome.total), {
+            total: status.total.toLocaleString(locale),
+          })}
         </p>
       </div>
 
@@ -136,7 +139,7 @@ export default async function WelcomePage({
           {t.welcome.moveUp}
         </h2>
         <p className="mb-5 text-sm text-paper-dim">
-          {tierMessage(status.referrals, t)}
+          {tierMessage(status.referrals, locale, t)}
         </p>
         <ReferralLinkBox
           link={referralLink}

@@ -144,15 +144,17 @@ export const it: Dictionary = {
     Other: "Altro",
   },
   welcome: {
-    metaTitle: "Benvenuto",
+    metaTitle: "Benvenuti",
     metaDescription:
       "Sei nella lista d'attesa dei membri fondatori di DancePro.",
     youreIn: "Ci sei",
     position: "Sei il #{position}.",
-    totalOne:
-      "1 ballerino si è iscritto alla lista dei membri fondatori finora.",
-    totalMany:
-      "{total} ballerini si sono iscritti alla lista dei membri fondatori finora.",
+    total: {
+      one: "1 ballerino si è iscritto alla lista dei membri fondatori finora.",
+      few: "{total} ballerini si sono iscritti alla lista dei membri fondatori finora.",
+      many: "{total} ballerini si sono iscritti alla lista dei membri fondatori finora.",
+      other: "{total} ballerini si sono iscritti alla lista dei membri fondatori finora.",
+    },
     moveUp: "Sali nella lista",
     copyLink: "Copia link",
     copied: "Copiato!",
@@ -167,13 +169,17 @@ export const it: Dictionary = {
     tierMsgToFirst:
       "Hai invitato {referred}. Ancora {remaining} e sali nella lista d'attesa.",
     tierMsgToPriority:
-      "Hai invitato {referred} e sei salito nella lista. Ancora {remaining} per l'accesso prioritario al lancio.",
+      "Hai invitato {referred} e ora sei più in alto nella lista. Ancora {remaining} per l'accesso prioritario al lancio.",
     tierMsgToVip:
       "Hai invitato {referred} e hai sbloccato l'accesso prioritario al lancio. Ancora {remaining} per lo status fondatore VIP.",
     tierMsgMax:
-      "Hai invitato {referred} e ti sei guadagnato lo status fondatore VIP. Grazie per costruire questo progetto con noi.",
-    dancerOne: "ballerino",
-    dancerMany: "ballerini",
+      "Hai invitato {referred} e hai ottenuto lo status fondatore VIP. Grazie per costruire questo progetto con noi.",
+    dancers: {
+      one: "ballerino",
+      few: "ballerini",
+      many: "ballerini",
+      other: "ballerini",
+    },
   },
   howItWorks: {
     metaTitle: "Come funziona",

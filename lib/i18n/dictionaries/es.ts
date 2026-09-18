@@ -145,15 +145,17 @@ export const es: Dictionary = {
     Other: "Otro",
   },
   welcome: {
-    metaTitle: "Bienvenido",
+    metaTitle: "Bienvenida",
     metaDescription:
       "Estás en la lista de espera de miembros fundadores de DancePro.",
     youreIn: "Ya estás dentro",
     position: "Eres el #{position}.",
-    totalOne:
-      "1 bailarín se ha unido a la lista de miembros fundadores hasta ahora.",
-    totalMany:
-      "{total} bailarines se han unido a la lista de miembros fundadores hasta ahora.",
+    total: {
+      one: "1 bailarín se ha unido a la lista de miembros fundadores hasta ahora.",
+      few: "{total} bailarines se han unido a la lista de miembros fundadores hasta ahora.",
+      many: "{total} bailarines se han unido a la lista de miembros fundadores hasta ahora.",
+      other: "{total} bailarines se han unido a la lista de miembros fundadores hasta ahora.",
+    },
     moveUp: "Sube en la lista",
     copyLink: "Copiar enlace",
     copied: "¡Copiado!",
@@ -173,8 +175,12 @@ export const es: Dictionary = {
       "Has invitado a {referred} y has desbloqueado el acceso prioritario en el lanzamiento. {remaining} más para el estatus fundador VIP.",
     tierMsgMax:
       "Has invitado a {referred} y te has ganado el estatus fundador VIP. Gracias por construir esto con nosotros.",
-    dancerOne: "bailarín",
-    dancerMany: "bailarines",
+    dancers: {
+      one: "bailarín",
+      few: "bailarines",
+      many: "bailarines",
+      other: "bailarines",
+    },
   },
   howItWorks: {
     metaTitle: "Cómo funciona",

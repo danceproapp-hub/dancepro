@@ -1,4 +1,17 @@
-export const LOCALES = ["en", "es", "it", "de"] as const;
+// Chosen by where competitive ballroom actually is, not by general web
+// traffic: the Russian-speaking bloc, Ukraine, Poland, China and Japan all
+// carry far more dancers than their share of the web would suggest.
+export const LOCALES = [
+  "en",
+  "es",
+  "it",
+  "de",
+  "ru",
+  "uk",
+  "pl",
+  "zh",
+  "ja",
+] as const;
 
 export type Locale = (typeof LOCALES)[number];
 
@@ -10,6 +23,30 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   es: "Español",
   it: "Italiano",
   de: "Deutsch",
+  ru: "Русский",
+  uk: "Українська",
+  pl: "Polski",
+  zh: "中文",
+  ja: "日本語",
+};
+
+/**
+ * Which writing system each locale needs a typeface for. Instrument Serif
+ * and DM Sans cover Latin only, so Cyrillic and CJK pages get their own
+ * faces — see app/[locale]/layout.tsx and globals.css.
+ */
+export type Script = "latin" | "cyrillic" | "sc" | "jp";
+
+export const LOCALE_SCRIPT: Record<Locale, Script> = {
+  en: "latin",
+  es: "latin",
+  it: "latin",
+  de: "latin",
+  pl: "latin",
+  ru: "cyrillic",
+  uk: "cyrillic",
+  zh: "sc",
+  ja: "jp",
 };
 
 export const LOCALE_COOKIE = "NEXT_LOCALE";
@@ -41,7 +78,9 @@ export function matchLocale(acceptLanguage: string | null): Locale {
     .sort((a, b) => b.q - a.q);
 
   for (const { tag } of ranked) {
-    // "es-419", "es-MX" and "es" all resolve to Spanish.
+    // "es-419", "es-MX" and "es" all resolve to Spanish. Note this sends
+    // zh-TW and zh-HK to the Simplified dictionary; a Traditional variant
+    // would need its own locale rather than a region subtag.
     const base = tag.split("-")[0];
     if (isLocale(base)) return base;
   }
