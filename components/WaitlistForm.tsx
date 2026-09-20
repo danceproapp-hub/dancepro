@@ -81,7 +81,7 @@ export function WaitlistForm({
       className="mx-auto flex max-w-xl flex-col gap-5 border border-line bg-panel p-6 sm:p-8"
     >
       <div className="flex flex-col gap-2">
-        <label htmlFor="firstName" className="label">
+        <label htmlFor="firstName" className="field-label">
           {t.firstName}
         </label>
         <input
@@ -100,7 +100,7 @@ export function WaitlistForm({
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="label">
+        <label htmlFor="email" className="field-label">
           {t.email}
         </label>
         <input
@@ -119,7 +119,7 @@ export function WaitlistForm({
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="label">{t.danceStyles}</span>
+        <span className="field-label">{t.danceStyles}</span>
         <div className="flex flex-wrap gap-2">
           {DANCE_STYLES.map((style) => {
             const active = styles.includes(style.name);

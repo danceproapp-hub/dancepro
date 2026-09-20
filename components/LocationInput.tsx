@@ -107,7 +107,7 @@ export function LocationInput({
 
   return (
     <div className="flex flex-col gap-2" ref={boxRef}>
-      <label htmlFor="location" className="label">
+      <label htmlFor="location" className="field-label">
         {t.location}
       </label>
 

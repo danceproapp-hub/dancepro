@@ -271,7 +271,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="label">{label}</span>
+      <span className="field-label">{label}</span>
       {children}
       {error && (
         <p className="caption text-red-400" role="alert">

@@ -34,7 +34,7 @@ export function SiteHeader({
             className="transition-transform duration-500 group-hover:scale-110"
           />
           {/* The wordmark is display type: Marcellus, uppercase, tracked. */}
-          <span className="font-display text-xl tracking-[0.12em] text-paper">
+          <span className="font-display text-xl tracking-[0.18em] text-paper">
             DANCE<span className="text-gold">PRO</span>
           </span>
         </Link>
