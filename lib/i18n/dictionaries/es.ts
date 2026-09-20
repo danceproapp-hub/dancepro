@@ -26,7 +26,7 @@ export const es: Dictionary = {
     ideaEyebrow: "Cómo se siente",
     ideaTitle: "Imagina encontrar tu pareja en una tarde.",
     ideaBody:
-      "Di qué bailas, tu nivel y el rol que llevas, y mira quién busca exactamente eso: en tu academia, al otro lado del mundo o alguien que se mudaría a donde tú estés. Sin publicaciones en grupos, sin esperar a que un profesor pregunte por ahí. Alguien que entrena de la misma manera que tú, quiere las mismas competiciones y tiene libres las mismas noches. Para el fin de semana ya estáis en la pista juntos.",
+      "Di qué bailas, tu nivel y el rol que llevas, y mira quién busca exactamente eso: en tu academia, al otro lado del mundo o alguien que se mudaría a donde tú estés. Sin publicaciones en grupos, sin esperar a que un profesor pregunte por ahí. Alguien que entrena de la misma manera, quiere las mismas competiciones y tiene libres las mismas noches. Para el fin de semana ya estáis en la pista juntos.",
 
     pillarsEyebrow: "Más que una búsqueda de pareja",
     pillarsTitle: "Todo el mundo del baile, en un solo lugar.",
