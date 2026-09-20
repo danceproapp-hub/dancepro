@@ -94,15 +94,15 @@ export function ProfileForm({
   // Nothing saved yet, and not currently editing.
   if (!open && !hasProfile) {
     return (
-      <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 text-center sm:p-8">
-        <h2 className="font-serif text-xl text-paper">{t.profile.inviteTitle}</h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-paper-dim">
+      <div className="w-full border border-line bg-panel p-6 text-center sm:p-8">
+        <h2>{t.profile.inviteTitle}</h2>
+        <p className="mx-auto mt-3 max-w-md text-muted">
           {t.profile.inviteBody}
         </p>
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="mt-5 rounded-full border border-gold/60 px-6 py-2.5 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink"
+          className="btn btn-secondary mt-6 px-6 py-3.5"
         >
           {t.profile.inviteCta}
         </button>
@@ -113,13 +113,13 @@ export function ProfileForm({
   // Saved, and not currently editing.
   if (!open && hasProfile) {
     return (
-      <div className="w-full rounded-2xl border border-gold/40 bg-ink-raised p-6 text-center sm:p-8">
-        <p className="font-serif text-xl text-paper">{t.profile.savedTitle}</p>
-        <p className="mt-2 text-sm text-paper-dim">{t.profile.savedBody}</p>
+      <div className="w-full border border-gold/40 bg-panel p-6 text-center sm:p-8">
+        <p className="font-display text-xl uppercase tracking-[0.05em] text-paper">{t.profile.savedTitle}</p>
+        <p className="mx-auto mt-2 text-muted">{t.profile.savedBody}</p>
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="mt-4 text-sm text-gold underline-offset-4 transition hover:underline"
+          className="label mt-5 underline-offset-4 transition hover:underline"
         >
           {t.profile.editCta}
         </button>
@@ -130,7 +130,7 @@ export function ProfileForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full flex-col gap-6 rounded-2xl border border-line bg-ink-raised p-6 text-left sm:p-8"
+      className="flex w-full flex-col gap-6 border border-line bg-panel p-6 text-left sm:p-8"
     >
       <div className="flex flex-col gap-2">
         <LocationInput
@@ -142,7 +142,7 @@ export function ProfileForm({
           t={t.profile}
         />
         {errors.location && (
-          <p className="text-sm text-red-400" role="alert">
+          <p className="caption text-red-400" role="alert">
             {errors.location}
           </p>
         )}
@@ -157,11 +157,7 @@ export function ProfileForm({
           {ROLE_OPTIONS.map((option) => (
             <label
               key={option.value}
-              className={`cursor-pointer rounded-full border px-5 py-2 text-sm transition ${
-                form.role === option.value
-                  ? "border-gold bg-gold text-ink"
-                  : "border-line text-paper-dim hover:border-gold/60"
-              }`}
+              className={`chip ${form.role === option.value ? "is-active" : ""}`}
             >
               <input
                 type="radio"
@@ -183,7 +179,7 @@ export function ProfileForm({
           <select
             value={form.level}
             onChange={(e) => setForm({ ...form, level: e.target.value })}
-            className={inputClass}
+            className="input"
             aria-label={t.profile.level}
           >
             <option value="">{t.profile.levelPlaceholder}</option>
@@ -233,7 +229,7 @@ export function ProfileForm({
       </Field>
 
       {error && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="caption text-red-400">
           {error}
         </p>
       )}
@@ -242,7 +238,7 @@ export function ProfileForm({
         <button
           type="submit"
           disabled={saving}
-          className="flex-1 rounded-full bg-gold px-8 py-3.5 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim disabled:opacity-60"
+          className="btn btn-primary btn-lift flex-1 px-8 py-4"
         >
           {saving ? t.profile.saving : t.profile.save}
         </button>
@@ -254,7 +250,7 @@ export function ProfileForm({
               setErrors({});
               setOpen(false);
             }}
-            className="rounded-full border border-line px-6 py-3.5 text-sm text-paper-dim transition hover:border-gold/60 hover:text-paper"
+            className="btn btn-secondary px-6 py-4"
           >
             {t.profile.cancel}
           </button>
@@ -275,10 +271,10 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-sm text-paper-dim">{label}</span>
+      <span className="label">{label}</span>
       {children}
       {error && (
-        <p className="text-sm text-red-400" role="alert">
+        <p className="caption text-red-400" role="alert">
           {error}
         </p>
       )}
@@ -300,16 +296,10 @@ function Chip({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`rounded-full border px-4 py-2 text-sm transition ${
-        active
-          ? "border-gold bg-gold text-ink"
-          : "border-line text-paper-dim hover:border-gold/60"
-      }`}
+      className="chip"
     >
       {label}
     </button>
   );
 }
 
-const inputClass =
-  "rounded-lg border border-line bg-ink px-4 py-3 text-paper outline-none transition focus:border-gold";

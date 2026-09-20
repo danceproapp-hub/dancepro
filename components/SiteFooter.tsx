@@ -16,8 +16,8 @@ export function SiteFooter({
 
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-paper-dim sm:flex-row sm:items-center sm:justify-between">
-        <p>
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+        <p className="caption">
           &copy; {new Date().getFullYear()} DancePro. {t.footer.tagline}
         </p>
         <nav className="flex flex-wrap gap-6">
@@ -25,7 +25,7 @@ export function SiteFooter({
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-paper"
+              className="label text-muted transition hover:text-paper"
             >
               {link.label}
             </Link>

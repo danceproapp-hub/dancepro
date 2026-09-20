@@ -18,7 +18,7 @@ export function SiteHeader({
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-ink/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-ground/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link
           href={`/${locale}`}
@@ -33,7 +33,8 @@ export function SiteHeader({
             priority
             className="transition-transform duration-500 group-hover:scale-110"
           />
-          <span className="font-serif text-xl tracking-wide text-paper">
+          {/* The wordmark is display type: Marcellus, uppercase, tracked. */}
+          <span className="font-display text-xl tracking-[0.12em] text-paper">
             DANCE<span className="text-gold">PRO</span>
           </span>
         </Link>
@@ -43,7 +44,7 @@ export function SiteHeader({
             <Link
               key={link.href}
               href={link.href}
-              className="relative text-sm text-paper-dim transition-colors duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:text-paper hover:after:w-full"
+              className="label relative text-muted transition-colors duration-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:text-paper hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -60,7 +61,7 @@ export function SiteHeader({
           */}
           <Link
             href={`/${locale}#join`}
-            className="hidden whitespace-nowrap rounded-full border border-gold/60 px-5 py-2 text-sm text-gold transition-all duration-300 hover:border-gold hover:bg-gold hover:text-ink sm:inline-block"
+            className="btn btn-secondary hidden whitespace-nowrap px-5 py-3 sm:inline-block"
           >
             {t.nav.joinWaitlist}
           </Link>

@@ -44,10 +44,10 @@ export function LanguageSwitcher({
         value={locale}
         onChange={(e) => switchTo(e.target.value)}
         aria-label={label}
-        className="cursor-pointer rounded-full border border-line bg-transparent px-3 py-1.5 text-xs text-paper-dim outline-none transition hover:border-gold/60 hover:text-paper focus:border-gold"
+        className="label cursor-pointer border border-line bg-transparent px-3 py-2 text-muted outline-none transition hover:border-gold hover:text-paper focus:border-gold-dp"
       >
         {LOCALES.map((l) => (
-          <option key={l} value={l} className="bg-ink-raised text-paper">
+          <option key={l} value={l} className="bg-panel text-paper">
             {LOCALE_NAMES[l]}
           </option>
         ))}

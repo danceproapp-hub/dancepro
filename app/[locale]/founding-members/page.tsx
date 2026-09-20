@@ -57,14 +57,14 @@ export default async function FoundingMembersPage({
     <div className="mx-auto max-w-3xl px-6 py-24">
       <Reveal>
         <Eyebrow>{t.foundingMembers.eyebrow}</Eyebrow>
-        <h1 className="mb-4 font-serif text-4xl text-paper sm:text-5xl">
+        <h1 className="mb-4">
           {t.foundingMembers.title}
         </h1>
-        <p className="mb-14 text-lg text-paper-dim">{t.foundingMembers.intro}</p>
+        <p className="lead mb-14 text-muted">{t.foundingMembers.intro}</p>
       </Reveal>
 
-      <div className="mb-16 flex flex-col gap-4 text-paper-dim">
-        <h2 className="mb-2 font-serif text-2xl text-paper">
+      <div className="mb-16 flex flex-col gap-4 text-muted">
+        <h2 className="mb-2">
           {t.foundingMembers.firstTitle}
         </h2>
         <p>{t.foundingMembers.firstPara1}</p>
@@ -72,7 +72,7 @@ export default async function FoundingMembersPage({
       </div>
 
       <div className="mb-16">
-        <h2 className="mb-8 font-serif text-2xl text-paper">
+        <h2 className="mb-8">
           {t.foundingMembers.perksTitle}
         </h2>
         <div className="grid gap-8 sm:grid-cols-2">
@@ -81,15 +81,15 @@ export default async function FoundingMembersPage({
               key={perk.title}
               className="border-l border-gold/40 pl-5 transition-all duration-500 hover:border-gold hover:pl-6"
             >
-              <h3 className="mb-1 text-paper">{perk.title}</h3>
-              <p className="text-sm text-paper-dim">{perk.description}</p>
+              <h3 className="mb-1">{perk.title}</h3>
+              <p className="text-muted">{perk.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mb-16 flex flex-col gap-4 text-paper-dim">
-        <h2 className="mb-2 font-serif text-2xl text-paper">
+      <div className="mb-16 flex flex-col gap-4 text-muted">
+        <h2 className="mb-2">
           {t.foundingMembers.laterTitle}
         </h2>
         <p>{t.foundingMembers.laterBody}</p>
@@ -98,7 +98,7 @@ export default async function FoundingMembersPage({
       <div className="text-center">
         <a
           href={`/${locale}#join`}
-          className="inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)]"
+          className="btn btn-primary btn-lift inline-block px-8 py-4"
         >
           {t.foundingMembers.cta}
         </a>

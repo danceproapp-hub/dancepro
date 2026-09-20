@@ -63,10 +63,10 @@ export default async function DanceStylesPage({
     <div className="mx-auto max-w-4xl px-6 py-24">
       <Reveal>
         <Eyebrow>{t.danceStyles.eyebrow}</Eyebrow>
-        <h1 className="mb-4 font-serif text-4xl text-paper sm:text-5xl">
+        <h1 className="mb-4">
           {t.danceStyles.title}
         </h1>
-        <p className="mb-14 max-w-2xl text-lg text-paper-dim">
+        <p className="lead mb-14 max-w-2xl text-muted">
           {t.danceStyles.intro}
         </p>
       </Reveal>
@@ -75,20 +75,20 @@ export default async function DanceStylesPage({
         {categories.map((category) => (
           <div key={category.key}>
             <Reveal>
-              <h2 className="mb-1 font-serif text-2xl text-paper">
+              <h2 className="mb-1">
                 {category.label}
               </h2>
-              <p className="mb-6 text-sm text-paper-dim">{category.blurb}</p>
+              <p className="caption mb-6">{category.blurb}</p>
             </Reveal>
             <div className="grid gap-6 sm:grid-cols-2">
               {DANCE_STYLES.filter(
                 (style) => style.category === category.key
               ).map((style, index) => (
                 <Reveal key={style.name} delay={index * 70}>
-                  <div className="h-full rounded-xl border border-line p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-ink-raised">
+                  <div className="h-full border border-line p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-panel">
                     {/* The discipline name itself stays as dancers say it. */}
-                    <h3 className="mb-2 text-lg text-gold">{style.name}</h3>
-                    <p className="text-sm leading-relaxed text-paper-dim">
+                    <h3 className="mb-2 text-gold">{style.name}</h3>
+                    <p className="text-muted">
                       {descriptions[style.name] ?? style.description}
                     </p>
                   </div>
@@ -100,10 +100,10 @@ export default async function DanceStylesPage({
       </div>
 
       <Reveal className="mt-16 text-center">
-        <p className="mb-4 text-paper-dim">{t.danceStyles.closing}</p>
+        <p className="mx-auto mb-6 text-muted">{t.danceStyles.closing}</p>
         <Link
           href={`/${locale}#join`}
-          className="inline-block rounded-full bg-gold px-8 py-4 font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)]"
+          className="btn btn-primary btn-lift inline-block px-8 py-4"
         >
           {t.danceStyles.cta}
         </Link>

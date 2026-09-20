@@ -31,8 +31,8 @@ export const LOCALE_NAMES: Record<Locale, string> = {
 };
 
 /**
- * Which writing system each locale needs a typeface for. Instrument Serif
- * and DM Sans cover Latin only, so Cyrillic and CJK pages get their own
+ * Which writing system each locale needs a typeface for. Marcellus and
+ * Jost cover Latin only, so Cyrillic and CJK pages get their own
  * faces — see app/[locale]/layout.tsx and globals.css.
  */
 export type Script = "latin" | "cyrillic" | "sc" | "jp";

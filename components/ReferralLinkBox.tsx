@@ -28,13 +28,13 @@ export function ReferralLinkBox({
       <input
         readOnly
         value={link}
-        className="w-full rounded-lg border border-line bg-ink px-4 py-2 text-sm text-paper-dim"
+        className="input caption tabular py-2.5"
         onFocus={(e) => e.currentTarget.select()}
       />
       <button
         type="button"
         onClick={handleCopy}
-        className="shrink-0 rounded-full bg-gold px-5 py-2 text-sm font-medium text-ink transition hover:bg-gold-dim"
+        className="btn btn-primary shrink-0 px-5 py-3.5"
       >
         {copied ? copiedLabel : copyLabel}
       </button>

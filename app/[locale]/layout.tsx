@@ -1,46 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  Instrument_Serif,
-  DM_Sans,
-  Playfair_Display,
-  Manrope,
-} from "next/font/google";
 import "../globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { LOCALES, LOCALE_SCRIPT, isLocale, getDictionary } from "@/lib/i18n";
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument-serif",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-// Cyrillic stand-ins for the two Latin faces, which have no Cyrillic
-// glyphs. preload is off and the classes are only attached on Cyrillic
-// pages, so Latin and CJK visitors never fetch them.
-const playfair = Playfair_Display({
-  subsets: ["cyrillic"],
-  weight: "400",
-  variable: "--font-playfair",
-  display: "swap",
-  preload: false,
-});
-
-const manrope = Manrope({
-  subsets: ["cyrillic"],
-  variable: "--font-manrope",
-  display: "swap",
-  preload: false,
-});
+import { display, body, displayCyrillic, bodyCyrillic } from "@/app/fonts";
 
 const siteUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -99,20 +63,22 @@ export default async function LocaleLayout({
   const t = getDictionary(locale);
   const script = LOCALE_SCRIPT[locale];
 
-  // The Latin faces are attached everywhere: each script's stack leads with
+  // The brand faces are attached everywhere: each script's stack leads with
   // them so Latin glyphs keep the brand type. Cyrillic pages additionally
   // get the faces that actually carry their alphabet.
   const fontClasses = [
-    instrumentSerif.variable,
-    dmSans.variable,
-    script === "cyrillic" ? `${playfair.variable} ${manrope.variable}` : "",
+    display.variable,
+    body.variable,
+    script === "cyrillic"
+      ? `${displayCyrillic.variable} ${bodyCyrillic.variable}`
+      : "",
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
     <html lang={locale} data-script={script} className={fontClasses}>
-      <body className="flex min-h-screen flex-col bg-ink font-sans text-paper antialiased">
+      <body className="flex min-h-screen flex-col font-body antialiased">
         <SiteHeader locale={locale} t={t} />
         <main className="flex-1">{children}</main>
         <SiteFooter locale={locale} t={t} />

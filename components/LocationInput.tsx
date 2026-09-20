@@ -107,7 +107,7 @@ export function LocationInput({
 
   return (
     <div className="flex flex-col gap-2" ref={boxRef}>
-      <label htmlFor="location" className="text-sm text-paper-dim">
+      <label htmlFor="location" className="label">
         {t.location}
       </label>
 
@@ -128,19 +128,19 @@ export function LocationInput({
             // Typing again clears the confirmed pick until they choose one.
             if (value.city) onChange({ city: "", country: "" });
           }}
-          className="w-full rounded-lg border border-line bg-ink px-4 py-3 text-paper outline-none transition focus:border-gold"
+          className="input"
         />
 
         {open && query.trim().length >= 2 && (
-          <ul className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-line bg-ink-raised shadow-xl">
+          <ul className="absolute z-20 mt-1 max-h-60 w-full overflow-auto border border-line bg-panel shadow-xl">
             {loading && suggestions.length === 0 && (
-              <li className="px-4 py-3 text-sm text-paper-dim">
+              <li className="caption px-4 py-3">
                 {t.locationSearching}
               </li>
             )}
 
             {!loading && suggestions.length === 0 && (
-              <li className="px-4 py-3 text-sm text-paper-dim">
+              <li className="caption px-4 py-3">
                 {t.locationNoMatch}
               </li>
             )}
@@ -152,8 +152,8 @@ export function LocationInput({
                   onClick={() => choose(s)}
                   className="flex w-full flex-col items-start gap-0.5 px-4 py-2.5 text-left transition hover:bg-gold/10"
                 >
-                  <span className="text-sm text-paper">{s.city}</span>
-                  <span className="text-xs text-paper-dim">
+                  <span className="text-paper">{s.city}</span>
+                  <span className="caption">
                     {[s.region, s.country].filter(Boolean).join(", ")}
                   </span>
                 </button>

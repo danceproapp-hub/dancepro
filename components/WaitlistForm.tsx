@@ -78,10 +78,10 @@ export function WaitlistForm({
     <form
       id="join"
       onSubmit={handleSubmit}
-      className="mx-auto flex max-w-xl flex-col gap-5 rounded-2xl border border-line bg-ink-raised p-6 sm:p-8"
+      className="mx-auto flex max-w-xl flex-col gap-5 border border-line bg-panel p-6 sm:p-8"
     >
       <div className="flex flex-col gap-2">
-        <label htmlFor="firstName" className="text-sm text-paper-dim">
+        <label htmlFor="firstName" className="label">
           {t.firstName}
         </label>
         <input
@@ -90,17 +90,17 @@ export function WaitlistForm({
           autoComplete="given-name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          className={inputClass(!!errors.firstName)}
+          className={`input ${errors.firstName ? "is-invalid" : ""}`}
         />
         {errors.firstName && (
-          <p className="text-sm text-red-400" role="alert">
+          <p className="caption text-red-400" role="alert">
             {errors.firstName}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-sm text-paper-dim">
+        <label htmlFor="email" className="label">
           {t.email}
         </label>
         <input
@@ -109,17 +109,17 @@ export function WaitlistForm({
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={inputClass(!!errors.email)}
+          className={`input ${errors.email ? "is-invalid" : ""}`}
         />
         {errors.email && (
-          <p className="text-sm text-red-400" role="alert">
+          <p className="caption text-red-400" role="alert">
             {errors.email}
           </p>
         )}
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm text-paper-dim">{t.danceStyles}</span>
+        <span className="label">{t.danceStyles}</span>
         <div className="flex flex-wrap gap-2">
           {DANCE_STYLES.map((style) => {
             const active = styles.includes(style.name);
@@ -135,11 +135,7 @@ export function WaitlistForm({
                       : [...styles, style.name]
                   )
                 }
-                className={`rounded-full border px-4 py-2 text-sm transition ${
-                  active
-                    ? "border-gold bg-gold text-ink"
-                    : "border-line text-paper-dim hover:border-gold/60"
-                }`}
+                className="chip"
               >
                 {style.name}
               </button>
@@ -147,14 +143,14 @@ export function WaitlistForm({
           })}
         </div>
         {errors.styles && (
-          <p className="text-sm text-red-400" role="alert">
+          <p className="caption text-red-400" role="alert">
             {errors.styles}
           </p>
         )}
       </div>
 
       {formError && (
-        <p role="alert" className="text-sm text-red-400">
+        <p role="alert" className="caption text-red-400">
           {formError}
         </p>
       )}
@@ -162,18 +158,13 @@ export function WaitlistForm({
       <button
         type="submit"
         disabled={submitting}
-        className="mt-1 rounded-full bg-gold px-8 py-4 text-center font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)] disabled:opacity-60"
+        className="btn btn-primary btn-lift mt-1 px-8 py-4"
       >
         {submitting ? t.submitting : t.submit}
       </button>
 
-      <p className="text-center text-xs text-paper-dim">{t.footnote}</p>
+      <p className="caption mx-auto text-center">{t.footnote}</p>
     </form>
   );
 }
 
-function inputClass(hasError: boolean): string {
-  return `rounded-lg border bg-ink px-4 py-3 text-paper outline-none transition focus:border-gold ${
-    hasError ? "border-red-400" : "border-line"
-  }`;
-}

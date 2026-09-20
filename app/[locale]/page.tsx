@@ -53,7 +53,7 @@ export default async function HomePage({
       <section className="relative overflow-hidden px-6 pt-24 pb-20 sm:pt-32">
         <div
           aria-hidden
-          className="hero-glow pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[820px] max-w-[140vw] -translate-x-1/2 -translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,var(--color-gold),transparent)] blur-3xl"
+          className="hero-glow pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[820px] max-w-[140vw] -translate-x-1/2 -translate-y-1/3 bg-[radial-gradient(closest-side,var(--color-gold),transparent)] blur-3xl"
         />
 
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 text-center">
@@ -67,14 +67,14 @@ export default async function HomePage({
           />
 
           <h1
-            className="enter font-serif text-5xl leading-[1.05] text-paper sm:text-7xl"
+            className="enter"
             style={{ animationDelay: "120ms" }}
           >
             {t.home.heroTitle}
           </h1>
 
           <p
-            className="enter max-w-2xl text-lg text-paper-dim sm:text-xl"
+            className="enter lead max-w-2xl text-muted"
             style={{ animationDelay: "240ms" }}
           >
             {t.home.heroSubtitle}
@@ -82,7 +82,7 @@ export default async function HomePage({
 
           <a
             href="#join"
-            className="enter rounded-full bg-gold px-8 py-4 font-medium text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-dim hover:shadow-[0_12px_32px_-8px_rgba(201,162,75,0.45)]"
+            className="btn btn-primary btn-lift enter px-8 py-4"
             style={{ animationDelay: "360ms" }}
           >
             {t.home.heroCta}
@@ -90,7 +90,7 @@ export default async function HomePage({
 
           {count >= 25 && (
             <p
-              className="enter text-sm text-paper-dim"
+              className="enter caption"
               style={{ animationDelay: "460ms" }}
             >
               {fill(t.home.socialProof, {
@@ -108,12 +108,12 @@ export default async function HomePage({
       <section className="mx-auto max-w-3xl px-6 py-24">
         <Reveal>
           <Eyebrow>{t.home.ideaEyebrow}</Eyebrow>
-          <h2 className="mb-6 font-serif text-3xl text-paper sm:text-4xl">
+          <h2 className="mb-6">
             {t.home.ideaTitle}
           </h2>
         </Reveal>
         <Reveal delay={100}>
-          <div className="flex flex-col gap-4 text-paper-dim">
+          <div className="flex flex-col gap-4 text-muted">
             <p>{t.home.ideaPara1}</p>
             <p>{t.home.ideaPara2}</p>
             <p>{t.home.ideaPara3}</p>
@@ -124,19 +124,19 @@ export default async function HomePage({
       <section className="mx-auto max-w-4xl px-6 py-24">
         <Reveal>
           <Eyebrow>{t.home.pillarsEyebrow}</Eyebrow>
-          <h2 className="mb-6 font-serif text-3xl text-paper sm:text-4xl">
+          <h2 className="mb-6">
             {t.home.pillarsTitle}
           </h2>
-          <p className="mb-12 max-w-2xl text-paper-dim">{t.home.pillarsIntro}</p>
+          <p className="mb-12 max-w-2xl text-muted">{t.home.pillarsIntro}</p>
         </Reveal>
         <div className="grid gap-8 sm:grid-cols-2">
           {pillars.map((pillar, index) => (
             <Reveal key={pillar.title} delay={index * 80}>
-              <div className="h-full rounded-xl border border-line p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-ink-raised">
-                <h3 className="mb-2 font-serif text-xl text-gold">
+              <div className="h-full border border-line p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-panel">
+                <h3 className="mb-2 text-gold">
                   {pillar.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-paper-dim">
+                <p className="text-muted">
                   {pillar.description}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default async function HomePage({
       <section className="mx-auto max-w-4xl px-6 py-24">
         <Reveal>
           <Eyebrow>{t.home.stepsEyebrow}</Eyebrow>
-          <h2 className="mb-12 font-serif text-3xl text-paper sm:text-4xl">
+          <h2 className="mb-12">
             {t.home.stepsTitle}
           </h2>
         </Reveal>
@@ -156,12 +156,12 @@ export default async function HomePage({
           {steps.map((step, index) => (
             <Reveal key={step.title} delay={index * 90}>
               <div className="group flex gap-5">
-                <span className="font-serif text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-0.5">
+                <span className="font-display tabular text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-0.5">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="mb-1.5 text-lg text-paper">{step.title}</h3>
-                  <p className="text-sm leading-relaxed text-paper-dim">
+                  <h3 className="mb-1.5">{step.title}</h3>
+                  <p className="text-muted">
                     {step.description}
                   </p>
                 </div>
@@ -172,7 +172,7 @@ export default async function HomePage({
         <Reveal delay={200}>
           <Link
             href={`/${locale}/how-it-works`}
-            className="mt-10 inline-block text-sm text-gold underline-offset-4 transition-opacity duration-300 hover:underline hover:opacity-80"
+            className="label mt-10 inline-block underline-offset-4 transition-opacity duration-300 hover:underline hover:opacity-80"
           >
             {t.home.stepsLink} &rarr;
           </Link>
@@ -182,7 +182,7 @@ export default async function HomePage({
       <section className="mx-auto max-w-4xl px-6 py-24">
         <Reveal>
           <Eyebrow>{t.home.benefitsEyebrow}</Eyebrow>
-          <h2 className="mb-12 font-serif text-3xl text-paper sm:text-4xl">
+          <h2 className="mb-12">
             {t.home.benefitsTitle}
           </h2>
         </Reveal>
@@ -190,8 +190,8 @@ export default async function HomePage({
           {benefits.map((benefit, index) => (
             <Reveal key={benefit.title} delay={index * 80}>
               <div className="border-l border-gold/40 pl-5 transition-all duration-500 hover:border-gold hover:pl-6">
-                <h3 className="mb-1.5 text-paper">{benefit.title}</h3>
-                <p className="text-sm leading-relaxed text-paper-dim">
+                <h3 className="mb-1.5">{benefit.title}</h3>
+                <p className="text-muted">
                   {benefit.description}
                 </p>
               </div>
@@ -203,10 +203,10 @@ export default async function HomePage({
       <section className="px-6 py-24">
         <Reveal>
           <div className="mb-12 text-center">
-            <h2 className="font-serif text-3xl text-paper sm:text-4xl">
+            <h2>
               {t.home.formTitle}
             </h2>
-            <p className="mt-3 text-sm text-paper-dim">{t.home.formSubtitle}</p>
+            <p className="mx-auto mt-3 text-muted">{t.home.formSubtitle}</p>
           </div>
         </Reveal>
         <Reveal delay={100}>

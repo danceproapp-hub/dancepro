@@ -85,13 +85,13 @@ export default async function WelcomePage({
   if (!code || !status) {
     return (
       <section className="mx-auto flex max-w-lg flex-col items-center gap-6 px-6 py-24 text-center">
-        <h1 className="font-serif text-3xl text-paper">
+        <h1>
           {t.welcome.notFoundTitle}
         </h1>
-        <p className="text-paper-dim">{t.welcome.notFoundBody}</p>
+        <p className="text-muted">{t.welcome.notFoundBody}</p>
         <Link
           href={`/${locale}`}
-          className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition hover:bg-gold-dim"
+          className="btn btn-primary px-6 py-3.5"
         >
           {t.welcome.back}
         </Link>
@@ -112,13 +112,13 @@ export default async function WelcomePage({
   return (
     <section className="mx-auto flex max-w-2xl flex-col items-center gap-10 px-6 py-20 text-center">
       <div>
-        <p className="mb-2 text-sm uppercase tracking-widest text-gold">
+        <p className="label mb-3">
           {t.welcome.youreIn}
         </p>
-        <h1 className="font-serif text-5xl text-paper sm:text-6xl">
+        <h1 className="tabular">
           {fill(t.welcome.position, { position: status.position })}
         </h1>
-        <p className="mt-3 text-paper-dim">
+        <p className="mt-3 text-muted">
           {fill(plural(locale, status.total, t.welcome.total), {
             total: status.total.toLocaleString(locale),
           })}
@@ -134,11 +134,11 @@ export default async function WelcomePage({
         t={profileFormDictionary(t)}
       />
 
-      <div className="w-full rounded-2xl border border-line bg-ink-raised p-6 sm:p-8">
-        <h2 className="mb-3 font-serif text-xl text-paper">
+      <div className="w-full border border-line bg-panel p-6 sm:p-8">
+        <h2 className="mb-3">
           {t.welcome.moveUp}
         </h2>
-        <p className="mb-5 text-sm text-paper-dim">
+        <p className="mb-5 text-muted">
           {tierMessage(status.referrals, locale, t)}
         </p>
         <ReferralLinkBox
@@ -171,7 +171,7 @@ export default async function WelcomePage({
 
       <Link
         href={`/${locale}`}
-        className="text-sm text-gold underline-offset-4 hover:underline"
+        className="label underline-offset-4 hover:underline"
       >
         {t.welcome.back}
       </Link>
@@ -192,14 +192,14 @@ function TierCard({
 }) {
   return (
     <div
-      className={`rounded-xl border p-4 ${
+      className={`border p-4 ${
         met ? "border-gold bg-gold/10" : "border-line"
       }`}
     >
-      <p className={`font-serif text-lg ${met ? "text-gold" : "text-paper"}`}>
+      <p className={`font-display tabular text-lg tracking-[0.04em] ${met ? "text-gold" : "text-paper"}`}>
         {fill(t.welcome.referralsLabel, { count: threshold })}
       </p>
-      <p className="text-sm text-paper-dim">{label}</p>
+      <p className="caption">{label}</p>
     </div>
   );
 }
