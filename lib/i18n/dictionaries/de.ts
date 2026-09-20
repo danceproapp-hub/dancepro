@@ -25,12 +25,8 @@ export const de: Dictionary = {
 
     ideaEyebrow: "Wie es sich anfühlt",
     ideaTitle: "Stell dir vor, du findest deinen Partner an einem Nachmittag.",
-    ideaPara1:
-      "Du öffnest DancePro und suchst genau das, was du brauchst: deinen Stil, dein Niveau, die Rolle, die du tanzt, in der Nähe deines Studios oder überall auf der Welt. Es kommen echte Tänzer zurück, jeder zeigt schon, was er tanzt und welche Art von Partnerschaft er sucht.",
-    ideaPara2:
-      "Du schickst eine Kontaktanfrage an die, die passen. Sie nehmen an, und das Gespräch beginnt in der App. Bis zum Wochenende habt ihr einen Trainingsplan vereinbart und ein Turnier ausgesucht, auf das ihr gemeinsam hinarbeitet.",
-    ideaPara3:
-      "Das ist DancePro: die Tänzer, die zu deiner Suche passen, an einem Ort, aus dem gleichen Grund dort wie du.",
+    ideaBody:
+      "Sag, was du tanzt, dein Niveau und welche Rolle du tanzt, und sieh, wer genau das sucht — in deinem Studio, am anderen Ende der Welt oder bereit, dorthin zu ziehen, wo du bist. Keine Gruppenposts, kein Warten, bis ein Trainer sich umhört. Jemand, der auf dieselbe Art trainiert wie du, dieselben Turniere will und an denselben Abenden Zeit hat. Bis zum Wochenende steht ihr zusammen auf dem Parkett.",
 
     pillarsEyebrow: "Mehr als eine Partnersuche",
     pillarsTitle: "Die ganze Tanzwelt, an einem Ort.",

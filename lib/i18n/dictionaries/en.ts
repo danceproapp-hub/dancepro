@@ -24,12 +24,8 @@ export const en = {
 
     ideaEyebrow: "What it's like",
     ideaTitle: "Imagine finding your partner in an afternoon.",
-    ideaPara1:
-      "You open DancePro and search for exactly what you need: your style, your level, the role you dance, near your studio or anywhere in the world. Real dancers come back — each one already showing what they dance and the kind of partnership they're after.",
-    ideaPara2:
-      "You send a connection request to the ones who fit. They accept, and the conversation starts in the app. By the weekend you've agreed on a practice schedule and picked a competition to aim for together.",
-    ideaPara3:
-      "That's DancePro: the dancers who fit what you're looking for, in one place, there for the same reason you are.",
+    ideaBody:
+      "Say what you dance, your level and the role you take, and see who's looking for exactly that — at your studio, on the other side of the world, or ready to move to wherever you are. No group posts, no waiting for a coach to ask around. Someone who trains the same way you do, wants the same competitions, and is free on the same nights. By the weekend you're on the floor together.",
 
     pillarsEyebrow: "More than a partner search",
     pillarsTitle: "The whole dance world, in one place.",

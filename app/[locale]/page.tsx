@@ -113,11 +113,7 @@ export default async function HomePage({
           </h2>
         </Reveal>
         <Reveal delay={100}>
-          <div className="flex flex-col gap-4 text-muted">
-            <p>{t.home.ideaPara1}</p>
-            <p>{t.home.ideaPara2}</p>
-            <p>{t.home.ideaPara3}</p>
-          </div>
+          <p className="text-muted">{t.home.ideaBody}</p>
         </Reveal>
       </section>
 
