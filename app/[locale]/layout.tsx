@@ -6,9 +6,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { LOCALES, LOCALE_SCRIPT, isLocale, getDictionary } from "@/lib/i18n";
 import { display, body, displayCyrillic, bodyCyrillic } from "@/app/fonts";
 
-const siteUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+// VERCEL_URL is the per-deployment host (dancepro-abc123-….vercel.app),
+// which sits behind deployment protection: a social scraper following an
+// og:image URL built from it gets Vercel's login page, not the card. The
+// production alias is the one that is public.
+const host =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+const siteUrl = host ? `https://${host}` : "http://localhost:3000";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
