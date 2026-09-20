@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { HydrationMark } from "@/components/HydrationMark";
 import { LOCALES, LOCALE_SCRIPT, isLocale, getDictionary } from "@/lib/i18n";
 import { display, body, displayCyrillic, bodyCyrillic } from "@/app/fonts";
 
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} data-script={script} className={fontClasses}>
       <body className="flex min-h-screen flex-col font-body antialiased">
+        <HydrationMark />
         <SiteHeader locale={locale} t={t} />
         <main className="flex-1">{children}</main>
         <SiteFooter locale={locale} t={t} />

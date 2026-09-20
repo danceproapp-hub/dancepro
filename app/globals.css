@@ -158,6 +158,13 @@
   }
 }
 
+@keyframes reveal-safety {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes glow-in {
   from {
     opacity: 0;
@@ -310,12 +317,26 @@
     animation: rise 0.9s var(--ease-out-soft) forwards;
   }
 
+  /*
+   * Hidden until the IntersectionObserver in Reveal.tsx says otherwise —
+   * but only while JavaScript is confirmed to be running. If hydration
+   * never happens (a cached page pointing at a previous build's chunks, a
+   * blocked script), the safety animation fades everything in on its own
+   * after 2.5s. HydrationMark.tsx cancels it the moment React is live, so
+   * on a healthy load the scroll reveal behaves exactly as before.
+   */
   .reveal {
     opacity: 0;
     transform: translateY(22px);
     transition:
       opacity 0.8s var(--ease-out-soft),
       transform 0.8s var(--ease-out-soft);
+    animation: reveal-safety 0.6s var(--ease-out-soft) 2.5s forwards;
+  }
+
+  [data-hydrated] .reveal,
+  .reveal.is-visible {
+    animation: none;
   }
 
   .reveal.is-visible {
@@ -358,6 +379,7 @@
       opacity: 1;
       transform: none;
       transition: none;
+      animation: none;
     }
 
     .btn-lift:hover:not(:disabled) {
