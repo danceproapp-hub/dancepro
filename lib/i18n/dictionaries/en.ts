@@ -182,11 +182,11 @@ export const en = {
      * the longer bodies live here.
      */
     s1Body:
-      "Set up a professional dancer profile: your name, city, the styles you dance, your competitive level, and what kind of partnership you're looking for. Be specific. Leader, follower, or both. Beginner through professional. International Latin or Argentine Tango. The more precise your profile, the better the dancers you find.",
+      "Your name, your city, the styles you dance, your role, your level, and the kind of partnership you're looking for. Be specific — Leader, Follower or both, beginner through Professional. The more precise your profile, the better the dancers you find.",
     s2Body:
       "Browse dancers who fit what you're looking for, filtered by style, role, level, and location — or simply keep your profile open and let the right people find you.",
     s3Body:
-      "Reach out directly and professionally. They can see what you dance and what you're looking for before they answer. Connections are mutual. Nobody is added to your network, and nobody sees your details, without agreeing to connect first.",
+      "Reach out directly; they can see what you dance and what you're looking for before they answer. Connections are mutual, so nobody joins your network — or sees your details — without agreeing first.",
     s4Body:
       "Once connected, coordinate practice schedules, competition plans, and logistics in one place built for dancers.",
     cta: "Join the Founding Members",

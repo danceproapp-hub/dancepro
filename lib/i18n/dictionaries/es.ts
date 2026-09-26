@@ -187,11 +187,11 @@ export const es: Dictionary = {
     intro:
       "Cada parte de DancePro está construida alrededor de una sola cosa: encontrar la pareja adecuada para tus objetivos de entrenamiento y competición.",
     s1Body:
-      "Monta un perfil profesional de bailarín: tu nombre, tu ciudad, los estilos que bailas, tu nivel competitivo y qué tipo de pareja buscas. Sé específico. Leader, follower o ambos. De principiante a professional. International Latin o Argentine Tango. Cuanto más preciso sea tu perfil, mejores serán los bailarines que encuentres.",
+      "Tu nombre, tu ciudad, los estilos que bailas, tu rol, tu nivel y qué tipo de pareja buscas. Sé específico: Leader, Follower o ambos, de principiante a Professional. Cuanto más preciso sea tu perfil, mejores serán los bailarines que encuentres.",
     s2Body:
       "Explora bailarines que encajan con lo que buscas, filtrando por estilo, rol, nivel y ubicación, o simplemente deja tu perfil abierto y que las personas adecuadas te encuentren.",
     s3Body:
-      "Escribe directamente y de forma profesional. Pueden ver qué bailas y qué buscas antes de responder. Las conexiones son mutuas. Nadie se añade a tu red, y nadie ve tus datos, sin aceptar conectar primero.",
+      "Escribe directamente: pueden ver qué bailas y qué buscas antes de responder. Las conexiones son mutuas, así que nadie entra en tu red ni ve tus datos sin aceptar primero.",
     s4Body:
       "Una vez conectados, coordinad horarios de práctica, planes de competición y logística en un solo lugar hecho para bailarines.",
     cta: "Únete a los miembros fundadores",

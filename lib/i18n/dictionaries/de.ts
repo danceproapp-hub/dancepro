@@ -183,11 +183,11 @@ export const de: Dictionary = {
     intro:
       "Jeder Teil von DancePro ist um eine Sache herum gebaut: den richtigen Partner für deine Trainings- und Turnierziele zu finden.",
     s1Body:
-      "Leg ein professionelles Tänzerprofil an: Name, Stadt, die Stile, die du tanzt, dein Turnierniveau und welche Art von Partnerschaft du suchst. Sei genau. Leader, Follower oder beides. Von Anfänger bis Professional. International Latin oder Argentine Tango. Je präziser dein Profil, desto besser die Tänzer, die du findest.",
+      "Name, Stadt, die Stile, die du tanzt, deine Rolle, dein Niveau und welche Art von Partnerschaft du suchst. Sei genau: Leader, Follower oder beides, von Anfänger bis Professional. Je präziser dein Profil, desto besser die Tänzer, die du findest.",
     s2Body:
       "Durchsuche Tänzer, die zu deiner Suche passen, gefiltert nach Stil, Rolle, Niveau und Ort — oder lass einfach dein Profil offen und die richtigen Leute finden dich.",
     s3Body:
-      "Melde dich direkt und professionell. Sie sehen, was du tanzt und was du suchst, bevor sie antworten. Kontakte sind gegenseitig. Niemand landet in deinem Netzwerk, und niemand sieht deine Angaben, ohne vorher zugestimmt zu haben.",
+      "Melde dich direkt: Sie sehen, was du tanzt und was du suchst, bevor sie antworten. Kontakte sind gegenseitig, also landet niemand in deinem Netzwerk und sieht niemand deine Angaben, ohne vorher zugestimmt zu haben.",
     s4Body:
       "Sobald ihr verbunden seid, stimmt ihr Trainingszeiten, Turnierpläne und Organisation an einem Ort ab, der für Tänzer gemacht ist.",
     cta: "Werde Gründungsmitglied",

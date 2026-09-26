@@ -70,12 +70,15 @@ export default async function HowItWorksPage({
         ))}
       </ol>
 
-      <Link
-        href={`/${locale}#join`}
-        className="btn btn-primary btn-lift inline-block px-8 py-4 mt-12"
-      >
-        {t.howItWorks.cta}
-      </Link>
+      {/* Centred to match the Dance Styles and Founding Members pages. */}
+      <div className="mt-12 text-center">
+        <Link
+          href={`/${locale}#join`}
+          className="btn btn-primary btn-lift inline-block px-8 py-4"
+        >
+          {t.howItWorks.cta}
+        </Link>
+      </div>
     </div>
   );
 }
