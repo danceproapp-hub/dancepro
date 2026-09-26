@@ -458,8 +458,13 @@
      * real transition. Guarded by @supports — where either is missing the
      * card opens instantly and the body still fades in, as before.
      */
-    @supports (interpolate-size: allow-keywords) and
-      (selector(::details-content)) {
+    /*
+     * Guarded on interpolate-size alone: autoprefixer cannot parse a
+     * selector() condition here and fails the production build. A browser
+     * with interpolate-size but no ::details-content simply ignores the
+     * rules below, which is the same graceful fallback.
+     */
+    @supports (interpolate-size: allow-keywords) {
       .pillar {
         interpolate-size: allow-keywords;
       }
