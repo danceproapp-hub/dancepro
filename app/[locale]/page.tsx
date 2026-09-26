@@ -52,7 +52,7 @@ export default async function HomePage({
 
   return (
     <div>
-      <section className="relative overflow-hidden px-6 pt-16 pb-12 sm:pt-32 sm:pb-20">
+      <section className="relative overflow-hidden px-6 pt-16 pb-20 sm:pt-32">
         <div
           aria-hidden
           className="hero-glow pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[820px] max-w-[140vw] -translate-x-1/2 -translate-y-1/3 bg-[radial-gradient(closest-side,var(--color-gold),transparent)] blur-3xl"
