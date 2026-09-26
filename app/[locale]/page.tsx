@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import mark from "@/public/mark.png";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Reveal } from "@/components/Reveal";
-import { PillarCard } from "@/components/PillarCard";
+import { Pillars } from "@/components/Pillars";
 import { Eyebrow } from "@/components/Eyebrow";
 import { getWaitlistCount } from "@/lib/supabase";
 import { fill, getDictionary, isLocale } from "@/lib/i18n";
@@ -127,14 +127,7 @@ export default async function HomePage({
           <p className="mb-12 max-w-2xl text-muted">{t.home.pillarsIntro}</p>
         </Reveal>
         <div className="grid gap-8 sm:grid-cols-2">
-          {pillars.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 80}>
-              <PillarCard
-                title={pillar.title}
-                description={pillar.description}
-              />
-            </Reveal>
-          ))}
+          <Pillars items={pillars} />
         </div>
       </section>
 

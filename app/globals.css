@@ -407,6 +407,15 @@
    * control. PillarCard.tsx renders them open by default, so this only
    * ever hides copy once the script has confirmed a narrow viewport.
    */
+  /*
+   * Border colour lives here rather than on a `border-line` utility:
+   * utilities are a later cascade layer, so the open state below could
+   * never override one.
+   */
+  .pillar {
+    border-color: var(--color-line);
+  }
+
   .pillar-summary {
     display: flex;
     align-items: center;
@@ -434,13 +443,28 @@
     content: "+";
   }
 
-  details[open] > .pillar-summary .pillar-mark {
+  .pillar[open] > .pillar-summary .pillar-mark {
     transform: rotate(45deg);
   }
 
   @media (max-width: 639.98px) {
-    details[open] > .pillar-body {
+    .pillar[open] > .pillar-body {
       animation: pillar-open 0.28s var(--ease-out-soft);
+    }
+
+    /*
+     * The open card lifts to the raised surface so the one you tapped is
+     * obvious among four. Desktop is excluded: every card is open there,
+     * so highlighting them all would just repaint the section.
+     * transition-all on the element carries this over ~500ms.
+     */
+    .pillar[open] {
+      background-color: var(--color-panel);
+      border-color: color-mix(
+        in srgb,
+        var(--color-gold) 38%,
+        var(--color-line)
+      );
     }
   }
 
@@ -483,7 +507,7 @@
     }
 
     .pillar-mark,
-    details[open] > .pillar-body {
+    .pillar[open] > .pillar-body {
       animation: none;
       transition: none;
     }
