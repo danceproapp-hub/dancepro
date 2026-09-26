@@ -453,6 +453,33 @@
     }
 
     /*
+     * Soft open. <details> snaps its height by default; ::details-content
+     * with interpolate-size lets the card grow to its natural height as a
+     * real transition. Guarded by @supports — where either is missing the
+     * card opens instantly and the body still fades in, as before.
+     */
+    @supports (interpolate-size: allow-keywords) and
+      (selector(::details-content)) {
+      .pillar {
+        interpolate-size: allow-keywords;
+      }
+
+      .pillar::details-content {
+        block-size: 0;
+        overflow: hidden;
+        transition-property: block-size, content-visibility;
+        transition-duration: 0.34s;
+        transition-timing-function: var(--ease-out-soft);
+        /* Keeps the content on screen while the card collapses. */
+        transition-behavior: allow-discrete;
+      }
+
+      .pillar[open]::details-content {
+        block-size: auto;
+      }
+    }
+
+    /*
      * The open card lifts to the raised surface so the one you tapped is
      * obvious among four. Desktop is excluded: every card is open there,
      * so highlighting them all would just repaint the section.
@@ -509,6 +536,10 @@
     .pillar-mark,
     .pillar[open] > .pillar-body {
       animation: none;
+      transition: none;
+    }
+
+    .pillar::details-content {
       transition: none;
     }
   }

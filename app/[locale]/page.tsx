@@ -34,12 +34,13 @@ export default async function HomePage({
     { title: t.home.step4Title, description: t.home.step4Body },
   ];
 
+  // The three that actually move someone to sign up. Exclusive events and
+  // a say in what comes next are softer, and the Founding Members page
+  // still lists all five; their strings stay in the dictionaries.
   const benefits = [
     { title: t.home.benefitBadgeTitle, description: t.home.benefitBadgeBody },
     { title: t.home.benefitAccessTitle, description: t.home.benefitAccessBody },
     { title: t.home.benefitPricingTitle, description: t.home.benefitPricingBody },
-    { title: t.home.benefitEventsTitle, description: t.home.benefitEventsBody },
-    { title: t.home.benefitVoteTitle, description: t.home.benefitVoteBody },
   ];
 
   let count = 0;
@@ -131,7 +132,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-24">
+      {/*
+        Hidden on phones: a condensed copy of the How It Works page, which
+        mobile visitors reach from the footer. Cutting it moves the signup
+        form about a screen closer to the top.
+      */}
+      <section className="mx-auto hidden max-w-4xl px-6 py-24 sm:block">
         <Reveal>
           <Eyebrow>{t.home.stepsEyebrow}</Eyebrow>
           <h2 className="mb-12">
