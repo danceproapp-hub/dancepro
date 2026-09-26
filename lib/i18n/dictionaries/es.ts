@@ -186,23 +186,13 @@ export const es: Dictionary = {
     title: "Cómo funciona DancePro",
     intro:
       "Cada parte de DancePro está construida alrededor de una sola cosa: encontrar la pareja adecuada para tus objetivos de entrenamiento y competición.",
-    s1Title: "Crea tu perfil",
     s1Body:
-      "Monta un perfil profesional de bailarín: tu nombre, tu ciudad, los estilos que bailas, tu nivel competitivo y qué tipo de pareja buscas.",
-    s2Title: "Define tus estilos, rol y nivel",
+      "Monta un perfil profesional de bailarín: tu nombre, tu ciudad, los estilos que bailas, tu nivel competitivo y qué tipo de pareja buscas. Sé específico. Leader, follower o ambos. De principiante a professional. International Latin o Argentine Tango. Cuanto más preciso sea tu perfil, mejores serán los bailarines que encuentres.",
     s2Body:
-      "Sé específico. Leader, follower o ambos. De principiante a professional. International Latin o Argentine Tango. Cuanto más preciso sea tu perfil, mejores serán los bailarines que encuentres.",
-    s3Title: "Busca bailarines compatibles, o deja que te encuentren",
-    s3Body:
       "Explora bailarines que encajan con lo que buscas, filtrando por estilo, rol, nivel y ubicación, o simplemente deja tu perfil abierto y que las personas adecuadas te encuentren.",
-    s4Title: "Envía una solicitud de conexión",
+    s3Body:
+      "Escribe directamente y de forma profesional. Pueden ver qué bailas y qué buscas antes de responder. Las conexiones son mutuas. Nadie se añade a tu red, y nadie ve tus datos, sin aceptar conectar primero.",
     s4Body:
-      "Escribe directamente y de forma profesional. Pueden ver qué bailas y qué buscas antes de responder.",
-    s5Title: "La aceptan",
-    s5Body:
-      "Las conexiones son mutuas. Nadie se añade a tu red, y nadie ve tus datos, sin aceptar conectar primero.",
-    s6Title: "Habláis dentro de la app",
-    s6Body:
       "Una vez conectados, coordinad horarios de práctica, planes de competición y logística en un solo lugar hecho para bailarines.",
     cta: "Únete a los miembros fundadores",
   },

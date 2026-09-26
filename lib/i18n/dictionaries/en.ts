@@ -176,23 +176,18 @@ export const en = {
     title: "How DancePro works",
     intro:
       "Every part of DancePro is built around one thing: finding the right partner for your training and competition goals.",
-    s1Title: "Create your profile",
+    /*
+     * Four steps, the same four the home page names — the titles come from
+     * home.step1Title…step4Title so the two pages cannot drift apart. Only
+     * the longer bodies live here.
+     */
     s1Body:
-      "Set up a professional dancer profile: your name, city, the styles you dance, your competitive level, and what kind of partnership you're looking for.",
-    s2Title: "Set your styles, role, and level",
+      "Set up a professional dancer profile: your name, city, the styles you dance, your competitive level, and what kind of partnership you're looking for. Be specific. Leader, follower, or both. Beginner through professional. International Latin or Argentine Tango. The more precise your profile, the better the dancers you find.",
     s2Body:
-      "Be specific. Leader, follower, or both. Beginner through professional. International Latin or Argentine Tango. The more precise your profile, the better the dancers you find.",
-    s3Title: "Search for compatible dancers, or get discovered",
-    s3Body:
       "Browse dancers who fit what you're looking for, filtered by style, role, level, and location — or simply keep your profile open and let the right people find you.",
-    s4Title: "Send a connection request",
+    s3Body:
+      "Reach out directly and professionally. They can see what you dance and what you're looking for before they answer. Connections are mutual. Nobody is added to your network, and nobody sees your details, without agreeing to connect first.",
     s4Body:
-      "Reach out directly and professionally. They can see what you dance and what you're looking for before they answer.",
-    s5Title: "They accept",
-    s5Body:
-      "Connections are mutual. Nobody is added to your network, and nobody sees your details, without agreeing to connect first.",
-    s6Title: "You message inside the app",
-    s6Body:
       "Once connected, coordinate practice schedules, competition plans, and logistics in one place built for dancers.",
     cta: "Join the Founding Members",
   },

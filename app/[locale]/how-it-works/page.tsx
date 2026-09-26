@@ -31,13 +31,15 @@ export default async function HowItWorksPage({
   if (!isLocale(locale)) notFound();
   const t = getDictionary(locale);
 
+  // Titles are the home page's four, deliberately: this page used to split
+  // "create your profile" and "connect" into six numbered steps, so the two
+  // pages showed different counts for the same journey. Sharing the strings
+  // keeps them from drifting apart again; only the bodies are longer here.
   const steps = [
-    { title: t.howItWorks.s1Title, description: t.howItWorks.s1Body },
-    { title: t.howItWorks.s2Title, description: t.howItWorks.s2Body },
-    { title: t.howItWorks.s3Title, description: t.howItWorks.s3Body },
-    { title: t.howItWorks.s4Title, description: t.howItWorks.s4Body },
-    { title: t.howItWorks.s5Title, description: t.howItWorks.s5Body },
-    { title: t.howItWorks.s6Title, description: t.howItWorks.s6Body },
+    { title: t.home.step1Title, description: t.howItWorks.s1Body },
+    { title: t.home.step2Title, description: t.howItWorks.s2Body },
+    { title: t.home.step3Title, description: t.howItWorks.s3Body },
+    { title: t.home.step4Title, description: t.howItWorks.s4Body },
   ];
 
   return (

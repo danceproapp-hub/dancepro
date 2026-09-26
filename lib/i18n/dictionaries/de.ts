@@ -182,23 +182,13 @@ export const de: Dictionary = {
     title: "So funktioniert DancePro",
     intro:
       "Jeder Teil von DancePro ist um eine Sache herum gebaut: den richtigen Partner für deine Trainings- und Turnierziele zu finden.",
-    s1Title: "Erstelle dein Profil",
     s1Body:
-      "Leg ein professionelles Tänzerprofil an: Name, Stadt, die Stile, die du tanzt, dein Turnierniveau und welche Art von Partnerschaft du suchst.",
-    s2Title: "Lege Stile, Rolle und Niveau fest",
+      "Leg ein professionelles Tänzerprofil an: Name, Stadt, die Stile, die du tanzt, dein Turnierniveau und welche Art von Partnerschaft du suchst. Sei genau. Leader, Follower oder beides. Von Anfänger bis Professional. International Latin oder Argentine Tango. Je präziser dein Profil, desto besser die Tänzer, die du findest.",
     s2Body:
-      "Sei genau. Leader, Follower oder beides. Von Anfänger bis Professional. International Latin oder Argentine Tango. Je präziser dein Profil, desto besser die Tänzer, die du findest.",
-    s3Title: "Suche passende Tänzer, oder werde gefunden",
-    s3Body:
       "Durchsuche Tänzer, die zu deiner Suche passen, gefiltert nach Stil, Rolle, Niveau und Ort — oder lass einfach dein Profil offen und die richtigen Leute finden dich.",
-    s4Title: "Schicke eine Kontaktanfrage",
+    s3Body:
+      "Melde dich direkt und professionell. Sie sehen, was du tanzt und was du suchst, bevor sie antworten. Kontakte sind gegenseitig. Niemand landet in deinem Netzwerk, und niemand sieht deine Angaben, ohne vorher zugestimmt zu haben.",
     s4Body:
-      "Melde dich direkt und professionell. Sie sehen, was du tanzt und was du suchst, bevor sie antworten.",
-    s5Title: "Sie nehmen an",
-    s5Body:
-      "Kontakte sind gegenseitig. Niemand landet in deinem Netzwerk, und niemand sieht deine Angaben, ohne vorher zugestimmt zu haben.",
-    s6Title: "Ihr schreibt euch in der App",
-    s6Body:
       "Sobald ihr verbunden seid, stimmt ihr Trainingszeiten, Turnierpläne und Organisation an einem Ort ab, der für Tänzer gemacht ist.",
     cta: "Werde Gründungsmitglied",
   },

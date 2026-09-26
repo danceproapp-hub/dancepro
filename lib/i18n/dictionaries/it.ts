@@ -185,23 +185,13 @@ export const it: Dictionary = {
     title: "Come funziona DancePro",
     intro:
       "Ogni parte di DancePro è costruita intorno a una cosa sola: trovare il partner giusto per i tuoi obiettivi di allenamento e di gara.",
-    s1Title: "Crea il tuo profilo",
     s1Body:
-      "Costruisci un profilo professionale da ballerino: nome, città, gli stili che balli, il tuo livello agonistico e che tipo di coppia cerchi.",
-    s2Title: "Imposta stili, ruolo e livello",
+      "Costruisci un profilo professionale da ballerino: nome, città, gli stili che balli, il tuo livello agonistico e che tipo di coppia cerchi. Sii preciso. Leader, follower o entrambi. Da principiante a professional. International Latin o Argentine Tango. Più preciso è il tuo profilo, migliori sono i ballerini che trovi.",
     s2Body:
-      "Sii preciso. Leader, follower o entrambi. Da principiante a professional. International Latin o Argentine Tango. Più preciso è il tuo profilo, migliori sono i ballerini che trovi.",
-    s3Title: "Cerca ballerini compatibili, o farti trovare",
-    s3Body:
       "Sfoglia i ballerini che corrispondono a quello che cerchi, filtrati per stile, ruolo, livello e località, oppure lascia semplicemente il profilo aperto e fatti trovare dalle persone giuste.",
-    s4Title: "Invia una richiesta di collegamento",
+    s3Body:
+      "Scrivi in modo diretto e professionale. Possono vedere cosa balli e cosa cerchi prima di risponderti. I collegamenti sono reciproci. Nessuno entra nella tua rete, e nessuno vede i tuoi dati, senza aver prima accettato di collegarsi.",
     s4Body:
-      "Scrivi in modo diretto e professionale. Possono vedere cosa balli e cosa cerchi prima di risponderti.",
-    s5Title: "La accettano",
-    s5Body:
-      "I collegamenti sono reciproci. Nessuno entra nella tua rete, e nessuno vede i tuoi dati, senza aver prima accettato di collegarsi.",
-    s6Title: "Vi scrivete dentro l'app",
-    s6Body:
       "Una volta collegati, organizzate allenamenti, piani di gara e logistica in un unico posto pensato per i ballerini.",
     cta: "Unisciti ai membri fondatori",
   },

@@ -187,23 +187,13 @@ export const pl: Dictionary = {
     title: "Jak działa DancePro",
     intro:
       "Wszystko w DancePro jest zbudowane wokół jednej rzeczy: znalezienia właściwego partnera do twoich celów treningowych i turniejowych.",
-    s1Title: "Załóż profil",
     s1Body:
-      "Zbuduj profesjonalny profil tancerza: imię, miasto, style, które tańczysz, twój poziom turniejowy i to, jakiej pary szukasz.",
-    s2Title: "Ustaw style, rolę i poziom",
+      "Zbuduj profesjonalny profil tancerza: imię, miasto, style, które tańczysz, twój poziom turniejowy i to, jakiej pary szukasz. Bądź precyzyjny. Leader, follower albo obie role. Od początkującego do professional. International Latin albo Argentine Tango. Im dokładniejszy profil, tym lepszych tancerzy znajdziesz.",
     s2Body:
-      "Bądź precyzyjny. Leader, follower albo obie role. Od początkującego do professional. International Latin albo Argentine Tango. Im dokładniejszy profil, tym lepszych tancerzy znajdziesz.",
-    s3Title: "Szukaj pasujących tancerzy albo daj się znaleźć",
-    s3Body:
       "Przeglądaj tancerzy z filtrami według stylu, roli, poziomu i miasta — albo po prostu zostaw profil otwarty i pozwól właściwym osobom znaleźć ciebie.",
-    s4Title: "Wyślij zaproszenie do kontaktu",
+    s3Body:
+      "Pisz wprost i konkretnie. Widzą, co tańczysz i czego szukasz, jeszcze zanim odpowiedzą. Kontakt jest zawsze obustronny. Nikt nie trafia do twojej sieci i nikt nie widzi twoich danych bez zgody.",
     s4Body:
-      "Pisz wprost i konkretnie. Widzą, co tańczysz i czego szukasz, jeszcze zanim odpowiedzą.",
-    s5Title: "Zaproszenie zostaje przyjęte",
-    s5Body:
-      "Kontakt jest zawsze obustronny. Nikt nie trafia do twojej sieci i nikt nie widzi twoich danych bez zgody.",
-    s6Title: "Piszecie w aplikacji",
-    s6Body:
       "Po nawiązaniu kontaktu ustalajcie grafik treningów, plany turniejowe i organizację w jednym miejscu zrobionym dla tancerzy.",
     cta: "Dołącz do członków założycieli",
   },
