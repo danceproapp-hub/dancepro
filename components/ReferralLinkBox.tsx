@@ -34,7 +34,7 @@ export function ReferralLinkBox({
       <button
         type="button"
         onClick={handleCopy}
-        className="btn btn-primary shrink-0 px-5 py-3.5"
+        className="btn btn-primary shrink-0 px-5 py-3"
       >
         {copied ? copiedLabel : copyLabel}
       </button>

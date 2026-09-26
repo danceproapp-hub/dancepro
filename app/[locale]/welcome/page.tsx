@@ -134,11 +134,15 @@ export default async function WelcomePage({
         t={profileFormDictionary(t)}
       />
 
-      <div className="w-full border border-line bg-panel p-6 sm:p-8">
-        <h2 className="mb-3">
-          {t.welcome.moveUp}
-        </h2>
-        <p className="mb-5 text-muted">
+      {/*
+        Deliberately a step quieter than the profile panel above it:
+        tighter padding, a 20px heading against 26px, and caption-sized
+        body copy. Adding your details is the ask; referring is the
+        follow-on.
+      */}
+      <div className="w-full border border-line bg-panel p-5 sm:p-6">
+        <h2 className="mb-2 text-[20px]">{t.welcome.moveUp}</h2>
+        <p className="caption mb-4">
           {tierMessage(status.referrals, locale, t)}
         </p>
         <ReferralLinkBox
