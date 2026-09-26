@@ -34,9 +34,7 @@ export default async function HomePage({
     { title: t.home.step4Title, description: t.home.step4Body },
   ];
 
-  // The three that actually move someone to sign up. "A say in what comes
-  // next" is softer: it stays on the Founding Members page, and its
-  // benefitVote* strings stay in the dictionaries, currently unused.
+  // Three, and the Founding Members page lists the same three.
   const benefits = [
     { title: t.home.benefitBadgeTitle, description: t.home.benefitBadgeBody },
     { title: t.home.benefitAccessTitle, description: t.home.benefitAccessBody },

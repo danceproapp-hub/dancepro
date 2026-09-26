@@ -67,8 +67,6 @@ export const zh: Dictionary = {
     benefitAccessBody: "在 DancePro 向所有人开放之前先行进入。",
     benefitPricingTitle: "特别首发价",
     benefitPricingBody: "只要你还是会员，价格就一直锁定。",
-    benefitVoteTitle: "对下一步的发言权",
-    benefitVoteBody: "创始会员提出的需求会被优先实现。",
 
     formTitle: "加入创始会员",
     formSubtitle: "在我们向公众开放之前，先占好你的位置。",
@@ -227,12 +225,9 @@ export const zh: Dictionary = {
     perkAccessBody: "比所有人都更早用上 DancePro。",
     perkPricingTitle: "特别首发价",
     perkPricingBody: "为创始会员锁定，只要你的会员资格保持有效就一直有效。",
-    perkVoteTitle: "对下一步的发言权",
-    perkVoteBody:
-      "创始会员提出的需求会被优先实现。由你来告诉我们这个网络还缺什么。",
     laterTitle: "为什么现在胜过以后",
     laterBody:
-      "创始会员身份在 DancePro 向公众开放的那天关闭——事后无法再获得。首发价、徽章，以及对开发方向的发言权，都只属于这一批人。之后加入的所有人都从零开始。",
+      "创始会员身份在 DancePro 向公众开放的那天关闭——事后无法再获得。首发价、徽章，以及抢先体验，都只属于这一批人。之后加入的所有人都从零开始。",
     cta: "成为创始会员",
   },
   language: {

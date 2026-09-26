@@ -70,9 +70,6 @@ export const ja: Dictionary = {
     benefitAccessBody: "一般公開より先に DancePro を使えます。",
     benefitPricingTitle: "特別なローンチ価格",
     benefitPricingBody: "メンバーでいる限り、その価格のまま固定されます。",
-    benefitVoteTitle: "次に何を作るかへの発言権",
-    benefitVoteBody:
-      "ファウンディングメンバーからの要望が最優先で形になります。",
 
     formTitle: "ファウンディングメンバーに参加する",
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
@@ -237,12 +234,9 @@ export const ja: Dictionary = {
     perkPricingTitle: "特別なローンチ価格",
     perkPricingBody:
       "ファウンディングメンバー向けに固定され、メンバーシップが有効な限り続きます。",
-    perkVoteTitle: "次に何を作るかへの発言権",
-    perkVoteBody:
-      "ファウンディングメンバーからの要望が最優先で形になります。何が必要かを教えてください。",
     laterTitle: "あとよりも今がいい理由",
     laterBody:
-      "ファウンディングメンバーの資格は、DancePro が一般公開される日に締め切られます。あとから得られるものではありません。ローンチ価格も、バッジも、何を作るかへの発言権も、この期間に参加した人だけのものです。あとから参加する人は全員ゼロからのスタートになります。",
+      "ファウンディングメンバーの資格は、DancePro が一般公開される日に締め切られます。あとから得られるものではありません。ローンチ価格も、バッジも、先行アクセスも、この期間に参加した人だけのものです。あとから参加する人は全員ゼロからのスタートになります。",
     cta: "ファウンディングメンバーになる",
   },
   language: {

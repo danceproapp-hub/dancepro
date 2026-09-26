@@ -67,8 +67,6 @@ export const en = {
     benefitAccessBody: "Into DancePro before it opens to everyone else.",
     benefitPricingTitle: "Special launch pricing",
     benefitPricingBody: "Locked in for as long as you remain a member.",
-    benefitVoteTitle: "A say in what comes next",
-    benefitVoteBody: "What founding members ask for gets built first.",
 
     formTitle: "Join the founding members",
     formSubtitle: "Reserve your place before we open to the public.",
@@ -231,12 +229,9 @@ export const en = {
     perkPricingTitle: "Special launch pricing",
     perkPricingBody:
       "Locked in for founding members, for as long as you keep your membership active.",
-    perkVoteTitle: "A say in what comes next",
-    perkVoteBody:
-      "What founding members ask for gets built first. You tell us what the network needs.",
     laterTitle: "Why now beats later",
     laterBody:
-      "Founding member status closes the day DancePro opens to the public — it isn't something you can earn after the fact. Launch pricing, the badge, and the say in what gets built all belong to this group and this group only. Everyone who joins afterwards starts from zero.",
+      "Founding member status closes the day DancePro opens to the public — it isn't something you can earn after the fact. Launch pricing, the badge, and early access all belong to this group and this group only. Everyone who joins afterwards starts from zero.",
     cta: "Join the Founding Members",
   },
   language: {

@@ -70,9 +70,6 @@ export const de: Dictionary = {
     benefitAccessBody: "Zu DancePro, bevor es für alle anderen öffnet.",
     benefitPricingTitle: "Besonderer Startpreis",
     benefitPricingBody: "Festgeschrieben, solange du Mitglied bleibst.",
-    benefitVoteTitle: "Mitbestimmung, was als Nächstes kommt",
-    benefitVoteBody:
-      "Was Gründungsmitglieder sich wünschen, wird zuerst gebaut.",
 
     formTitle: "Werde Gründungsmitglied",
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
@@ -233,12 +230,9 @@ export const de: Dictionary = {
     perkPricingTitle: "Besonderer Startpreis",
     perkPricingBody:
       "Für Gründungsmitglieder festgeschrieben, solange deine Mitgliedschaft aktiv bleibt.",
-    perkVoteTitle: "Mitbestimmung, was als Nächstes kommt",
-    perkVoteBody:
-      "Was Gründungsmitglieder sich wünschen, wird zuerst gebaut. Du sagst uns, was das Netzwerk braucht.",
     laterTitle: "Warum jetzt besser ist als später",
     laterBody:
-      "Der Status als Gründungsmitglied schließt an dem Tag, an dem DancePro öffentlich öffnet — man kann ihn sich nicht nachträglich verdienen. Startpreis, Abzeichen und Mitbestimmung darüber, was gebaut wird, gehören dieser Gruppe und nur dieser Gruppe. Alle, die später dazukommen, fangen bei null an.",
+      "Der Status als Gründungsmitglied schließt an dem Tag, an dem DancePro öffentlich öffnet — man kann ihn sich nicht nachträglich verdienen. Startpreis, Abzeichen und früher Zugang gehören dieser Gruppe und nur dieser Gruppe. Alle, die später dazukommen, fangen bei null an.",
     cta: "Werde Gründungsmitglied",
   },
   language: {

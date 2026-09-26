@@ -43,10 +43,6 @@ export default async function FoundingMembersPage({
       title: t.foundingMembers.perkPricingTitle,
       description: t.foundingMembers.perkPricingBody,
     },
-    {
-      title: t.foundingMembers.perkVoteTitle,
-      description: t.foundingMembers.perkVoteBody,
-    },
   ];
 
   return (
