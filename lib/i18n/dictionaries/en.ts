@@ -232,11 +232,6 @@ export const en = {
     title: "The founding member program",
     intro:
       "Founding members are the dancers who join before DancePro opens to the public. Here's what that means, and what you get for being one of them.",
-    firstTitle: "What being first actually means",
-    firstPara1:
-      "Founding members shape what DancePro becomes — the cities it's strongest in, the styles best represented, what gets built next. Join now and you're not just on the network, you're part of the reason it's worth being on.",
-    firstPara2:
-      "You'll be among the first profiles other dancers see when they arrive, with a badge that never gets handed out again.",
     perksTitle: "What founding members get",
     perkBadgeTitle: "Founding Member badge",
     perkBadgeBody:

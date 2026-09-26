@@ -59,14 +59,6 @@ export default async function FoundingMembersPage({
         <p className="lead mb-14 text-muted">{t.foundingMembers.intro}</p>
       </Reveal>
 
-      <div className="mb-16 flex flex-col gap-4 text-muted">
-        <h2 className="mb-2">
-          {t.foundingMembers.firstTitle}
-        </h2>
-        <p>{t.foundingMembers.firstPara1}</p>
-        <p>{t.foundingMembers.firstPara2}</p>
-      </div>
-
       <div className="mb-16">
         <h2 className="mb-8">
           {t.foundingMembers.perksTitle}

@@ -239,11 +239,6 @@ export const pl: Dictionary = {
     title: "Program członków założycieli",
     intro:
       "Członkowie założyciele to tancerze, którzy dołączyli, zanim DancePro otworzył się dla wszystkich. Oto co to znaczy i co zyskujesz, będąc jednym z nich.",
-    firstTitle: "Co naprawdę znaczy być pierwszym",
-    firstPara1:
-      "Członkowie założyciele kształtują to, czym stanie się DancePro: w których miastach będzie najsilniejszy, które style będą najlepiej reprezentowane, co powstanie jako następne. Zapisując się teraz, nie jesteś po prostu w sieci — jesteś częścią powodu, dla którego warto w niej być.",
-    firstPara2:
-      "Będziesz wśród pierwszych profili, które widzą przychodzący tancerze, z odznaką, której nikt już nigdy nie dostanie.",
     perksTitle: "Co dostają członkowie założyciele",
     perkBadgeTitle: "Odznaka członka założyciela",
     perkBadgeBody:

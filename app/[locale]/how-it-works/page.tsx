@@ -56,7 +56,7 @@ export default async function HowItWorksPage({
         {steps.map((step, index) => (
           <Reveal key={step.title} delay={index * 70}>
             <li className="group flex gap-6">
-              <span className="font-display tabular text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-0.5">
+              <span className="w-12 shrink-0 font-display text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-0.5">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div>

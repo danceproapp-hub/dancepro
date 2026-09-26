@@ -237,11 +237,6 @@ export const es: Dictionary = {
     title: "El programa de miembros fundadores",
     intro:
       "Los miembros fundadores son los bailarines que se unen antes de que DancePro abra al público. Esto es lo que significa y lo que consigues por ser uno de ellos.",
-    firstTitle: "Qué significa de verdad llegar primero",
-    firstPara1:
-      "Los miembros fundadores dan forma a lo que DancePro será: las ciudades donde sea más fuerte, los estilos mejor representados, lo que se construye después. Únete ahora y no solo estás en la red: eres parte de la razón por la que vale la pena estar en ella.",
-    firstPara2:
-      "Estarás entre los primeros perfiles que vean otros bailarines al llegar, con un distintivo que no se volverá a entregar.",
     perksTitle: "Qué reciben los miembros fundadores",
     perkBadgeTitle: "Distintivo de Miembro Fundador",
     perkBadgeBody:

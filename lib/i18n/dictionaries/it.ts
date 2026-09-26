@@ -236,11 +236,6 @@ export const it: Dictionary = {
     title: "Il programma membri fondatori",
     intro:
       "I membri fondatori sono i ballerini che si iscrivono prima che DancePro apra al pubblico. Ecco cosa significa e cosa ottieni a essere uno di loro.",
-    firstTitle: "Cosa significa davvero essere tra i primi",
-    firstPara1:
-      "I membri fondatori danno forma a quello che DancePro diventerà: le città in cui sarà più forte, gli stili meglio rappresentati, cosa verrà costruito dopo. Iscriviti ora e non sei solo nella rete: sei parte del motivo per cui vale la pena esserci.",
-    firstPara2:
-      "Sarai tra i primi profili che gli altri ballerini vedono quando arrivano, con un badge che non verrà più assegnato.",
     perksTitle: "Cosa ottengono i membri fondatori",
     perkBadgeTitle: "Badge Membro Fondatore",
     perkBadgeBody:

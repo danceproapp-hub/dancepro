@@ -234,11 +234,6 @@ export const de: Dictionary = {
     title: "Das Gründungsmitglied-Programm",
     intro:
       "Gründungsmitglieder sind die Tänzer, die dabei sind, bevor DancePro öffentlich öffnet. Das bedeutet es, und das bekommst du dafür, eines von ihnen zu sein.",
-    firstTitle: "Was es wirklich heißt, zuerst da zu sein",
-    firstPara1:
-      "Gründungsmitglieder prägen, was DancePro wird — in welchen Städten es am stärksten ist, welche Stile am besten vertreten sind, was als Nächstes gebaut wird. Melde dich jetzt an, und du bist nicht bloß im Netzwerk: du bist ein Teil des Grunds, warum es sich lohnt, dabei zu sein.",
-    firstPara2:
-      "Du gehörst zu den ersten Profilen, die andere Tänzer bei ihrer Ankunft sehen — mit einem Abzeichen, das nie wieder vergeben wird.",
     perksTitle: "Was Gründungsmitglieder bekommen",
     perkBadgeTitle: "Gründungsmitglied-Abzeichen",
     perkBadgeBody:

@@ -228,11 +228,6 @@ export const zh: Dictionary = {
     title: "创始会员计划",
     intro:
       "创始会员是在 DancePro 向公众开放之前就加入的舞者。以下是它的含义，以及成为其中一员你能得到什么。",
-    firstTitle: "「第一批」真正意味着什么",
-    firstPara1:
-      "创始会员塑造着 DancePro 将成为什么样子——它在哪些城市最强、哪些舞种代表性最好、接下来做什么。现在加入，你不只是身处这个网络之中，你本身就是它值得加入的理由之一。",
-    firstPara2:
-      "新来的舞者最先看到的档案里就有你，还带着一枚此后不会再发放的徽章。",
     perksTitle: "创始会员能得到什么",
     perkBadgeTitle: "创始会员徽章",
     perkBadgeBody:
