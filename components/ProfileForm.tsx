@@ -95,7 +95,7 @@ export function ProfileForm({
   if (!open && !hasProfile) {
     return (
       <div className="w-full border border-line bg-panel p-6 text-center sm:p-8">
-        <h2>{t.profile.inviteTitle}</h2>
+        <h2 className="text-[22px] sm:text-[26px]">{t.profile.inviteTitle}</h2>
         <p className="mx-auto mt-3 max-w-md text-muted">
           {t.profile.inviteBody}
         </p>

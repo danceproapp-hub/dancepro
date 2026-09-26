@@ -109,7 +109,7 @@ export default async function WelcomePage({
         follow-on.
       */}
       <div className="w-[90%] max-w-md border border-line bg-panel p-4 sm:p-6">
-        <h2 className="mb-2 text-[20px]">{t.welcome.moveUp}</h2>
+        <h2 className="mb-2 text-[18px] sm:text-[20px]">{t.welcome.moveUp}</h2>
         <p className="caption mb-4">
           {fill(t.welcome.referralMsg, {
             referred: `${status.referrals} ${plural(
