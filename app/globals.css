@@ -158,6 +158,17 @@
   }
 }
 
+@keyframes pillar-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes reveal-safety {
   to {
     opacity: 1;
@@ -389,6 +400,62 @@
     );
   }
 
+  /*
+   * On phones the four pillars collapse to their titles, so the section
+   * reads as four short lines and the signup form sits closer to the top.
+   * From `sm` up they are always open and the summary stops being a
+   * control. PillarCard.tsx renders them open by default, so this only
+   * ever hides copy once the script has confirmed a narrow viewport.
+   */
+  .pillar-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .pillar-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .pillar-mark {
+    flex: none;
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-gold);
+    transition: transform 0.25s var(--ease-out-soft);
+  }
+
+  .pillar-mark::before {
+    content: "+";
+  }
+
+  details[open] > .pillar-summary .pillar-mark {
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 639.98px) {
+    details[open] > .pillar-body {
+      animation: pillar-open 0.28s var(--ease-out-soft);
+    }
+  }
+
+  @media (min-width: 640px) {
+    /* Never collapsed here, so it should not invite a click. */
+    .pillar-summary {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .pillar-mark {
+      display: none;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -413,6 +480,12 @@
 
     .btn-lift:hover:not(:disabled) {
       transform: none;
+    }
+
+    .pillar-mark,
+    details[open] > .pillar-body {
+      animation: none;
+      transition: none;
     }
   }
 }
