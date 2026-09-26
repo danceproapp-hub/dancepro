@@ -153,10 +153,6 @@ export const de: Dictionary = {
     moveUp: "Rücke auf der Liste vor",
     copyLink: "Link kopieren",
     copied: "Kopiert!",
-    tier3: "Rücke auf der Liste vor",
-    tier10: "Vorrangiger Zugang zum Start",
-    tier25: "VIP-Gründungsstatus",
-    referralsLabel: "{count} Empfehlungen",
     back: "Zurück zu DancePro",
     notFoundTitle: "Diesen Link konnten wir nicht finden",
     notFoundBody:

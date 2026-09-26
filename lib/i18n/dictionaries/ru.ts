@@ -151,10 +151,6 @@ export const ru: Dictionary = {
     moveUp: "Поднимитесь в списке",
     copyLink: "Скопировать ссылку",
     copied: "Скопировано!",
-    tier3: "Подъём в списке",
-    tier10: "Приоритетный доступ на старте",
-    tier25: "VIP-статус основателя",
-    referralsLabel: "{count} приглашённых",
     back: "Вернуться в DancePro",
     notFoundTitle: "Мы не нашли такую ссылку",
     notFoundBody:

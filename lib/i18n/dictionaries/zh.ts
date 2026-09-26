@@ -146,10 +146,6 @@ export const zh: Dictionary = {
     moveUp: "在名单上前进",
     copyLink: "复制链接",
     copied: "已复制！",
-    tier3: "在名单上前进",
-    tier10: "上线时优先使用",
-    tier25: "VIP 创始身份",
-    referralsLabel: "邀请 {count} 人",
     back: "返回 DancePro",
     notFoundTitle: "我们找不到这个链接",
     notFoundBody:

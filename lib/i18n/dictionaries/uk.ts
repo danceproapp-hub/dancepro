@@ -150,10 +150,6 @@ export const uk: Dictionary = {
     moveUp: "Підніміться у списку",
     copyLink: "Скопіювати посилання",
     copied: "Скопійовано!",
-    tier3: "Підйом у списку",
-    tier10: "Пріоритетний доступ на старті",
-    tier25: "VIP-статус засновника",
-    referralsLabel: "{count} запрошених",
     back: "Повернутися до DancePro",
     notFoundTitle: "Ми не знайшли такого посилання",
     notFoundBody:

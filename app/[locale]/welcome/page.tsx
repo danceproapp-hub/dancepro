@@ -148,26 +148,6 @@ export default async function WelcomePage({
         />
       </div>
 
-      <div className="grid w-full gap-4 text-left sm:grid-cols-3">
-        <TierCard
-          threshold={3}
-          label={t.welcome.tier3}
-          met={status.referrals >= 3}
-          t={t}
-        />
-        <TierCard
-          threshold={10}
-          label={t.welcome.tier10}
-          met={status.referrals >= 10}
-          t={t}
-        />
-        <TierCard
-          threshold={25}
-          label={t.welcome.tier25}
-          met={status.referrals >= 25}
-          t={t}
-        />
-      </div>
 
       <Link
         href={`/${locale}`}
@@ -176,30 +156,5 @@ export default async function WelcomePage({
         {t.welcome.back}
       </Link>
     </section>
-  );
-}
-
-function TierCard({
-  threshold,
-  label,
-  met,
-  t,
-}: {
-  threshold: number;
-  label: string;
-  met: boolean;
-  t: Dictionary;
-}) {
-  return (
-    <div
-      className={`border p-4 ${
-        met ? "border-gold bg-gold/10" : "border-line"
-      }`}
-    >
-      <p className={`font-display tabular text-lg tracking-[0.04em] ${met ? "text-gold" : "text-paper"}`}>
-        {fill(t.welcome.referralsLabel, { count: threshold })}
-      </p>
-      <p className="caption">{label}</p>
-    </div>
   );
 }

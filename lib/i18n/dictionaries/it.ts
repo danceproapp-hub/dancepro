@@ -151,10 +151,6 @@ export const it: Dictionary = {
     moveUp: "Sali nella lista",
     copyLink: "Copia link",
     copied: "Copiato!",
-    tier3: "Sali nella lista",
-    tier10: "Accesso prioritario al lancio",
-    tier25: "Status fondatore VIP",
-    referralsLabel: "{count} invitati",
     back: "Torna a DancePro",
     notFoundTitle: "Non abbiamo trovato quel link",
     notFoundBody:

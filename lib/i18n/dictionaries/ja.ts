@@ -154,10 +154,6 @@ export const ja: Dictionary = {
     moveUp: "リストで順位を上げる",
     copyLink: "リンクをコピー",
     copied: "コピーしました！",
-    tier3: "リストで順位が上がる",
-    tier10: "公開時の優先アクセス",
-    tier25: "VIP ファウンディングステータス",
-    referralsLabel: "紹介 {count} 人",
     back: "DancePro に戻る",
     notFoundTitle: "そのリンクが見つかりませんでした",
     notFoundBody:

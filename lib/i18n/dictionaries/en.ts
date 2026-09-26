@@ -147,10 +147,6 @@ export const en = {
     moveUp: "Move up the list",
     copyLink: "Copy link",
     copied: "Copied!",
-    tier3: "Move up the list",
-    tier10: "Priority access at launch",
-    tier25: "VIP founding status",
-    referralsLabel: "{count} referrals",
     back: "Back to DancePro",
     notFoundTitle: "We couldn't find that link",
     notFoundBody:
