@@ -152,14 +152,8 @@ export const en = {
     notFoundBody:
       "Your waitlist link may have expired or been typed incorrectly. Join the founding members from the homepage instead.",
     // {referred} = how many they've brought in, {remaining} = to the next tier
-    tierMsgToFirst:
-      "You've referred {referred}. {remaining} more and you move up the waitlist.",
-    tierMsgToPriority:
-      "You've referred {referred} and moved up the list. {remaining} more for priority access at launch.",
-    tierMsgToVip:
-      "You've referred {referred} and unlocked priority access at launch. {remaining} more for VIP founding status.",
-    tierMsgMax:
-      "You've referred {referred} and earned VIP founding status. Thank you for building this with us.",
+    referralMsg:
+      "You've referred {referred}. Every dancer who joins through your link moves you up the list.",
     dancers: { one: "dancer", few: "dancers", many: "dancers", other: "dancers" },
   },
   howItWorks: {

@@ -156,14 +156,8 @@ export const es: Dictionary = {
     notFoundTitle: "No hemos encontrado ese enlace",
     notFoundBody:
       "Tu enlace de la lista puede haber caducado o estar mal escrito. Únete a los miembros fundadores desde la página de inicio.",
-    tierMsgToFirst:
-      "Has invitado a {referred}. {remaining} más y subes en la lista de espera.",
-    tierMsgToPriority:
-      "Has invitado a {referred} y has subido en la lista. {remaining} más para acceso prioritario en el lanzamiento.",
-    tierMsgToVip:
-      "Has invitado a {referred} y has desbloqueado el acceso prioritario en el lanzamiento. {remaining} más para el estatus fundador VIP.",
-    tierMsgMax:
-      "Has invitado a {referred} y te has ganado el estatus fundador VIP. Gracias por construir esto con nosotros.",
+    referralMsg:
+      "Has invitado a {referred}. Cada bailarín que se une con tu enlace te sube en la lista.",
     dancers: {
       one: "bailarín",
       few: "bailarines",

@@ -150,13 +150,8 @@ export const zh: Dictionary = {
     notFoundTitle: "我们找不到这个链接",
     notFoundBody:
       "你的候补名单链接可能已过期或输入有误。请从首页加入创始会员。",
-    tierMsgToFirst: "你已邀请 {referred}。再邀请 {remaining} 位就能在名单上前进。",
-    tierMsgToPriority:
-      "你已邀请 {referred}，并在名单上前进。再邀请 {remaining} 位即可获得上线优先使用权。",
-    tierMsgToVip:
-      "你已邀请 {referred}，并解锁了上线优先使用权。再邀请 {remaining} 位即可获得 VIP 创始身份。",
-    tierMsgMax:
-      "你已邀请 {referred}，并获得了 VIP 创始身份。感谢你和我们一起把它建起来。",
+    referralMsg:
+      "你已邀请 {referred}。每有一位舞者通过你的链接加入，你就会在名单上前进。",
     dancers: {
       one: "名舞者",
       few: "名舞者",

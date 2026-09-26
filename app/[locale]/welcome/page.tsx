@@ -11,8 +11,6 @@ import {
   isLocale,
   plural,
   profileFormDictionary,
-  type Dictionary,
-  type Locale,
 } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
@@ -29,36 +27,6 @@ export async function generateMetadata({
     description: t.welcome.metaDescription,
     robots: { index: false, follow: false },
   };
-}
-
-function tierMessage(
-  referrals: number,
-  locale: Locale,
-  t: Dictionary
-): string {
-  // Russian, Ukrainian and Polish need three plural forms, not two, so the
-  // noun is picked by the locale's own rules rather than by n === 1.
-  const dancers = (n: number) => `${n} ${plural(locale, n, t.welcome.dancers)}`;
-
-  if (referrals < 3) {
-    return fill(t.welcome.tierMsgToFirst, {
-      referred: dancers(referrals),
-      remaining: 3 - referrals,
-    });
-  }
-  if (referrals < 10) {
-    return fill(t.welcome.tierMsgToPriority, {
-      referred: dancers(referrals),
-      remaining: 10 - referrals,
-    });
-  }
-  if (referrals < 25) {
-    return fill(t.welcome.tierMsgToVip, {
-      referred: dancers(referrals),
-      remaining: 25 - referrals,
-    });
-  }
-  return fill(t.welcome.tierMsgMax, { referred: dancers(referrals) });
 }
 
 export default async function WelcomePage({
@@ -140,10 +108,16 @@ export default async function WelcomePage({
         body copy. Adding your details is the ask; referring is the
         follow-on.
       */}
-      <div className="w-full border border-line bg-panel p-5 sm:p-6">
+      <div className="w-[85%] max-w-md border border-line bg-panel p-5 sm:p-6">
         <h2 className="mb-2 text-[20px]">{t.welcome.moveUp}</h2>
         <p className="caption mb-4">
-          {tierMessage(status.referrals, locale, t)}
+          {fill(t.welcome.referralMsg, {
+            referred: `${status.referrals} ${plural(
+              locale,
+              status.referrals,
+              t.welcome.dancers
+            )}`,
+          })}
         </p>
         <ReferralLinkBox
           link={referralLink}

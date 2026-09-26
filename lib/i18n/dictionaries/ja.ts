@@ -158,14 +158,8 @@ export const ja: Dictionary = {
     notFoundTitle: "そのリンクが見つかりませんでした",
     notFoundBody:
       "リンクの有効期限が切れているか、入力に誤りがある可能性があります。トップページからファウンディングメンバーにご登録ください。",
-    tierMsgToFirst:
-      "これまでに {referred} を紹介しています。あと {remaining} 人でリストの順位が上がります。",
-    tierMsgToPriority:
-      "これまでに {referred} を紹介し、リストの順位が上がりました。あと {remaining} 人で公開時の優先アクセスが得られます。",
-    tierMsgToVip:
-      "これまでに {referred} を紹介し、公開時の優先アクセスを獲得しました。あと {remaining} 人で VIP ファウンディングステータスです。",
-    tierMsgMax:
-      "これまでに {referred} を紹介し、VIP ファウンディングステータスを獲得しました。一緒に作ってくださってありがとうございます。",
+    referralMsg:
+      "これまでに {referred} を紹介しています。あなたのリンクから参加したダンサーの数だけ、リストの順位が上がります。",
     dancers: {
       one: "人のダンサー",
       few: "人のダンサー",

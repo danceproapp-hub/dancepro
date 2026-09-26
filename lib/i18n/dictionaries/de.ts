@@ -157,14 +157,8 @@ export const de: Dictionary = {
     notFoundTitle: "Diesen Link konnten wir nicht finden",
     notFoundBody:
       "Dein Wartelisten-Link ist vielleicht abgelaufen oder falsch eingegeben. Werde stattdessen über die Startseite Gründungsmitglied.",
-    tierMsgToFirst:
-      "Du hast {referred} empfohlen. Noch {remaining}, und du rückst auf der Warteliste vor.",
-    tierMsgToPriority:
-      "Du hast {referred} empfohlen und bist auf der Liste vorgerückt. Noch {remaining} für vorrangigen Zugang zum Start.",
-    tierMsgToVip:
-      "Du hast {referred} empfohlen und den vorrangigen Zugang zum Start freigeschaltet. Noch {remaining} für den VIP-Gründungsstatus.",
-    tierMsgMax:
-      "Du hast {referred} empfohlen und dir den VIP-Gründungsstatus verdient. Danke, dass du das mit uns aufbaust.",
+    referralMsg:
+      "Du hast {referred} empfohlen. Jeder Tänzer, der über deinen Link beitritt, bringt dich auf der Liste nach oben.",
     dancers: { one: "Tänzer", few: "Tänzer", many: "Tänzer", other: "Tänzer" },
   },
   howItWorks: {

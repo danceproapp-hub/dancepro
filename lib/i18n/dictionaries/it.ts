@@ -155,14 +155,8 @@ export const it: Dictionary = {
     notFoundTitle: "Non abbiamo trovato quel link",
     notFoundBody:
       "Il tuo link della lista d'attesa potrebbe essere scaduto o scritto male. Iscriviti ai membri fondatori dalla homepage.",
-    tierMsgToFirst:
-      "Hai invitato {referred}. Ancora {remaining} e sali nella lista d'attesa.",
-    tierMsgToPriority:
-      "Hai invitato {referred} e ora sei più in alto nella lista. Ancora {remaining} per l'accesso prioritario al lancio.",
-    tierMsgToVip:
-      "Hai invitato {referred} e hai sbloccato l'accesso prioritario al lancio. Ancora {remaining} per lo status fondatore VIP.",
-    tierMsgMax:
-      "Hai invitato {referred} e hai ottenuto lo status fondatore VIP. Grazie per costruire questo progetto con noi.",
+    referralMsg:
+      "Hai invitato {referred}. Ogni ballerino che si iscrive con il tuo link ti fa salire nella lista.",
     dancers: {
       one: "ballerino",
       few: "ballerini",

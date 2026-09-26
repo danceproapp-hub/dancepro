@@ -155,14 +155,8 @@ export const pl: Dictionary = {
     notFoundTitle: "Nie znaleźliśmy takiego linku",
     notFoundBody:
       "Twój link mógł wygasnąć albo został wpisany z błędem. Dołącz do członków założycieli ze strony głównej.",
-    tierMsgToFirst:
-      "Twoje zaproszenia: {referred}. Jeszcze {remaining} i awansujesz na liście.",
-    tierMsgToPriority:
-      "Twoje zaproszenia: {referred} — jesteś już wyżej na liście. Jeszcze {remaining} do priorytetowego dostępu na starcie.",
-    tierMsgToVip:
-      "Twoje zaproszenia: {referred} — masz priorytetowy dostęp na starcie. Jeszcze {remaining} do statusu VIP założyciela.",
-    tierMsgMax:
-      "Twoje zaproszenia: {referred} — masz status VIP założyciela. Dziękujemy, że budujesz to razem z nami.",
+    referralMsg:
+      "Twoje zaproszenia: {referred}. Każdy tancerz, który dołączy z twojego linku, podnosi cię na liście.",
     // Counting form for "Twoje zaproszenia: 1 tancerz / 2 tancerze /
     // 5 tancerzy", not the accusative used after a verb.
     dancers: {
