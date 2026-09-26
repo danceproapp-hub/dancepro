@@ -70,9 +70,6 @@ export const pl: Dictionary = {
     benefitAccessBody: "Do DancePro, zanim otworzy się dla wszystkich.",
     benefitPricingTitle: "Specjalna cena na start",
     benefitPricingBody: "Zablokowana tak długo, jak pozostajesz członkiem.",
-    benefitEventsTitle: "Zamknięte wydarzenia",
-    benefitEventsBody:
-      "Spotkania członków założycieli i imprezy organizowane przez DancePro.",
     benefitVoteTitle: "Głos w tym, co powstanie dalej",
     benefitVoteBody:
       "To, o co proszą członkowie założyciele, powstaje w pierwszej kolejności.",
@@ -188,7 +185,7 @@ export const pl: Dictionary = {
     intro:
       "Wszystko w DancePro jest zbudowane wokół jednej rzeczy: znalezienia właściwego partnera do twoich celów treningowych i turniejowych.",
     s1Body:
-      "Imię, miasto, style, które tańczysz, twoja rola, twój poziom i to, jakiej pary szukasz. Bądź precyzyjny: Leader, Follower albo obie role, od początkującego do Professional. Im dokładniejszy profil, tym lepszych tancerzy znajdziesz.",
+      "Imię, miasto, style, które tańczysz, twoja rola, twój poziom i to, jakiej pary szukasz. Im dokładniejszy profil, tym lepszych tancerzy znajdziesz.",
     s2Body:
       "Przeglądaj tancerzy z filtrami według stylu, roli, poziomu i miasta — albo po prostu zostaw profil otwarty i pozwól właściwym osobom znaleźć ciebie.",
     s3Body:
@@ -256,9 +253,6 @@ export const pl: Dictionary = {
     perkPricingTitle: "Specjalna cena na start",
     perkPricingBody:
       "Zablokowana dla członków założycieli tak długo, jak twoje członkostwo pozostaje aktywne.",
-    perkEventsTitle: "Zamknięte wydarzenia",
-    perkEventsBody:
-      "Spotkania członków założycieli, imprezy i pierwszy podgląd tego, co powstaje, zanim zobaczy to ktokolwiek inny.",
     perkVoteTitle: "Głos w tym, co powstanie dalej",
     perkVoteBody:
       "To, o co proszą członkowie założyciele, powstaje w pierwszej kolejności. To ty mówisz nam, czego potrzebuje sieć.",

@@ -67,8 +67,6 @@ export const zh: Dictionary = {
     benefitAccessBody: "在 DancePro 向所有人开放之前先行进入。",
     benefitPricingTitle: "特别首发价",
     benefitPricingBody: "只要你还是会员，价格就一直锁定。",
-    benefitEventsTitle: "专属活动",
-    benefitEventsBody: "创始会员聚会，以及由 DancePro 举办的舞会。",
     benefitVoteTitle: "对下一步的发言权",
     benefitVoteBody: "创始会员提出的需求会被优先实现。",
 
@@ -179,7 +177,7 @@ export const zh: Dictionary = {
     intro:
       "DancePro 的每一部分都围绕着一件事：为你的训练与比赛目标找到合适的舞伴。",
     s1Body:
-      "姓名、城市、你所跳的舞种、你的角色、你的水平，以及你想找什么样的搭档。写得具体一些：Leader、Follower 或两者皆可，从初学到 Professional。档案越准确，你找到的舞者就越合适。",
+      "姓名、城市、你所跳的舞种、你的角色、你的水平，以及你想找什么样的搭档。档案越准确，你找到的舞者就越合适。",
     s2Body:
       "按舞种、角色、水平和所在地筛选浏览符合你要求的舞者——或者干脆让档案保持开放，让对的人来找到你。",
     s3Body:
@@ -243,9 +241,6 @@ export const zh: Dictionary = {
     perkAccessBody: "比所有人都更早用上 DancePro。",
     perkPricingTitle: "特别首发价",
     perkPricingBody: "为创始会员锁定，只要你的会员资格保持有效就一直有效。",
-    perkEventsTitle: "专属活动",
-    perkEventsBody:
-      "创始会员聚会、舞会，以及在其他人看到之前先睹为快的新功能。",
     perkVoteTitle: "对下一步的发言权",
     perkVoteBody:
       "创始会员提出的需求会被优先实现。由你来告诉我们这个网络还缺什么。",

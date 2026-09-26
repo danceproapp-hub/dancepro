@@ -44,10 +44,6 @@ export default async function FoundingMembersPage({
       description: t.foundingMembers.perkPricingBody,
     },
     {
-      title: t.foundingMembers.perkEventsTitle,
-      description: t.foundingMembers.perkEventsBody,
-    },
-    {
       title: t.foundingMembers.perkVoteTitle,
       description: t.foundingMembers.perkVoteBody,
     },

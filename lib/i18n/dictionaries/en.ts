@@ -67,8 +67,6 @@ export const en = {
     benefitAccessBody: "Into DancePro before it opens to everyone else.",
     benefitPricingTitle: "Special launch pricing",
     benefitPricingBody: "Locked in for as long as you remain a member.",
-    benefitEventsTitle: "Exclusive events",
-    benefitEventsBody: "Founding member meetups and DancePro-hosted socials.",
     benefitVoteTitle: "A say in what comes next",
     benefitVoteBody: "What founding members ask for gets built first.",
 
@@ -182,7 +180,7 @@ export const en = {
      * the longer bodies live here.
      */
     s1Body:
-      "Your name, your city, the styles you dance, your role, your level, and the kind of partnership you're looking for. Be specific — Leader, Follower or both, beginner through Professional. The more precise your profile, the better the dancers you find.",
+      "Your name, your city, the styles you dance, your role, your level, and the kind of partnership you're looking for. The more precise your profile, the better the dancers you find.",
     s2Body:
       "Browse dancers who fit what you're looking for, filtered by style, role, level, and location — or simply keep your profile open and let the right people find you.",
     s3Body:
@@ -248,9 +246,6 @@ export const en = {
     perkPricingTitle: "Special launch pricing",
     perkPricingBody:
       "Locked in for founding members, for as long as you keep your membership active.",
-    perkEventsTitle: "Exclusive events",
-    perkEventsBody:
-      "Founding member meetups, socials, and a first look at what's coming before anyone else sees it.",
     perkVoteTitle: "A say in what comes next",
     perkVoteBody:
       "What founding members ask for gets built first. You tell us what the network needs.",

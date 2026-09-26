@@ -69,9 +69,6 @@ export const it: Dictionary = {
     benefitAccessBody: "A DancePro prima che apra a tutti gli altri.",
     benefitPricingTitle: "Prezzo speciale di lancio",
     benefitPricingBody: "Bloccato per tutto il tempo in cui resti membro.",
-    benefitEventsTitle: "Eventi esclusivi",
-    benefitEventsBody:
-      "Incontri tra membri fondatori e serate organizzate da DancePro.",
     benefitVoteTitle: "Voce in capitolo su cosa arriva",
     benefitVoteBody:
       "Quello che chiedono i membri fondatori viene costruito prima.",
@@ -186,7 +183,7 @@ export const it: Dictionary = {
     intro:
       "Ogni parte di DancePro è costruita intorno a una cosa sola: trovare il partner giusto per i tuoi obiettivi di allenamento e di gara.",
     s1Body:
-      "Il tuo nome, la tua città, gli stili che balli, il tuo ruolo, il tuo livello e che tipo di coppia cerchi. Sii preciso: Leader, Follower o entrambi, da principiante a Professional. Più preciso è il tuo profilo, migliori sono i ballerini che trovi.",
+      "Il tuo nome, la tua città, gli stili che balli, il tuo ruolo, il tuo livello e che tipo di coppia cerchi. Più preciso è il tuo profilo, migliori sono i ballerini che trovi.",
     s2Body:
       "Sfoglia i ballerini che corrispondono a quello che cerchi, filtrati per stile, ruolo, livello e località, oppure lascia semplicemente il profilo aperto e fatti trovare dalle persone giuste.",
     s3Body:
@@ -253,9 +250,6 @@ export const it: Dictionary = {
     perkPricingTitle: "Prezzo speciale di lancio",
     perkPricingBody:
       "Bloccato per i membri fondatori, per tutto il tempo in cui mantieni attiva l'iscrizione.",
-    perkEventsTitle: "Eventi esclusivi",
-    perkEventsBody:
-      "Incontri tra membri fondatori, serate e un'anteprima di quello che arriva prima che lo veda chiunque altro.",
     perkVoteTitle: "Voce in capitolo su cosa arriva",
     perkVoteBody:
       "Quello che chiedono i membri fondatori viene costruito prima. Sei tu a dirci di cosa ha bisogno la rete.",

@@ -70,9 +70,6 @@ export const ja: Dictionary = {
     benefitAccessBody: "一般公開より先に DancePro を使えます。",
     benefitPricingTitle: "特別なローンチ価格",
     benefitPricingBody: "メンバーでいる限り、その価格のまま固定されます。",
-    benefitEventsTitle: "限定イベント",
-    benefitEventsBody:
-      "ファウンディングメンバーの集まりと、DancePro 主催のパーティー。",
     benefitVoteTitle: "次に何を作るかへの発言権",
     benefitVoteBody:
       "ファウンディングメンバーからの要望が最優先で形になります。",
@@ -189,7 +186,7 @@ export const ja: Dictionary = {
     intro:
       "DancePro のすべては、ひとつのことを中心に作られています。あなたの練習と競技の目標に合ったパートナーを見つけることです。",
     s1Body:
-      "名前、都市、踊る種目、ロール、レベル、そしてどんなパートナーシップを求めているか。具体的に——Leader、Follower、またはその両方、初級から Professional まで。プロフィールが正確なほど、見つかるダンサーの質も上がります。",
+      "名前、都市、踊る種目、ロール、レベル、そしてどんなパートナーシップを求めているか。プロフィールが正確なほど、見つかるダンサーの質も上がります。",
     s2Body:
       "種目・ロール・レベル・地域で絞り込んで探せます。あるいはプロフィールを公開したままにして、ふさわしい相手から見つけてもらうこともできます。",
     s3Body:
@@ -255,9 +252,6 @@ export const ja: Dictionary = {
     perkPricingTitle: "特別なローンチ価格",
     perkPricingBody:
       "ファウンディングメンバー向けに固定され、メンバーシップが有効な限り続きます。",
-    perkEventsTitle: "限定イベント",
-    perkEventsBody:
-      "ファウンディングメンバーの集まり、パーティー、そして誰よりも早く次の機能を見られる機会。",
     perkVoteTitle: "次に何を作るかへの発言権",
     perkVoteBody:
       "ファウンディングメンバーからの要望が最優先で形になります。何が必要かを教えてください。",
