@@ -108,7 +108,7 @@ export default async function WelcomePage({
         body copy. Adding your details is the ask; referring is the
         follow-on.
       */}
-      <div className="w-[85%] max-w-md border border-line bg-panel p-5 sm:p-6">
+      <div className="w-[90%] max-w-md border border-line bg-panel p-4 sm:p-6">
         <h2 className="mb-2 text-[20px]">{t.welcome.moveUp}</h2>
         <p className="caption mb-4">
           {fill(t.welcome.referralMsg, {
