@@ -12,6 +12,9 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SITE_KEY =
   process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || TURNSTILE_TEST_SITE_KEY;
 
+// Where a dancer the bot check refuses can still reach a person.
+const FALLBACK_EMAIL = "danceproapp@gmail.com";
+
 interface Errors {
   firstName?: string;
   email?: string;
@@ -42,6 +45,12 @@ export function WaitlistForm({
   const [parentEmail, setParentEmail] = useState("");
   const [pendingFor, setPendingFor] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
+  // The human check can fail for a human: a VPN, a restricted network, or
+  // a country where Cloudflare is unreachable. Tracked separately from
+  // formError so the form can offer a way through instead of a shrug.
+  const [captchaFailed, setCaptchaFailed] = useState(false);
+  // Bumped to remount the widget, which is how Turnstile is retried.
+  const [captchaAttempt, setCaptchaAttempt] = useState(0);
   const refCodeRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -100,9 +109,16 @@ export function WaitlistForm({
         const { error } = (await response
           .json()
           .catch(() => ({ error: "" }))) as { error?: string };
-        setFormError(
-          error === "minors_unavailable" ? t.minorsUnavailable : t.errGeneric
-        );
+        // A rejected token is not a broken form, and saying "try again"
+        // to someone the bot check will refuse every time is a dead end.
+        if (error === "captcha") {
+          setCaptchaFailed(true);
+          setFormError(null);
+        } else {
+          setFormError(
+            error === "minors_unavailable" ? t.minorsUnavailable : t.errGeneric
+          );
+        }
         setSubmitting(false);
         setToken(null);
         return;
@@ -271,7 +287,44 @@ export function WaitlistForm({
         </p>
       )}
 
-      <Turnstile siteKey={SITE_KEY} onToken={setToken} />
+      {captchaFailed ? (
+        <div className="border border-line bg-ground p-5 text-center">
+          <p className="caption mb-4">{t.errCaptcha}</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setToken(null);
+                setCaptchaFailed(false);
+                setCaptchaAttempt((n) => n + 1);
+              }}
+              className="btn btn-secondary px-5 py-3"
+            >
+              {t.captchaRetry}
+            </button>
+            {/* Nobody is turned away for failing a bot check: a person
+                reads this mailbox, which no script can imitate. */}
+            <a
+              href={`mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(
+                t.captchaEmailSubject
+              )}`}
+              className="btn btn-secondary px-5 py-3"
+            >
+              {t.captchaEmail}
+            </a>
+          </div>
+        </div>
+      ) : (
+        <Turnstile
+          key={captchaAttempt}
+          siteKey={SITE_KEY}
+          onToken={(next) => {
+            setToken(next);
+            if (next) setCaptchaFailed(false);
+          }}
+          onError={() => setCaptchaFailed(true)}
+        />
+      )}
 
       <button
         type="submit"

@@ -74,6 +74,11 @@ export const it: Dictionary = {
     formSubtitle: "Prenota il tuo posto prima che apriamo al pubblico.",
   },
   signup: {
+    errCaptcha:
+      "Non è stato possibile completare il controllo di sicurezza. Può succedere con una VPN o su una rete con restrizioni: non significa che tu sia stato respinto.",
+    captchaRetry: "Riprova",
+    captchaEmail: "Iscriviti via email",
+    captchaEmailSubject: "Iscrizione ai membri fondatori di DancePro",
     privacyLink: "Come usiamo i tuoi dati",
     firstName: "Nome",
     email: "Email",

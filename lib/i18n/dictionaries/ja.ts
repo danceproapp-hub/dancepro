@@ -75,6 +75,11 @@ export const ja: Dictionary = {
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
   },
   signup: {
+    errCaptcha:
+      "セキュリティ確認を完了できませんでした。VPN や制限のあるネットワークでは起こりうることで、お断りしたわけではありません。",
+    captchaRetry: "もう一度試す",
+    captchaEmail: "メールで登録する",
+    captchaEmailSubject: "DancePro 創設メンバーへの登録",
     privacyLink: "情報の取り扱いについて",
     firstName: "お名前",
     email: "メールアドレス",

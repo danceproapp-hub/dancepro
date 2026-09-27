@@ -75,6 +75,11 @@ export const de: Dictionary = {
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
   },
   signup: {
+    errCaptcha:
+      "Die Sicherheitsprüfung konnte nicht abgeschlossen werden. Das kann mit einem VPN oder in einem eingeschränkten Netz passieren — es heißt nicht, dass du abgewiesen wurdest.",
+    captchaRetry: "Erneut versuchen",
+    captchaEmail: "Stattdessen per E-Mail beitreten",
+    captchaEmailSubject: "Beitritt zu den DancePro-Gründungsmitgliedern",
     privacyLink: "Wie wir deine Daten verwenden",
     firstName: "Vorname",
     email: "E-Mail",

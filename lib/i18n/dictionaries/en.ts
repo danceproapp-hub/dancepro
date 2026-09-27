@@ -72,6 +72,11 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    errCaptcha:
+      "The human check could not be completed. This can happen on a VPN or a restricted network — it does not mean you were turned away.",
+    captchaRetry: "Try again",
+    captchaEmail: "Join by email instead",
+    captchaEmailSubject: "Join the DancePro founding members",
     privacyLink: "How we use your details",
     firstName: "First name",
     email: "Email",

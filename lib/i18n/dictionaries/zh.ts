@@ -72,6 +72,11 @@ export const zh: Dictionary = {
     formSubtitle: "在我们向公众开放之前，先占好你的位置。",
   },
   signup: {
+    errCaptcha:
+      "安全验证未能完成。使用 VPN 或受限网络时可能出现这种情况，这并不表示您被拒绝。",
+    captchaRetry: "重试",
+    captchaEmail: "改用邮件加入",
+    captchaEmailSubject: "加入 DancePro 创始成员",
     privacyLink: "我们如何使用您的信息",
     firstName: "名字",
     email: "电子邮箱",

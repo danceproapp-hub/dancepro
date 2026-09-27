@@ -75,6 +75,11 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    errCaptcha:
+      "Nie udało się ukończyć sprawdzenia zabezpieczeń. Zdarza się to przy VPN lub w sieci z ograniczeniami — to nie jest odmowa.",
+    captchaRetry: "Spróbuj ponownie",
+    captchaEmail: "Dołącz przez e-mail",
+    captchaEmailSubject: "Dołączenie do członków założycieli DancePro",
     privacyLink: "Jak wykorzystujemy Twoje dane",
     firstName: "Imię",
     email: "E-mail",

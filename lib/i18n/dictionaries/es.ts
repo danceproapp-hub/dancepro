@@ -75,6 +75,11 @@ export const es: Dictionary = {
     formSubtitle: "Reserva tu lugar antes de que abramos al público.",
   },
   signup: {
+    errCaptcha:
+      "No se pudo completar la comprobación de seguridad. Puede pasar con una VPN o en una red restringida; no significa que te hayamos rechazado.",
+    captchaRetry: "Intentar de nuevo",
+    captchaEmail: "Unirte por correo",
+    captchaEmailSubject: "Unirme a los miembros fundadores de DancePro",
     privacyLink: "Cómo usamos tus datos",
     firstName: "Nombre",
     email: "Correo electrónico",
