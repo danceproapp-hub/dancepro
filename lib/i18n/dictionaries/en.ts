@@ -72,6 +72,7 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    privacyLink: "How we use your details",
     firstName: "First name",
     email: "Email",
     danceStyles: "Dance styles",
@@ -256,6 +257,61 @@ export const en = {
     laterBody:
       "Founding member status closes the day DancePro opens to the public — it isn't something you can earn after the fact. Launch pricing, the badge, and early access all belong to this group and this group only. Everyone who joins afterwards starts from zero.",
     cta: "Join the Founding Members",
+  },
+  privacy: {
+    metaTitle: "Privacy",
+    metaDescription:
+      "What DancePro collects when you join the founding members list, why we collect it, and who else can see it.",
+    eyebrow: "Privacy",
+    title: "Privacy policy",
+    updated: "Last updated 26 September 2026",
+    intro:
+      "DancePro is a waitlist for a network that hasn't opened yet. This page describes what the site actually does — not what a longer policy might allow it to do later.",
+
+    collectTitle: "What we collect",
+    collectBody:
+      "When you join: your first name, your email address, and the dance styles you picked. Afterwards you can add your city and country, your role, your level or competition divisions, and what you are looking for. Every one of those later fields is optional, and the list works without them.",
+    collectAgeBody:
+      "We also ask which age group you are in. If you are under 16, we ask for a parent or guardian's email address and nothing else about them.",
+    collectRefBody:
+      "If you arrived through another dancer's invitation link, we record which link it was, so that their invitations count.",
+
+    whyTitle: "Why we collect it",
+    whyBody:
+      "To tell you when DancePro opens, and to send occasional updates while it is being built. If you added your dance details, we use them to line up compatible partners before you get access. We do not advertise anything else to you, and we do not sell, rent or trade your address.",
+
+    sharingTitle: "Who else sees it",
+    sharingBody:
+      "Nobody receives this information for their own purposes. It passes through the companies that run the site for us, and only so that they can do that:",
+    sharingSupabase: "Supabase — stores the waitlist database.",
+    sharingVercel: "Vercel — hosts the site and serves these pages.",
+    sharingCloudflare:
+      "Cloudflare — runs the \"confirm you are human\" check on the signup form. It sees your IP address, not what you typed.",
+    sharingOpenMeteo:
+      "Open-Meteo — if you use the optional city box, the text you type there is sent to their service to find matching place names.",
+    sharingGmail:
+      "Gmail — delivers the confirmation email to a parent or guardian, in the one case where we send one.",
+
+    minorsTitle: "Dancers under 16",
+    minorsBody:
+      "If you tell us you are under 16, your place is held but counts for nothing until a parent or guardian confirms it by email. Until then you are not in the member count, you have no position on the list, and you do not count toward anyone's invitations. If nobody ever confirms, the entry stays inert. A parent or guardian can write to us to have it deleted at any time, without explaining why.",
+
+    keepTitle: "How long we keep it",
+    keepBody:
+      "Until DancePro opens and you have had a fair chance to make an account, or until you ask us to delete it — whichever comes first. If the project does not go ahead, the whole list is deleted.",
+
+    cookiesTitle: "Cookies",
+    cookiesBody:
+      "One cookie, which remembers the language you are reading the site in. There is no advertising on this site, and no analytics: nothing follows you here and nothing follows you away.",
+
+    rightsTitle: "Your choices",
+    rightsBody:
+      "Write to us and we will tell you what we hold about you, correct it, or delete it. You do not have to give a reason, and deleting means deleting — we do not keep a quiet copy.",
+
+    contactTitle: "Contact",
+    contactBody: "Anything on this page, or anything we have not answered here:",
+
+    link: "Privacy",
   },
   language: {
     label: "Language",

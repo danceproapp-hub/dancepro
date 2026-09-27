@@ -74,6 +74,7 @@ export const it: Dictionary = {
     formSubtitle: "Prenota il tuo posto prima che apriamo al pubblico.",
   },
   signup: {
+    privacyLink: "Come usiamo i tuoi dati",
     firstName: "Nome",
     email: "Email",
     danceStyles: "Stili di ballo",
@@ -259,6 +260,61 @@ export const it: Dictionary = {
     laterBody:
       "Lo status di membro fondatore si chiude il giorno in cui DancePro apre al pubblico: non è qualcosa che si possa guadagnare dopo. Il prezzo di lancio, il badge e l'accesso anticipato appartengono a questo gruppo e solo a questo gruppo. Chi si iscrive dopo parte da zero.",
     cta: "Unisciti ai membri fondatori",
+  },
+  privacy: {
+    metaTitle: "Privacy",
+    metaDescription:
+      "Cosa raccoglie DancePro quando entri nella lista dei membri fondatori, perché lo raccoglie e chi altro può vederlo.",
+    eyebrow: "Privacy",
+    title: "Informativa sulla privacy",
+    updated: "Ultimo aggiornamento: 26 settembre 2026",
+    intro:
+      "DancePro è una lista d'attesa per una rete che non ha ancora aperto. Questa pagina descrive ciò che il sito fa davvero, non ciò che un'informativa più lunga potrebbe permettergli di fare in futuro.",
+
+    collectTitle: "Cosa raccogliamo",
+    collectBody:
+      "Quando entri: il tuo nome, il tuo indirizzo email e gli stili che hai scelto. Dopo puoi aggiungere città e paese, il tuo ruolo, il tuo livello o le divisioni di gara e che cosa cerchi. Tutti questi campi successivi sono facoltativi e la lista funziona anche senza.",
+    collectAgeBody:
+      "Chiediamo anche a quale fascia d'età appartieni. Se hai meno di 16 anni, chiediamo l'indirizzo email di un genitore o di chi ne fa le veci, e nient'altro su quella persona.",
+    collectRefBody:
+      "Se sei arrivato tramite il link di invito di un altro ballerino, registriamo di quale link si tratta, così i suoi inviti vengono contati.",
+
+    whyTitle: "Perché lo raccogliamo",
+    whyBody:
+      "Per avvisarti quando DancePro apre e per mandarti qualche aggiornamento mentre viene costruito. Se hai aggiunto i tuoi dati di ballo, li usiamo per preparare partner compatibili prima che tu entri. Non ti pubblicizziamo nient'altro e non vendiamo, noleggiamo né scambiamo il tuo indirizzo.",
+
+    sharingTitle: "Chi altro lo vede",
+    sharingBody:
+      "Nessuno riceve queste informazioni per scopi propri. Passano attraverso le aziende che fanno funzionare il sito, e soltanto perché possano farlo:",
+    sharingSupabase: "Supabase — conserva il database della lista d'attesa.",
+    sharingVercel: "Vercel — ospita il sito e serve queste pagine.",
+    sharingCloudflare:
+      "Cloudflare — esegue il controllo \"conferma di essere umano\" sul modulo. Vede il tuo indirizzo IP, non quello che hai scritto.",
+    sharingOpenMeteo:
+      "Open-Meteo — se usi il campo facoltativo della città, il testo che digiti viene inviato al loro servizio per trovare nomi di luoghi corrispondenti.",
+    sharingGmail:
+      "Gmail — consegna l'email di conferma a un genitore o a chi ne fa le veci, nell'unico caso in cui ne inviamo una.",
+
+    minorsTitle: "Ballerini sotto i 16 anni",
+    minorsBody:
+      "Se ci dici di avere meno di 16 anni, il tuo posto viene tenuto ma non conta finché un genitore o chi ne fa le veci non lo conferma via email. Fino ad allora non compari nel conteggio dei membri, non hai una posizione in lista e non conti per gli inviti di nessuno. Se nessuno conferma, la voce resta inattiva. Un genitore o chi ne fa le veci può scriverci per farla cancellare in qualsiasi momento, senza spiegare il motivo.",
+
+    keepTitle: "Per quanto tempo lo conserviamo",
+    keepBody:
+      "Finché DancePro non apre e hai avuto una reale possibilità di creare un account, oppure finché non ci chiedi di cancellarlo — a seconda di cosa avviene prima. Se il progetto non va avanti, l'intera lista viene cancellata.",
+
+    cookiesTitle: "Cookie",
+    cookiesBody:
+      "Un solo cookie, che ricorda la lingua in cui stai leggendo il sito. Qui non c'è pubblicità e non c'è analitica: niente ti segue quando arrivi e niente ti segue quando esci.",
+
+    rightsTitle: "Le tue scelte",
+    rightsBody:
+      "Scrivici e ti diremo che cosa conserviamo su di te, lo correggeremo o lo cancelleremo. Non devi dare una motivazione, e cancellare vuol dire cancellare: non teniamo una copia di riserva.",
+
+    contactTitle: "Contatti",
+    contactBody: "Per qualsiasi cosa in questa pagina, o qualsiasi cosa a cui non abbiamo risposto qui:",
+
+    link: "Privacy",
   },
   language: {
     label: "Lingua",

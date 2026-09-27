@@ -75,6 +75,7 @@ export const es: Dictionary = {
     formSubtitle: "Reserva tu lugar antes de que abramos al público.",
   },
   signup: {
+    privacyLink: "Cómo usamos tus datos",
     firstName: "Nombre",
     email: "Correo electrónico",
     danceStyles: "Estilos de baile",
@@ -260,6 +261,61 @@ export const es: Dictionary = {
     laterBody:
       "El estatus de miembro fundador se cierra el día que DancePro abre al público: no es algo que puedas ganar después. El precio de lanzamiento, el distintivo y el acceso anticipado pertenecen a este grupo y solo a este grupo. Todos los que se unan después empiezan de cero.",
     cta: "Únete a los miembros fundadores",
+  },
+  privacy: {
+    metaTitle: "Privacidad",
+    metaDescription:
+      "Qué recoge DancePro cuando te unes a la lista de miembros fundadores, por qué lo recoge y quién más puede verlo.",
+    eyebrow: "Privacidad",
+    title: "Política de privacidad",
+    updated: "Última actualización: 26 de septiembre de 2026",
+    intro:
+      "DancePro es una lista de espera para una red que todavía no ha abierto. Esta página describe lo que el sitio hace realmente, no lo que una política más larga podría permitirle hacer más adelante.",
+
+    collectTitle: "Qué recogemos",
+    collectBody:
+      "Al unirte: tu nombre, tu dirección de correo y los estilos que elegiste. Después puedes añadir tu ciudad y país, tu rol, tu nivel o tus divisiones de competición, y lo que buscas. Todos esos campos posteriores son opcionales, y la lista funciona sin ellos.",
+    collectAgeBody:
+      "También preguntamos en qué grupo de edad estás. Si eres menor de 16 años, pedimos el correo de un padre, madre o tutor, y nada más sobre esa persona.",
+    collectRefBody:
+      "Si llegaste por el enlace de invitación de otro bailarín, registramos de qué enlace se trata, para que sus invitaciones cuenten.",
+
+    whyTitle: "Por qué lo recogemos",
+    whyBody:
+      "Para avisarte cuando DancePro abra y para enviarte alguna novedad mientras se construye. Si añadiste tus datos de baile, los usamos para preparar parejas compatibles antes de que entres. No te anunciamos nada más, y no vendemos, alquilamos ni intercambiamos tu dirección.",
+
+    sharingTitle: "Quién más lo ve",
+    sharingBody:
+      "Nadie recibe esta información para sus propios fines. Pasa por las empresas que hacen funcionar el sitio, y solo para que puedan hacerlo:",
+    sharingSupabase: "Supabase — guarda la base de datos de la lista de espera.",
+    sharingVercel: "Vercel — aloja el sitio y sirve estas páginas.",
+    sharingCloudflare:
+      "Cloudflare — ejecuta la comprobación de \"confirma que eres humano\" en el formulario. Ve tu dirección IP, no lo que escribiste.",
+    sharingOpenMeteo:
+      "Open-Meteo — si usas el campo opcional de ciudad, el texto que escribes se envía a su servicio para encontrar nombres de lugares que coincidan.",
+    sharingGmail:
+      "Gmail — entrega el correo de confirmación a un padre, madre o tutor, en el único caso en que enviamos uno.",
+
+    minorsTitle: "Bailarines menores de 16 años",
+    minorsBody:
+      "Si nos dices que tienes menos de 16 años, tu plaza queda reservada pero no cuenta para nada hasta que un padre, madre o tutor lo confirme por correo. Hasta entonces no apareces en el recuento de miembros, no tienes posición en la lista y no cuentas para las invitaciones de nadie. Si nadie lo confirma, la entrada permanece inactiva. Un padre, madre o tutor puede escribirnos para borrarla en cualquier momento, sin dar explicaciones.",
+
+    keepTitle: "Cuánto tiempo lo guardamos",
+    keepBody:
+      "Hasta que DancePro abra y hayas tenido una oportunidad razonable de crear una cuenta, o hasta que nos pidas que lo borremos, lo que ocurra antes. Si el proyecto no sigue adelante, se borra la lista entera.",
+
+    cookiesTitle: "Cookies",
+    cookiesBody:
+      "Una sola cookie, que recuerda el idioma en el que estás leyendo el sitio. Aquí no hay publicidad ni analítica: nada te sigue al llegar y nada te sigue al marcharte.",
+
+    rightsTitle: "Tus opciones",
+    rightsBody:
+      "Escríbenos y te diremos qué tenemos sobre ti, lo corregiremos o lo borraremos. No tienes que dar motivos, y borrar significa borrar: no guardamos una copia discreta.",
+
+    contactTitle: "Contacto",
+    contactBody: "Para cualquier cosa de esta página, o cualquier cosa que no hayamos respondido aquí:",
+
+    link: "Privacidad",
   },
   language: {
     label: "Idioma",

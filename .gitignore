@@ -27,3 +27,8 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# agent tooling: generated locally, not part of the site
+.claude
+AGENTS.md
+CLAUDE.md

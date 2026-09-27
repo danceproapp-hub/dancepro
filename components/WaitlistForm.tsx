@@ -281,7 +281,15 @@ export function WaitlistForm({
         {submitting ? t.submitting : t.submit}
       </button>
 
-      <p className="caption mx-auto text-center">{t.footnote}</p>
+      <p className="caption mx-auto text-center">
+        {t.footnote}{" "}
+        <a
+          href={`/${locale}/privacy`}
+          className="underline-offset-4 transition hover:text-paper hover:underline"
+        >
+          {t.privacyLink}
+        </a>
+      </p>
     </form>
   );
 }

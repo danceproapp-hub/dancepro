@@ -12,6 +12,7 @@ export function SiteFooter({
     { href: `/${locale}/how-it-works`, label: t.nav.howItWorks },
     { href: `/${locale}/dance-styles`, label: t.nav.danceStyles },
     { href: `/${locale}/founding-members`, label: t.nav.foundingMembers },
+    { href: `/${locale}/privacy`, label: t.privacy.link },
   ];
 
   return (

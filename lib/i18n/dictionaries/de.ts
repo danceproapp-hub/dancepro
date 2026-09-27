@@ -75,6 +75,7 @@ export const de: Dictionary = {
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
   },
   signup: {
+    privacyLink: "Wie wir deine Daten verwenden",
     firstName: "Vorname",
     email: "E-Mail",
     danceStyles: "Tanzstile",
@@ -257,6 +258,61 @@ export const de: Dictionary = {
     laterBody:
       "Der Status als Gründungsmitglied schließt an dem Tag, an dem DancePro öffentlich öffnet — man kann ihn sich nicht nachträglich verdienen. Startpreis, Abzeichen und früher Zugang gehören dieser Gruppe und nur dieser Gruppe. Alle, die später dazukommen, fangen bei null an.",
     cta: "Werde Gründungsmitglied",
+  },
+  privacy: {
+    metaTitle: "Datenschutz",
+    metaDescription:
+      "Was DancePro erhebt, wenn du der Liste der Gründungsmitglieder beitrittst, warum wir es erheben und wer es sonst noch sieht.",
+    eyebrow: "Datenschutz",
+    title: "Datenschutzerklärung",
+    updated: "Zuletzt aktualisiert am 26. September 2026",
+    intro:
+      "DancePro ist eine Warteliste für ein Netzwerk, das noch nicht geöffnet hat. Diese Seite beschreibt, was die Website tatsächlich tut — nicht, was eine längere Erklärung ihr später erlauben könnte.",
+
+    collectTitle: "Was wir erheben",
+    collectBody:
+      "Beim Beitritt: deinen Vornamen, deine E-Mail-Adresse und die Tanzstile, die du ausgewählt hast. Danach kannst du Stadt und Land, deine Rolle, dein Niveau oder deine Turnierklassen und das, wonach du suchst, ergänzen. Alle diese späteren Angaben sind freiwillig, und die Liste funktioniert auch ohne sie.",
+    collectAgeBody:
+      "Wir fragen außerdem nach deiner Altersgruppe. Wenn du unter 16 bist, fragen wir nach der E-Mail-Adresse eines Elternteils oder einer erziehungsberechtigten Person — und sonst nichts über diese Person.",
+    collectRefBody:
+      "Wenn du über den Einladungslink einer anderen tanzenden Person gekommen bist, halten wir fest, um welchen Link es sich handelte, damit deren Einladungen zählen.",
+
+    whyTitle: "Warum wir es erheben",
+    whyBody:
+      "Um dir zu sagen, wann DancePro öffnet, und um gelegentlich über den Fortschritt zu berichten. Wenn du deine Tanzangaben ergänzt hast, nutzen wir sie, um passende Partnerinnen und Partner vorzubereiten, bevor du Zugang bekommst. Wir bewerben dir nichts anderes, und wir verkaufen, vermieten oder tauschen deine Adresse nicht.",
+
+    sharingTitle: "Wer es sonst sieht",
+    sharingBody:
+      "Niemand erhält diese Angaben für eigene Zwecke. Sie laufen über die Unternehmen, die die Website für uns betreiben, und nur damit diese ihre Arbeit tun können:",
+    sharingSupabase: "Supabase — speichert die Datenbank der Warteliste.",
+    sharingVercel: "Vercel — hostet die Website und liefert diese Seiten aus.",
+    sharingCloudflare:
+      "Cloudflare — führt die Prüfung \"bestätige, dass du ein Mensch bist\" im Formular aus. Cloudflare sieht deine IP-Adresse, nicht das, was du eingegeben hast.",
+    sharingOpenMeteo:
+      "Open-Meteo — wenn du das freiwillige Städtefeld nutzt, wird der eingegebene Text an deren Dienst gesendet, um passende Ortsnamen zu finden.",
+    sharingGmail:
+      "Gmail — stellt die Bestätigungs-E-Mail an einen Elternteil oder eine erziehungsberechtigte Person zu, im einzigen Fall, in dem wir eine versenden.",
+
+    minorsTitle: "Tanzende unter 16",
+    minorsBody:
+      "Wenn du angibst, unter 16 zu sein, wird dein Platz freigehalten, zählt aber für nichts, bis ein Elternteil oder eine erziehungsberechtigte Person ihn per E-Mail bestätigt. Bis dahin erscheinst du nicht in der Mitgliederzahl, hast keine Position auf der Liste und zählst für niemandes Einladungen. Bestätigt niemand, bleibt der Eintrag wirkungslos. Ein Elternteil oder eine erziehungsberechtigte Person kann uns jederzeit schreiben, um ihn löschen zu lassen, ohne Begründung.",
+
+    keepTitle: "Wie lange wir es aufbewahren",
+    keepBody:
+      "Bis DancePro öffnet und du eine faire Gelegenheit hattest, ein Konto anzulegen, oder bis du uns bittest, es zu löschen — je nachdem, was zuerst eintritt. Wird das Projekt nicht weitergeführt, wird die gesamte Liste gelöscht.",
+
+    cookiesTitle: "Cookies",
+    cookiesBody:
+      "Ein einziges Cookie, das sich merkt, in welcher Sprache du die Website liest. Es gibt hier keine Werbung und keine Analyse: nichts verfolgt dich hierher und nichts verfolgt dich von hier fort.",
+
+    rightsTitle: "Deine Möglichkeiten",
+    rightsBody:
+      "Schreib uns, und wir sagen dir, was wir über dich gespeichert haben, berichtigen es oder löschen es. Du musst keinen Grund nennen, und Löschen heißt Löschen — wir behalten keine stille Kopie.",
+
+    contactTitle: "Kontakt",
+    contactBody: "Für alles auf dieser Seite oder alles, was wir hier nicht beantwortet haben:",
+
+    link: "Datenschutz",
   },
   language: {
     label: "Sprache",

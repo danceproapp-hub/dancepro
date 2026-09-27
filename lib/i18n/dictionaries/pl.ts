@@ -75,6 +75,7 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    privacyLink: "Jak wykorzystujemy Twoje dane",
     firstName: "Imię",
     email: "E-mail",
     danceStyles: "Style tańca",
@@ -262,6 +263,61 @@ export const pl: Dictionary = {
     laterBody:
       "Status członka założyciela zamyka się w dniu, w którym DancePro otwiera się dla wszystkich — nie da się go zdobyć później. Cena startowa, odznaka i wcześniejszy dostęp należą do tej grupy i tylko do niej. Wszyscy, którzy dołączą później, zaczynają od zera.",
     cta: "Dołącz do członków założycieli",
+  },
+  privacy: {
+    metaTitle: "Prywatność",
+    metaDescription:
+      "Co DancePro zbiera przy zapisie na listę członków założycieli, po co to zbiera i kto jeszcze to widzi.",
+    eyebrow: "Prywatność",
+    title: "Polityka prywatności",
+    updated: "Ostatnia aktualizacja: 26 września 2026",
+    intro:
+      "DancePro to lista oczekujących na sieć, która jeszcze nie ruszyła. Ta strona opisuje to, co serwis naprawdę robi — a nie to, na co dłuższy dokument mógłby mu pozwolić w przyszłości.",
+
+    collectTitle: "Co zbieramy",
+    collectBody:
+      "Przy zapisie: imię, adres e-mail oraz wybrane style. Później można dodać miasto i kraj, rolę, poziom lub klasy turniejowe i to, czego się szuka. Wszystkie te późniejsze pola są nieobowiązkowe, a lista działa i bez nich.",
+    collectAgeBody:
+      "Pytamy również o grupę wiekową. Osoby poniżej 16 lat proszone są o adres e-mail rodzica lub opiekuna — i o nic więcej na temat tej osoby.",
+    collectRefBody:
+      "Jeśli wejście nastąpiło przez link zapraszający innej osoby tańczącej, zapisujemy, który to był link, aby jej zaproszenia zostały policzone.",
+
+    whyTitle: "Po co to zbieramy",
+    whyBody:
+      "Aby dać znać, kiedy DancePro ruszy, i od czasu do czasu napisać o postępach. Jeśli dane taneczne zostały uzupełnione, wykorzystujemy je, żeby przygotować pasujących partnerów jeszcze przed uzyskaniem dostępu. Niczego innego nie reklamujemy i nie sprzedajemy, nie wynajmujemy ani nie wymieniamy adresów.",
+
+    sharingTitle: "Kto jeszcze to widzi",
+    sharingBody:
+      "Nikt nie otrzymuje tych informacji do własnych celów. Przechodzą przez firmy, które prowadzą dla nas serwis, i wyłącznie po to, by mogły wykonać swoją pracę:",
+    sharingSupabase: "Supabase — przechowuje bazę danych listy oczekujących.",
+    sharingVercel: "Vercel — hostuje serwis i serwuje te strony.",
+    sharingCloudflare:
+      "Cloudflare — przeprowadza w formularzu sprawdzenie \"potwierdź, że jesteś człowiekiem\". Widzi adres IP, a nie wpisaną treść.",
+    sharingOpenMeteo:
+      "Open-Meteo — przy korzystaniu z nieobowiązkowego pola miasta wpisywany tekst trafia do ich usługi, aby znaleźć pasujące nazwy miejsc.",
+    sharingGmail:
+      "Gmail — dostarcza e-mail potwierdzający rodzicowi lub opiekunowi, w jedynym przypadku, w którym go wysyłamy.",
+
+    minorsTitle: "Osoby tańczące poniżej 16 lat",
+    minorsBody:
+      "Po wskazaniu wieku poniżej 16 lat miejsce zostaje zachowane, ale nie liczy się do niczego, dopóki rodzic lub opiekun nie potwierdzi go e-mailem. Do tego czasu taka osoba nie pojawia się w liczniku członków, nie ma pozycji na liście i nie liczy się do niczyich zaproszeń. Jeśli nikt nie potwierdzi, wpis pozostaje bezczynny. Rodzic lub opiekun może napisać do nas i usunąć go w dowolnej chwili, bez podawania powodu.",
+
+    keepTitle: "Jak długo to przechowujemy",
+    keepBody:
+      "Do czasu uruchomienia DancePro i realnej możliwości założenia konta albo do momentu prośby o usunięcie — zależnie od tego, co nastąpi wcześniej. Jeśli projekt nie dojdzie do skutku, cała lista zostanie usunięta.",
+
+    cookiesTitle: "Pliki cookie",
+    cookiesBody:
+      "Jedno jedyne ciasteczko, które zapamiętuje język, w jakim czytana jest strona. Nie ma tu reklam ani analityki: nic nie śledzi drogi tutaj i nic nie śledzi drogi stąd.",
+
+    rightsTitle: "Twoje możliwości",
+    rightsBody:
+      "Napisz do nas, a powiemy, co przechowujemy, poprawimy to albo usuniemy. Nie trzeba podawać powodu, a usunięcie znaczy usunięcie — nie zostawiamy cichej kopii.",
+
+    contactTitle: "Kontakt",
+    contactBody: "W każdej sprawie z tej strony lub w sprawie, na którą tu nie odpowiedzieliśmy:",
+
+    link: "Prywatność",
   },
   language: {
     label: "Język",
