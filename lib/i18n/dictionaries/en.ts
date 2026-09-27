@@ -307,9 +307,9 @@ export const en = {
     keepBody:
       "Until DancePro opens and you have had a fair chance to make an account, or until you ask us to delete it — whichever comes first. If the project does not go ahead, the whole list is deleted.",
 
-    cookiesTitle: "Cookies",
+    cookiesTitle: "Cookies and counting visits",
     cookiesBody:
-      "One cookie, which remembers the language you are reading the site in. There is no advertising on this site, and no analytics: nothing follows you here and nothing follows you away.",
+      "One cookie, which remembers the language you are reading the site in. We also count page views, through Vercel Analytics, so we can tell how many dancers found the site — but it counts visits, not people: no cookie, no fingerprint, nothing that follows you to another site or identifies you here. There is no advertising anywhere on this site.",
 
     rightsTitle: "Your choices",
     rightsBody:

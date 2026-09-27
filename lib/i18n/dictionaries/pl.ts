@@ -313,9 +313,9 @@ export const pl: Dictionary = {
     keepBody:
       "Do czasu uruchomienia DancePro i realnej możliwości założenia konta albo do momentu prośby o usunięcie — zależnie od tego, co nastąpi wcześniej. Jeśli projekt nie dojdzie do skutku, cała lista zostanie usunięta.",
 
-    cookiesTitle: "Pliki cookie",
+    cookiesTitle: "Pliki cookie i liczenie odwiedzin",
     cookiesBody:
-      "Jedno jedyne ciasteczko, które zapamiętuje język, w jakim czytana jest strona. Nie ma tu reklam ani analityki: nic nie śledzi drogi tutaj i nic nie śledzi drogi stąd.",
+      "Jedno jedyne ciasteczko, które zapamiętuje język, w jakim czytana jest strona. Liczymy też odsłony, przez Vercel Analytics, żeby wiedzieć, ile osób tańczących trafiło na stronę. Liczone są odwiedziny, a nie osoby: bez ciasteczek, bez odcisku przeglądarki, bez niczego, co pójdzie za kimś na inną stronę albo rozpozna go tutaj. Reklam nie ma tu nigdzie.",
 
     rightsTitle: "Twoje możliwości",
     rightsBody:

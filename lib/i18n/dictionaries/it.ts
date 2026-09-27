@@ -310,9 +310,9 @@ export const it: Dictionary = {
     keepBody:
       "Finché DancePro non apre e hai avuto una reale possibilità di creare un account, oppure finché non ci chiedi di cancellarlo — a seconda di cosa avviene prima. Se il progetto non va avanti, l'intera lista viene cancellata.",
 
-    cookiesTitle: "Cookie",
+    cookiesTitle: "Cookie e conteggio delle visite",
     cookiesBody:
-      "Un solo cookie, che ricorda la lingua in cui stai leggendo il sito. Qui non c'è pubblicità e non c'è analitica: niente ti segue quando arrivi e niente ti segue quando esci.",
+      "Un solo cookie, che ricorda la lingua in cui stai leggendo il sito. Contiamo anche le visite alle pagine, tramite Vercel Analytics, per sapere quanti ballerini hanno trovato il sito; ma conta le visite, non le persone: nessun cookie, nessuna impronta digitale, niente che ti segua su un altro sito o che ti identifichi qui. Su questo sito non c'è alcuna pubblicità.",
 
     rightsTitle: "Le tue scelte",
     rightsBody:

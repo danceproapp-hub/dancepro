@@ -6,14 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { HydrationMark } from "@/components/HydrationMark";
 import { LOCALES, LOCALE_SCRIPT, isLocale, getDictionary } from "@/lib/i18n";
 import { display, body, displayCyrillic, bodyCyrillic } from "@/app/fonts";
-
-// VERCEL_URL is the per-deployment host (dancepro-abc123-….vercel.app),
-// which sits behind deployment protection: a social scraper following an
-// og:image URL built from it gets Vercel's login page, not the card. The
-// production alias is the one that is public.
-const host =
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
-const siteUrl = host ? `https://${host}` : "http://localhost:3000";
+import { siteUrl } from "@/lib/siteUrl";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -88,6 +81,20 @@ export default async function LocaleLayout({
         <SiteHeader locale={locale} t={t} />
         <main className="flex-1">{children}</main>
         <SiteFooter locale={locale} t={t} />
+        {/*
+          Counts page views, so a signup number can be read against how
+          many dancers arrived at all. No cookie and no fingerprint, which
+          is why the privacy page can still say nothing here follows you.
+
+          Vercel serves this script itself, so the @vercel/analytics
+          package would only add a dependency to insert one tag — and this
+          project keeps its dependencies few on purpose. Rendered only on
+          Vercel, because the path does not exist locally and a 404 in the
+          console on every dev page load is noise that hides real errors.
+        */}
+        {process.env.VERCEL && (
+          <script defer src="/_vercel/insights/script.js" />
+        )}
       </body>
     </html>
   );

@@ -303,9 +303,9 @@ export const zh: Dictionary = {
     keepBody:
       "直到 DancePro 开放、并且您有充分机会注册账号为止，或者直到您要求删除为止——以先发生者为准。如果项目未能继续，整份名单都会被删除。",
 
-    cookiesTitle: "Cookie",
+    cookiesTitle: "Cookie 与访问统计",
     cookiesBody:
-      "只有一个 cookie，用来记住您正在以哪种语言阅读本站。这里没有广告，也没有统计分析：没有任何东西跟着您进来，也没有任何东西跟着您离开。",
+      "只有一个 cookie，用来记住您正在以哪种语言阅读本站。我们还通过 Vercel Analytics 统计页面访问量，以了解有多少舞者找到了本站。统计的是访问次数而不是个人：不使用 cookie，不做浏览器指纹，没有任何东西会跟着您到别的网站，也不会在这里识别您。本站没有任何广告。",
 
     rightsTitle: "您的选择",
     rightsBody:
