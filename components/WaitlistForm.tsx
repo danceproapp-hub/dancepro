@@ -4,10 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { REFERRAL_STORAGE_KEY } from "@/lib/waitlistOptions";
 import { DANCE_STYLES } from "@/lib/danceStyles";
-import { joinWaitlist } from "@/lib/supabase";
+import { Turnstile, TURNSTILE_TEST_SITE_KEY } from "@/components/Turnstile";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || TURNSTILE_TEST_SITE_KEY;
 
 interface Errors {
   firstName?: string;
@@ -30,6 +33,7 @@ export function WaitlistForm({
   const [styles, setStyles] = useState<string[]>([]);
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const refCodeRef = useRef<string | null>(null);
 
@@ -61,16 +65,27 @@ export function WaitlistForm({
     setFormError(null);
 
     try {
-      const code = await joinWaitlist({
-        firstName: firstName.trim(),
-        email: email.trim(),
-        styles,
-        ref: refCodeRef.current,
+      // Through our own route, not straight to the database: that is
+      // where the Turnstile token is checked.
+      const response = await fetch("/api/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: firstName.trim(),
+          email: email.trim(),
+          styles,
+          ref: refCodeRef.current,
+          token,
+        }),
       });
+
+      if (!response.ok) throw new Error("join failed");
+      const { code } = (await response.json()) as { code: string };
       router.push(`/${locale}/welcome?code=${encodeURIComponent(code)}`);
     } catch {
       setFormError(t.errGeneric);
       setSubmitting(false);
+      setToken(null);
     }
   }
 
@@ -154,6 +169,8 @@ export function WaitlistForm({
           {formError}
         </p>
       )}
+
+      <Turnstile siteKey={SITE_KEY} onToken={setToken} />
 
       <button
         type="submit"
