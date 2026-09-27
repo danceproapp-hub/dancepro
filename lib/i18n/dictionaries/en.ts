@@ -72,6 +72,8 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    captchaEmailIntro:
+      "The security check wouldn't let me through. Please add me to the founding members list:",
     errCaptcha:
       "The human check could not be completed. This can happen on a VPN or a restricted network — it does not mean you were turned away.",
     captchaRetry: "Try again",

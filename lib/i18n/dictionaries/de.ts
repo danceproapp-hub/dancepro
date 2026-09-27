@@ -75,6 +75,8 @@ export const de: Dictionary = {
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
   },
   signup: {
+    captchaEmailIntro:
+      "Die Sicherheitsprüfung hat mich nicht durchgelassen. Bitte nehmt mich in die Liste der Gründungsmitglieder auf:",
     errCaptcha:
       "Die Sicherheitsprüfung konnte nicht abgeschlossen werden. Das kann mit einem VPN oder in einem eingeschränkten Netz passieren — es heißt nicht, dass du abgewiesen wurdest.",
     captchaRetry: "Erneut versuchen",

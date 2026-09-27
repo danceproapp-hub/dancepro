@@ -75,6 +75,8 @@ export const ja: Dictionary = {
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
   },
   signup: {
+    captchaEmailIntro:
+      "セキュリティ確認を通過できませんでした。創設メンバーのリストに追加してください：",
     errCaptcha:
       "セキュリティ確認を完了できませんでした。VPN や制限のあるネットワークでは起こりうることで、お断りしたわけではありません。",
     captchaRetry: "もう一度試す",

@@ -74,6 +74,8 @@ export const it: Dictionary = {
     formSubtitle: "Prenota il tuo posto prima che apriamo al pubblico.",
   },
   signup: {
+    captchaEmailIntro:
+      "Il controllo di sicurezza non mi ha fatto passare. Per favore aggiungetemi alla lista dei membri fondatori:",
     errCaptcha:
       "Non è stato possibile completare il controllo di sicurezza. Può succedere con una VPN o su una rete con restrizioni: non significa che tu sia stato respinto.",
     captchaRetry: "Riprova",

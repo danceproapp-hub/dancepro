@@ -75,6 +75,8 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    captchaEmailIntro:
+      "Sprawdzenie zabezpieczeń mnie nie przepuściło. Proszę o dodanie mnie do listy członków założycieli:",
     errCaptcha:
       "Nie udało się ukończyć sprawdzenia zabezpieczeń. Zdarza się to przy VPN lub w sieci z ograniczeniami — to nie jest odmowa.",
     captchaRetry: "Spróbuj ponownie",

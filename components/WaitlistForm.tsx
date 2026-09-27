@@ -147,6 +147,29 @@ export function WaitlistForm({
     }
   }
 
+  /**
+   * The fallback email, pre-written from what is already on screen. The
+   * labels are the form's own, so each line arrives in the language the
+   * dancer was reading — and it costs no extra translation.
+   */
+  function fallbackMailto() {
+    const lines = [t.captchaEmailIntro, ""];
+    if (firstName.trim()) lines.push(`${t.firstName}: ${firstName.trim()}`);
+    if (email.trim()) lines.push(`${t.email}: ${email.trim()}`);
+    if (styles.length > 0) lines.push(`${t.danceStyles}: ${styles.join(", ")}`);
+    if (age) {
+      lines.push(`${t.ageLabel}: ${age === "minor" ? t.ageUnder16 : t.age16}`);
+    }
+    if (age === "minor" && parentEmail.trim()) {
+      lines.push(`${t.parentEmail}: ${parentEmail.trim()}`);
+    }
+    return (
+      `mailto:${FALLBACK_EMAIL}` +
+      `?subject=${encodeURIComponent(t.captchaEmailSubject)}` +
+      `&body=${encodeURIComponent(lines.join("\n"))}`
+    );
+  }
+
   if (pendingFor) {
     return (
       <div
@@ -303,11 +326,12 @@ export function WaitlistForm({
               {t.captchaRetry}
             </button>
             {/* Nobody is turned away for failing a bot check: a person
-                reads this mailbox, which no script can imitate. */}
+                reads this mailbox, which no script can imitate. The
+                message arrives already filled in, because asking someone
+                to type it all again — right after telling them they look
+                like a robot — is where they give up. */}
             <a
-              href={`mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent(
-                t.captchaEmailSubject
-              )}`}
+              href={fallbackMailto()}
               className="btn btn-secondary px-5 py-3"
             >
               {t.captchaEmail}
