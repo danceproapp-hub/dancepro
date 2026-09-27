@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { emailConfigured, sendParentConsentEmail } from "@/lib/email";
+import { isLocale, DEFAULT_LOCALE } from "@/lib/i18n";
 
 const VERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -28,6 +30,13 @@ export async function POST(request: Request) {
     : [];
   const ref = typeof body.ref === "string" ? body.ref : null;
   const token = typeof body.token === "string" ? body.token : "";
+  const isMinor = body.isMinor === true;
+  const parentEmail =
+    typeof body.parentEmail === "string" ? body.parentEmail : "";
+  const locale =
+    typeof body.locale === "string" && isLocale(body.locale)
+      ? body.locale
+      : DEFAULT_LOCALE;
 
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (secret) {
@@ -63,8 +72,48 @@ export async function POST(request: Request) {
     auth: { persistSession: false },
   });
 
-  // The database function does the real validation; it raises on a blank
+  // An under-16 needs a parent's confirmation, and that confirmation
+  // arrives by email. With no mailbox configured there is no way to ask,
+  // so refuse rather than store a child's details that can never be
+  // confirmed.
+  if (isMinor && !emailConfigured()) {
+    return NextResponse.json({ error: "minors_unavailable" }, { status: 503 });
+  }
+
+  // The database functions do the real validation; they raise on a blank
   // name, a malformed address or no styles.
+  if (isMinor) {
+    const { data, error } = await supabase.rpc("join_waitlist_minor", {
+      p_first_name: firstName,
+      p_email: email,
+      p_styles: styles,
+      p_ref: ref,
+      p_parent_email: parentEmail,
+    });
+
+    if (error || !data) {
+      return NextResponse.json({ error: "rejected" }, { status: 400 });
+    }
+
+    const { token: consentToken } = data as { code: string; token: string };
+    const origin = new URL(request.url).origin;
+    const sent = await sendParentConsentEmail({
+      to: parentEmail,
+      dancerName: firstName,
+      confirmUrl: `${origin}/${locale}/consent?token=${encodeURIComponent(
+        consentToken
+      )}`,
+      locale,
+    });
+
+    if (!sent) {
+      return NextResponse.json({ error: "email_failed" }, { status: 502 });
+    }
+
+    // No code back: the dancer has no place to see until a parent agrees.
+    return NextResponse.json({ pending: true, parentEmail });
+  }
+
   const { data, error } = await supabase.rpc("join_waitlist", {
     p_first_name: firstName,
     p_email: email,

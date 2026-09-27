@@ -10,6 +10,8 @@
 -- breaks: the route falls back to the publishable key until then.
 
 revoke execute on function public.join_waitlist(text, text, text[], text) from anon;
+revoke execute on function public.join_waitlist_minor(text, text, text[], text, text) from anon;
+revoke execute on function public.confirm_parent_consent(text) from anon;
 
 -- Reads stay open: they return counts and a single row by referral code,
 -- never the table itself.

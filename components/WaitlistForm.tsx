@@ -16,7 +16,11 @@ interface Errors {
   firstName?: string;
   email?: string;
   styles?: string;
+  age?: string;
+  parentEmail?: string;
 }
+
+type AgeGroup = "" | "adult" | "minor";
 
 export function WaitlistForm({
   locale,
@@ -34,6 +38,9 @@ export function WaitlistForm({
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [token, setToken] = useState<string | null>(null);
+  const [age, setAge] = useState<AgeGroup>("");
+  const [parentEmail, setParentEmail] = useState("");
+  const [pendingFor, setPendingFor] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const refCodeRef = useRef<string | null>(null);
 
@@ -57,6 +64,13 @@ export function WaitlistForm({
     else if (!EMAIL_PATTERN.test(email.trim()))
       next.email = t.errEmailInvalid;
     if (styles.length === 0) next.styles = t.errStyles;
+    if (!age) next.age = t.errAge;
+    // Under 16 cannot consent for themselves, so we need somewhere to ask.
+    if (age === "minor") {
+      if (!parentEmail.trim()) next.parentEmail = t.errParentEmail;
+      else if (!EMAIL_PATTERN.test(parentEmail.trim()))
+        next.parentEmail = t.errParentEmail;
+    }
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -76,17 +90,59 @@ export function WaitlistForm({
           styles,
           ref: refCodeRef.current,
           token,
+          isMinor: age === "minor",
+          parentEmail: parentEmail.trim(),
+          locale,
         }),
       });
 
-      if (!response.ok) throw new Error("join failed");
-      const { code } = (await response.json()) as { code: string };
-      router.push(`/${locale}/welcome?code=${encodeURIComponent(code)}`);
+      if (!response.ok) {
+        const { error } = (await response
+          .json()
+          .catch(() => ({ error: "" }))) as { error?: string };
+        setFormError(
+          error === "minors_unavailable" ? t.minorsUnavailable : t.errGeneric
+        );
+        setSubmitting(false);
+        setToken(null);
+        return;
+      }
+
+      const result = (await response.json()) as {
+        code?: string;
+        pending?: boolean;
+        parentEmail?: string;
+      };
+
+      // A minor has no place to see yet: it exists once a parent agrees.
+      if (result.pending) {
+        setPendingFor(result.parentEmail ?? parentEmail.trim());
+        setSubmitting(false);
+        return;
+      }
+
+      router.push(
+        `/${locale}/welcome?code=${encodeURIComponent(result.code ?? "")}`
+      );
     } catch {
       setFormError(t.errGeneric);
       setSubmitting(false);
       setToken(null);
     }
+  }
+
+  if (pendingFor) {
+    return (
+      <div
+        id="join"
+        className="mx-auto max-w-xl border border-gold/40 bg-panel p-6 text-center sm:p-8"
+      >
+        <h2 className="text-[22px] sm:text-[26px]">{t.pendingTitle}</h2>
+        <p className="mx-auto mt-3 max-w-md text-muted">
+          {t.pendingBody.replace("{email}", pendingFor)}
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -163,6 +219,51 @@ export function WaitlistForm({
           </p>
         )}
       </div>
+
+      <div className="flex flex-col gap-2">
+        <span className="label">{t.ageLabel}</span>
+        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t.ageLabel}>
+          {([["adult", t.age16], ["minor", t.ageUnder16]] as const).map(
+            ([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                aria-pressed={age === value}
+                onClick={() => setAge(value)}
+                className="chip"
+              >
+                {label}
+              </button>
+            )
+          )}
+        </div>
+        {errors.age && (
+          <p className="caption text-red-400" role="alert">
+            {errors.age}
+          </p>
+        )}
+      </div>
+
+      {age === "minor" && (
+        <div className="flex flex-col gap-2">
+          <label htmlFor="parentEmail" className="label">
+            {t.parentEmail}
+          </label>
+          <input
+            id="parentEmail"
+            type="email"
+            autoComplete="off"
+            value={parentEmail}
+            onChange={(e) => setParentEmail(e.target.value)}
+            className={`input ${errors.parentEmail ? "is-invalid" : ""}`}
+          />
+          {errors.parentEmail && (
+            <p className="caption text-red-400" role="alert">
+              {errors.parentEmail}
+            </p>
+          )}
+        </div>
+      )}
 
       {formError && (
         <p role="alert" className="caption text-red-400">
