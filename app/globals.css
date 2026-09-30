@@ -346,6 +346,26 @@
     transition-duration: 0.26s;
   }
 
+  /*
+   * How long it stays lit. A tap is over in about a tenth of a second, so
+   * what a thumb actually sees is mostly the way back — and at the stock
+   * 0.3s the gold was gone almost before the finger was. Fading out over
+   * two thirds of a second leaves the answer on screen while the page is
+   * still changing, instead of snapping off behind it.
+   */
+  .btn-gentle {
+    transition-duration: 0.66s;
+  }
+
+  /*
+   * And a smaller rise. 2px is right under a cursor, which hovers and
+   * holds; under a thumb the same distance arrives all at once and reads
+   * as a hop. Half of it is a nudge.
+   */
+  .btn-lift.btn-gentle:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
   /* Inputs — ground background, hairline border, gold-dp focus */
   .input {
     display: block;
