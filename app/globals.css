@@ -343,18 +343,23 @@
    * identical, so source order decides.
    */
   .btn-gentle:active:not(:disabled) {
-    transition-duration: 0.26s;
+    /*
+     * Straight to full gold. Easing the press IN was the mistake: a tap
+     * lasts about a tenth of a second, so a quarter-second fade meant the
+     * button never got much past a third lit before the finger left. Less
+     * happened, not more. The softness belongs entirely on the way out.
+     */
+    transition-duration: 0.04s;
   }
 
   /*
-   * How long it stays lit. A tap is over in about a tenth of a second, so
-   * what a thumb actually sees is mostly the way back — and at the stock
-   * 0.3s the gold was gone almost before the finger was. Fading out over
-   * two thirds of a second leaves the answer on screen while the page is
-   * still changing, instead of snapping off behind it.
+   * The whole of the softness. A tap is over in a tenth of a second, so
+   * nearly everything a thumb sees is the way back: this is the light
+   * dimming and the button settling, over most of a second, long after
+   * the finger has gone.
    */
   .btn-gentle {
-    transition-duration: 0.66s;
+    transition-duration: 0.95s;
   }
 
   /*
