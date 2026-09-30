@@ -454,24 +454,30 @@
     display: none;
   }
 
+  /*
+   * Drawn, not typed. ">" is a maths glyph: its weight and its angle are
+   * whatever the body face decided, and at this size Jost draws it heavy
+   * enough to read as code. Two 1px borders on a rotated box give a true
+   * hairline — the same weight as the card's own border, which is what
+   * makes it sit quietly inside the rule rather than shouting over it.
+   */
   .pillar-mark {
     flex: none;
-    font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 1;
-    color: var(--color-gold);
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid var(--color-gold);
+    border-bottom: 1px solid var(--color-gold);
+    /* The rotated square is ~8.5px across, so nudge it off the edge. */
+    margin-right: 2px;
+    /* Points right while closed... */
+    transform: rotate(-45deg);
     transition: transform 0.25s var(--ease-out-soft);
   }
 
-  .pillar-mark::before {
-    content: ">";
-  }
-
-  /* Points right when closed, down when open — a quarter turn, so the
-     chevron reads as the direction the card is about to move. */
+  /* ...and down once open. Right-closed, down-open is the disclosure
+     convention — the quarter turn says where the copy is about to go. */
   .pillar[open] > .pillar-summary .pillar-mark {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
   }
 
   @media (max-width: 639.98px) {
