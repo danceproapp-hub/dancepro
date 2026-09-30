@@ -54,6 +54,12 @@ export function WaitlistForm({
   const [captchaFailed, setCaptchaFailed] = useState(false);
   // Bumped to remount the widget, which is how Turnstile is retried.
   const [captchaAttempt, setCaptchaAttempt] = useState(0);
+  // The mail app has been asked for. Not proof anything was sent — only
+  // that we owe them an explanation of what happens next.
+  const [emailOpened, setEmailOpened] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  // The address on screen, so a refused clipboard can select it instead.
+  const emailRef = useRef<HTMLParagraphElement>(null);
   const refCodeRef = useRef<string | null>(null);
   // Their own code from a previous visit, if they already joined here.
   const [joinedCode, setJoinedCode] = useState<string | null>(null);
@@ -234,6 +240,30 @@ export function WaitlistForm({
     );
   }
 
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(FALLBACK_EMAIL);
+      setCopiedEmail(true);
+      window.setTimeout(() => setCopiedEmail(false), 2000);
+    } catch {
+      /*
+       * The clipboard can be refused outright — permission denied, plain
+       * http, an older browser — and it throws rather than warning. Doing
+       * nothing here would leave a button that looks broken to someone
+       * already being told they look like a robot. Selecting the address
+       * instead keeps the press visibly doing something, and leaves a
+       * manual copy one keystroke away.
+       */
+      const node = emailRef.current;
+      if (!node) return;
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    }
+  }
+
   if (pendingFor) {
     return (
       <div
@@ -374,7 +404,45 @@ export function WaitlistForm({
         </p>
       )}
 
-      {captchaFailed ? (
+      {captchaFailed && emailOpened ? (
+        /*
+         * After the mail app has been asked for. Two different people need
+         * this screen: on a phone the message really did open, and this is
+         * the only thing that tells them it worked once they come back from
+         * Mail. On a desktop with no mail client, mailto: does nothing at
+         * all — silently — so the address has to be here as text they can
+         * take, or they are stranded with no way to reach anyone.
+         */
+        <div className="border border-gold/40 bg-ground p-5 text-center">
+          <p className="caption mb-1 text-paper">{t.captchaSentTitle}</p>
+          <p className="caption mb-4">{t.captchaSentBody}</p>
+          <p className="caption mb-2">{t.captchaSentNothing}</p>
+          <p ref={emailRef} className="mb-4 break-all text-gold select-all">
+            {FALLBACK_EMAIL}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="btn btn-secondary px-5 py-3"
+            >
+              {copiedEmail ? t.captchaCopied : t.captchaCopy}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setEmailOpened(false);
+                setToken(null);
+                setCaptchaFailed(false);
+                setCaptchaAttempt((n) => n + 1);
+              }}
+              className="btn btn-secondary px-5 py-3"
+            >
+              {t.captchaRetry}
+            </button>
+          </div>
+        </div>
+      ) : captchaFailed ? (
         <div className="border border-line bg-ground p-5 text-center">
           <p className="caption mb-4">{t.errCaptcha}</p>
           <div className="flex flex-wrap justify-center gap-3">
@@ -396,6 +464,7 @@ export function WaitlistForm({
                 like a robot — is where they give up. */}
             <a
               href={fallbackMailto()}
+              onClick={() => setEmailOpened(true)}
               className="btn btn-secondary px-5 py-3"
             >
               {t.captchaEmail}

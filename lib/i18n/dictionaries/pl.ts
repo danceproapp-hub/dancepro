@@ -75,6 +75,12 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    captchaSentTitle: "Sprawdź aplikację pocztową",
+    captchaSentBody:
+      "Powinna otworzyć się wiadomość z podanymi danymi. Wystarczy ją wysłać, a dopiszemy Cię do listy ręcznie.",
+    captchaSentNothing: "Nic się nie otworzyło? Napisz do nas:",
+    captchaCopy: "Kopiuj adres",
+    captchaCopied: "Skopiowano",
     alreadyTitle: "Jesteś już na liście",
     alreadyBody:
       "Z tego urządzenia nastąpiło już dołączenie do członków założycieli. Miejsce jest zapisane — nie trzeba rejestrować się ponownie.",

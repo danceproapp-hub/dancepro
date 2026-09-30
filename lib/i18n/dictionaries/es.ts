@@ -75,6 +75,12 @@ export const es: Dictionary = {
     formSubtitle: "Reserva tu lugar antes de que abramos al público.",
   },
   signup: {
+    captchaSentTitle: "Revisa tu aplicación de correo",
+    captchaSentBody:
+      "Debería haberse abierto un mensaje con tus datos. Envíalo y te añadiremos a la lista a mano.",
+    captchaSentNothing: "¿No se abrió nada? Escríbenos a:",
+    captchaCopy: "Copiar dirección",
+    captchaCopied: "Copiado",
     alreadyTitle: "Ya estás dentro",
     alreadyBody:
       "Te uniste a los miembros fundadores desde este dispositivo. Tu plaza está guardada; no hace falta que te registres otra vez.",

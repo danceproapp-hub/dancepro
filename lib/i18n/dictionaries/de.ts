@@ -75,6 +75,12 @@ export const de: Dictionary = {
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
   },
   signup: {
+    captchaSentTitle: "Sieh in deiner Mail-App nach",
+    captchaSentBody:
+      "Eine Nachricht mit deinen Angaben sollte sich geöffnet haben. Schick sie ab, und wir tragen dich von Hand ein.",
+    captchaSentNothing: "Es hat sich nichts geöffnet? Schreib uns an:",
+    captchaCopy: "Adresse kopieren",
+    captchaCopied: "Kopiert",
     alreadyTitle: "Du bist schon dabei",
     alreadyBody:
       "Du bist den Gründungsmitgliedern von diesem Gerät aus beigetreten. Dein Platz ist gesichert — eine zweite Anmeldung ist nicht nötig.",

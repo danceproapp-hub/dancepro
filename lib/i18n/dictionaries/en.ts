@@ -72,6 +72,12 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    captchaSentTitle: "Check your mail app",
+    captchaSentBody:
+      "A message with your details should have opened. Send it and we'll add you to the list by hand.",
+    captchaSentNothing: "Nothing opened? Write to us at:",
+    captchaCopy: "Copy address",
+    captchaCopied: "Copied",
     alreadyTitle: "You're already in",
     alreadyBody:
       "You joined the founding members from this device. Your place is saved — there's no need to sign up again.",

@@ -75,6 +75,12 @@ export const ja: Dictionary = {
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
   },
   signup: {
+    captchaSentTitle: "メールアプリをご確認ください",
+    captchaSentBody:
+      "入力内容を記したメールが開いているはずです。送信いただければ、こちらで手作業でリストに追加します。",
+    captchaSentNothing: "何も開きませんでしたか？こちらまでご連絡ください：",
+    captchaCopy: "アドレスをコピー",
+    captchaCopied: "コピーしました",
     alreadyTitle: "すでに登録済みです",
     alreadyBody:
       "この端末から創設メンバーに登録済みです。席は確保されていますので、もう一度登録する必要はありません。",
