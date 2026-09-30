@@ -24,7 +24,7 @@ export const de: Dictionary = {
     socialProof: "Schließe dich {count} Tänzern an, die schon auf der Liste sind.",
 
     ideaEyebrow: "Wie es sich anfühlt",
-    ideaTitle: "Stell dir vor, du findest deinen Partner an einem Nachmittag.",
+    ideaTitle: "Weniger suchen. Mehr tanzen.",
     ideaBody:
       "Sag, was du tanzt, dein Niveau und deine Rolle, und sieh, wer genau das sucht — in deinem Studio, am anderen Ende der Welt oder bereit, dorthin zu ziehen, wo du bist. Keine Gruppenposts, kein Warten, bis ein Trainer sich umhört.",
 

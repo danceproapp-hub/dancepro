@@ -102,6 +102,14 @@
     font-family: var(--font-display);
     font-weight: 400;
     color: var(--color-paper);
+    /*
+     * Even out the lines rather than filling each one before wrapping.
+     * Left alone, "Less searching. More dancing." breaks after "More"
+     * and strands "dancing." on a line of its own; balanced, it breaks
+     * where the sentence does. Ignored by browsers that lack it, which
+     * simply get the greedy wrap they got before.
+     */
+    text-wrap: balance;
   }
 
   h1 {

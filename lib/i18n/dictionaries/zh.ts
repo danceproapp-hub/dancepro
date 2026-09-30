@@ -24,7 +24,7 @@ export const zh: Dictionary = {
     socialProof: "加入已在名单上的 {count} 名舞者。",
 
     ideaEyebrow: "它是什么样子",
-    ideaTitle: "想象一个下午就找到舞伴。",
+    ideaTitle: "少找人，多跳舞。",
     ideaBody:
       "写下你跳什么、你的水平和你的角色，就能看到谁正在找这样的人——在你的舞蹈室，在世界的另一端，或者愿意搬到你所在的地方。不用在群里发帖，也不用等教练替你打听。",
 

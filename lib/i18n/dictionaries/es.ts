@@ -24,7 +24,7 @@ export const es: Dictionary = {
     socialProof: "Únete a {count} bailarines que ya están en la lista.",
 
     ideaEyebrow: "Cómo se siente",
-    ideaTitle: "Imagina encontrar tu pareja en una tarde.",
+    ideaTitle: "Menos búsqueda. Más baile.",
     ideaBody:
       "Di qué bailas, tu nivel y tu rol, y mira quién busca exactamente eso: en tu academia, al otro lado del mundo o alguien que se mudaría a donde tú estés. Sin publicaciones en grupos, sin esperar a que un profesor pregunte por ahí.",
 

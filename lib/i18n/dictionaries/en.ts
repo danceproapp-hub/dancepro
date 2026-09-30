@@ -23,7 +23,7 @@ export const en = {
     socialProof: "Join {count} dancers already on the list.",
 
     ideaEyebrow: "What it's like",
-    ideaTitle: "Imagine finding your partner in an afternoon.",
+    ideaTitle: "Less searching. More dancing.",
     ideaBody:
       "Say what you dance, your level, and your role, and see who's looking for exactly that — at your studio, on the other side of the world, or ready to move to wherever you are. No group posts, no waiting for a coach to ask around.",
 
