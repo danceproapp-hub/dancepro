@@ -399,6 +399,30 @@
    * What is left is the one thing a tap can actually show: the gold
    * coming up in brightness, and a second of it going back down.
    */
+  /*
+   * The home page's buttons, on touch only.
+   *
+   * They keep their lift — nobody called that jumpy, and on the form's own
+   * submit the rise is part of the answer. What they did not keep is the
+   * 0.3s snap back, which is tuned for a cursor leaving a button and is
+   * far too quick for the one thing a thumb sees: the light going out.
+   *
+   * Gated to (hover: none) so a mouse is untouched — hover-in at 0.7s
+   * would feel like wading. And :not(.btn-gentle) so the sub-page CTAs
+   * keep the timing already settled on above.
+   */
+  @media (hover: none) {
+    .btn:not(.btn-gentle) {
+      transition-duration: 0.7s;
+      /* Holds at full before it starts leaving, as the sub-pages do. */
+      transition-delay: 0.12s;
+    }
+
+    .btn:not(.btn-gentle):active:not(:disabled) {
+      transition-delay: 0s;
+    }
+  }
+
   .btn-lift.btn-gentle:active:not(:disabled) {
     /*
      * The glow stays; only the movement goes. They were doing different
