@@ -75,6 +75,8 @@ export const ja: Dictionary = {
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
   },
   signup: {
+    errEmailFailed:
+      "確認メールを送信できませんでした。danceproapp@gmail.com までご連絡ください。こちらで手作業で追加します。",
     captchaSentTitle: "メールアプリをご確認ください",
     captchaSentBody:
       "入力内容を記したメールが開いているはずです。送信いただければ、こちらで手作業でリストに追加します。",
@@ -116,6 +118,7 @@ export const ja: Dictionary = {
     minorsUnavailable: "16歳未満の方はまだご登録いただけません。近日中にまたお越しください。",
   },
   consent: {
+    back: "DancePro に戻る",
     metaTitle: "保護者の同意",
     title: "ダンサーの登録を承認する",
     body: "あるダンサーが、DancePro のファウンディングメンバーリストに参加するため、保護者としてあなたのアドレスを入力しました。承認されるまで、情報は保存されません。",
@@ -334,6 +337,12 @@ export const ja: Dictionary = {
     contactBody: "このページに関すること、またはここでお答えできていないことについては、こちらまで：",
 
     link: "プライバシー",
+  },
+  notFound: {
+    metaTitle: "ページが見つかりません",
+    title: "そのページは見つかりませんでした",
+    body: "リンクが古いか、少し違って入力された可能性があります。",
+    back: "DancePro に戻る",
   },
   language: {
     label: "言語",

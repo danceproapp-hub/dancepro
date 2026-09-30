@@ -31,7 +31,7 @@ export default async function ConsentPage({
 
   return (
     <section className="mx-auto flex max-w-lg flex-col items-center gap-6 px-6 py-24 text-center">
-      <ConsentConfirm token={token ?? ""} t={t.consent} />
+      <ConsentConfirm token={token ?? ""} locale={locale} t={t.consent} />
     </section>
   );
 }

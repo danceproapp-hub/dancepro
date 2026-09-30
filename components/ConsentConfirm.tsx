@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 
 type State = "asking" | "sending" | "done" | "failed";
@@ -12,9 +13,11 @@ type State = "asking" | "sending" | "done" | "failed";
  */
 export function ConsentConfirm({
   token,
+  locale,
   t,
 }: {
   token: string;
+  locale: string;
   t: Dictionary["consent"];
 }) {
   const [state, setState] = useState<State>(token ? "asking" : "failed");
@@ -33,11 +36,21 @@ export function ConsentConfirm({
     }
   }
 
+  /*
+   * Both endings need a way out. A parent arrives here from an email, so
+   * this page is the whole site as far as they are concerned — without a
+   * link the browser's back button leads to their inbox and nothing else.
+   * The failed copy even tells them to sign up from the homepage, which
+   * was not reachable from the page saying it.
+   */
   if (state === "done") {
     return (
       <>
         <h1>{t.okTitle}</h1>
         <p className="text-muted">{t.okBody}</p>
+        <Link href={`/${locale}`} className="btn btn-primary px-6 py-3.5">
+          {t.back}
+        </Link>
       </>
     );
   }
@@ -47,6 +60,9 @@ export function ConsentConfirm({
       <>
         <h1>{t.badTitle}</h1>
         <p className="text-muted">{t.badBody}</p>
+        <Link href={`/${locale}`} className="btn btn-primary px-6 py-3.5">
+          {t.back}
+        </Link>
       </>
     );
   }

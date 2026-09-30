@@ -75,6 +75,8 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    errEmailFailed:
+      "Nie udało się wysłać e-maila z potwierdzeniem. Napisz na danceproapp@gmail.com, a dopiszemy Cię ręcznie.",
     captchaSentTitle: "Sprawdź aplikację pocztową",
     captchaSentBody:
       "Powinna otworzyć się wiadomość z podanymi danymi. Wystarczy ją wysłać, a dopiszemy Cię do listy ręcznie.",
@@ -116,6 +118,7 @@ export const pl: Dictionary = {
     minorsUnavailable: "Nie możemy jeszcze zapisywać osób poniżej 16 lat. Zajrzyj wkrótce.",
   },
   consent: {
+    back: "Wróć do DancePro",
     metaTitle: "Zgoda rodzica",
     title: "Potwierdź miejsce tancerza",
     body: "Tancerz podał twój adres jako adres rodzica lub opiekuna, żeby dołączyć do listy członków założycieli DancePro. Nic nie zostanie zapisane, dopóki nie potwierdzisz.",
@@ -335,6 +338,12 @@ export const pl: Dictionary = {
     contactBody: "W każdej sprawie z tej strony lub w sprawie, na którą tu nie odpowiedzieliśmy:",
 
     link: "Prywatność",
+  },
+  notFound: {
+    metaTitle: "Nie znaleziono strony",
+    title: "Nie znaleźliśmy tej strony",
+    body: "Link może być nieaktualny albo zapisany z drobnym błędem.",
+    back: "Wróć do DancePro",
   },
   language: {
     label: "Język",

@@ -72,6 +72,8 @@ export const zh: Dictionary = {
     formSubtitle: "在我们向公众开放之前，先占好你的位置。",
   },
   signup: {
+    errEmailFailed:
+      "确认邮件发送失败。请写信到 danceproapp@gmail.com，我们会手动为您添加。",
     captchaSentTitle: "请查看您的邮件应用",
     captchaSentBody:
       "应该已经打开了一封填好您信息的邮件。发送它，我们会手动把您加入名单。",
@@ -112,6 +114,7 @@ export const zh: Dictionary = {
     minorsUnavailable: "我们暂时还不能为未满 16 岁的舞者注册，请稍后再来。",
   },
   consent: {
+    back: "返回 DancePro",
     metaTitle: "家长同意",
     title: "确认一位舞者的名额",
     body: "有位舞者把你的邮箱填为家长或监护人，希望加入 DancePro 创始会员名单。在你确认之前，我们不会保存任何信息。",
@@ -325,6 +328,12 @@ export const zh: Dictionary = {
     contactBody: "本页的任何事项，或本页未能解答的问题：",
 
     link: "隐私",
+  },
+  notFound: {
+    metaTitle: "页面不存在",
+    title: "没有找到这个页面",
+    body: "链接可能已经过期，或者输入有误。",
+    back: "返回 DancePro",
   },
   language: {
     label: "语言",

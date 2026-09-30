@@ -134,8 +134,17 @@ export function WaitlistForm({
           setCaptchaFailed(true);
           setFormError(null);
         } else {
+          /*
+           * email_failed means the row exists but the parent will never
+           * be asked. Telling them to try again sends them round the same
+           * loop for ever; they need the mailbox instead.
+           */
           setFormError(
-            error === "minors_unavailable" ? t.minorsUnavailable : t.errGeneric
+            error === "minors_unavailable"
+              ? t.minorsUnavailable
+              : error === "email_failed"
+                ? t.errEmailFailed
+                : t.errGeneric
           );
         }
         setSubmitting(false);

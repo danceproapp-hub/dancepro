@@ -72,6 +72,8 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    errEmailFailed:
+      "We couldn't send the confirmation email. Write to danceproapp@gmail.com and we'll add you by hand.",
     captchaSentTitle: "Check your mail app",
     captchaSentBody:
       "A message with your details should have opened. Send it and we'll add you to the list by hand.",
@@ -113,6 +115,7 @@ export const en = {
     minorsUnavailable: "We can't add dancers under 16 just yet. Please check back soon.",
   },
   consent: {
+    back: "Back to DancePro",
     metaTitle: "Parental consent",
     title: "Confirm a dancer's place",
     body: "A dancer gave your address as their parent or guardian so they can join the DancePro founding members list. Nothing is saved until you confirm.",
@@ -329,6 +332,12 @@ export const en = {
     contactBody: "Anything on this page, or anything we have not answered here:",
 
     link: "Privacy",
+  },
+  notFound: {
+    metaTitle: "Page not found",
+    title: "We couldn't find that page",
+    body: "The link may be out of date, or typed slightly wrong.",
+    back: "Back to DancePro",
   },
   language: {
     label: "Language",
