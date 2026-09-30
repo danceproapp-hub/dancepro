@@ -206,7 +206,6 @@ export function WaitlistForm({
   if (joinedCode) {
     return (
       <div
-        id="join"
         className="mx-auto max-w-xl border border-gold/40 bg-panel p-6 text-center sm:p-8"
       >
         <h2 className="text-[22px] sm:text-[26px]">{t.alreadyTitle}</h2>
@@ -267,7 +266,6 @@ export function WaitlistForm({
   if (pendingFor) {
     return (
       <div
-        id="join"
         className="mx-auto max-w-xl border border-gold/40 bg-panel p-6 text-center sm:p-8"
       >
         <h2 className="text-[22px] sm:text-[26px]">{t.pendingTitle}</h2>
@@ -280,7 +278,6 @@ export function WaitlistForm({
 
   return (
     <form
-      id="join"
       onSubmit={handleSubmit}
       className="mx-auto flex max-w-xl flex-col gap-5 border border-line bg-panel p-6 sm:p-8"
     >

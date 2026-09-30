@@ -78,6 +78,15 @@
     scroll-behavior: smooth;
   }
 
+  /*
+   * The header is sticky and 69px tall, so an anchor landing flush at the
+   * top of the viewport sits underneath it. Reserve its height plus a
+   * little air, for the browser's own jump and for any scrollIntoView.
+   */
+  :target {
+    scroll-margin-top: 5.5rem;
+  }
+
   /* Body — Jost 300, 15px, 1.72 */
   body {
     background-color: var(--color-ground);
@@ -489,6 +498,22 @@
    */
   .pillar {
     border-color: var(--color-line);
+  }
+
+  /*
+   * The very first collapse, before the cards have settled. It happens on
+   * load and nobody asked for it, so it should not be watched: easing it
+   * means the page is still shrinking a third of a second after a reader
+   * arrives, which on a deep link reads as the page lurching.
+   */
+  .pillar-settling,
+  .pillar-settling * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .pillar-settling::details-content {
+    transition: none !important;
   }
 
   .pillar-summary {

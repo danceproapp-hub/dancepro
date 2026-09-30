@@ -190,7 +190,12 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="px-6 py-14 sm:py-24">
+      {/* The anchor sits on the section, not the form. The form is the
+          last thing on the page, so the browser cannot scroll its top to
+          the top of the screen — it runs out of document and clamps,
+          landing a visitor halfway down the fields. The section starts
+          high enough to be reachable, and arrives on the heading. */}
+      <section id="join" className="px-6 py-14 sm:py-24">
         <Reveal>
           <div className="mb-12 text-center">
             <h2>

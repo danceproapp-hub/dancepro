@@ -30,6 +30,42 @@ export function Pillars({
     return () => query.removeEventListener("change", apply);
   }, []);
 
+  /*
+   * Arriving from another page's "Join" link.
+   *
+   * The browser jumps to #join while the four cards are still expanded —
+   * that is the markup it was sent — and then this component collapses
+   * them, taking roughly 250px of page out from above the form and
+   * leaving the landing that far past where it aimed. Worse, the collapse
+   * is a 0.28s animation, so the page goes on shrinking under the reader
+   * for a third of a second after it arrives. Together that is the lurch.
+   *
+   * So the first collapse is not animated: `settled` gates the transition
+   * on, one frame later, once the cards are already shut. The animation is
+   * for a dancer opening a card, not for a page putting itself together.
+   * Then the scroll is corrected — instantly, since this is repairing a
+   * jump that has already happened and animating it would draw the eye to
+   * the very movement being undone.
+   */
+  const [settled, setSettled] = useState(false);
+
+  useEffect(() => {
+    if (!compact) {
+      setSettled(true);
+      return;
+    }
+    const id = requestAnimationFrame(() => {
+      // Heights are final here: the collapse above ran without easing.
+      if (window.location.hash === "#join") {
+        document
+          .getElementById("join")
+          ?.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+      setSettled(true);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [compact]);
+
   return (
     <>
       {items.map((item, index) => {
@@ -40,7 +76,9 @@ export function Pillars({
         return (
           <Reveal key={item.title} delay={index * 80}>
             <details
-              className="pillar h-full border p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-panel"
+              className={`pillar h-full border p-6 transition-all duration-500 hover:-translate-y-0.5 hover:border-gold/50 hover:bg-panel${
+                settled ? "" : " pillar-settling"
+              }`}
               open={open}
               onToggle={(event) => {
                 const nowOpen = event.currentTarget.open;
