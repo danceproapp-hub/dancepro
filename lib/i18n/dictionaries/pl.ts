@@ -93,7 +93,6 @@ export const pl: Dictionary = {
     captchaRetry: "Spróbuj ponownie",
     captchaEmail: "Dołącz przez e-mail",
     captchaEmailSubject: "Dołączenie do członków założycieli DancePro",
-    privacyLink: "Jak wykorzystujemy Twoje dane",
     firstName: "Imię",
     email: "E-mail",
     danceStyles: "Style tańca",

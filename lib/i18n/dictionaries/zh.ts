@@ -90,7 +90,6 @@ export const zh: Dictionary = {
     captchaRetry: "重试",
     captchaEmail: "改用邮件加入",
     captchaEmailSubject: "加入 DancePro 创始成员",
-    privacyLink: "我们如何使用您的信息",
     firstName: "名字",
     email: "电子邮箱",
     danceStyles: "舞种",

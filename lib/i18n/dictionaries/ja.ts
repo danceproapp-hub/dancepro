@@ -93,7 +93,6 @@ export const ja: Dictionary = {
     captchaRetry: "もう一度試す",
     captchaEmail: "メールで登録する",
     captchaEmailSubject: "DancePro 創設メンバーへの登録",
-    privacyLink: "情報の取り扱いについて",
     firstName: "お名前",
     email: "メールアドレス",
     danceStyles: "種目",

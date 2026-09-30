@@ -90,7 +90,6 @@ export const en = {
     captchaRetry: "Try again",
     captchaEmail: "Join by email instead",
     captchaEmailSubject: "Join the DancePro founding members",
-    privacyLink: "How we use your details",
     firstName: "First name",
     email: "Email",
     danceStyles: "Dance styles",

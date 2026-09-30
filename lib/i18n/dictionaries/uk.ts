@@ -92,7 +92,6 @@ export const uk: Dictionary = {
     captchaRetry: "Спробувати ще раз",
     captchaEmail: "Приєднатися електронною поштою",
     captchaEmailSubject: "Приєднання до списку засновників DancePro",
-    privacyLink: "Як ми використовуємо ваші дані",
     firstName: "Ім'я",
     email: "Електронна пошта",
     danceStyles: "Танцювальні стилі",
