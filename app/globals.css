@@ -419,13 +419,20 @@
        * one also has 2px to travel back down, and at 0.7s the descent
        * outstayed itself.
        */
-      transition-duration: 0.45s;
+      transition-duration: 0.55s;
       /* Still holds at full first, just briefly. */
       transition-delay: 0.08s;
     }
 
     .btn:not(.btn-gentle):active:not(:disabled) {
       transition-delay: 0s;
+      /*
+       * Not instant — 0s against a half-second descent is an infinite
+       * ratio, and the rise reads as a snap the fall never answers. 70ms
+       * is still gone before a thumb could notice waiting, but it makes
+       * the two ends of the movement belong to each other.
+       */
+      transition-duration: 0.07s;
     }
   }
 
