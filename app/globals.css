@@ -318,14 +318,39 @@
     color: var(--color-gold);
     background-color: transparent;
     cursor: pointer;
+    /*
+     * A phone otherwise waits to see whether a tap is the first half of a
+     * double-tap-to-zoom before dispatching it. On a control that toggles,
+     * that pause is worse than slow: it reads as "nothing happened", the
+     * dancer taps again, and the second tap turns off what the first one
+     * turned on. `manipulation` drops the wait.
+     */
+    touch-action: manipulation;
+    /* Replaced by the branded :active state below. */
+    -webkit-tap-highlight-color: transparent;
+    /*
+     * Short enough that the fill is there by the time a thumb lifts. The
+     * slower 0.2s that used to be here was the other half of the same
+     * double-tap problem.
+     */
     transition:
-      background-color 0.2s var(--ease-out-soft),
-      border-color 0.2s var(--ease-out-soft),
-      color 0.2s var(--ease-out-soft);
+      background-color 0.09s var(--ease-out-soft),
+      border-color 0.09s var(--ease-out-soft),
+      color 0.09s var(--ease-out-soft);
   }
 
   .chip:hover {
     border-color: var(--color-gold);
+  }
+
+  /*
+   * Answers on touch-down, before the tap has even finished — so the
+   * press is acknowledged instantly whatever the toggle then does.
+   */
+  .chip:active {
+    border-color: var(--color-gold);
+    background-color: color-mix(in srgb, var(--color-gold) 20%, transparent);
+    transition-duration: 0s;
   }
 
   .chip[aria-pressed="true"],
