@@ -440,11 +440,13 @@
   }
 
   .pillar-mark::before {
-    content: "+";
+    content: ">";
   }
 
+  /* Points right when closed, down when open — a quarter turn, so the
+     chevron reads as the direction the card is about to move. */
   .pillar[open] > .pillar-summary .pillar-mark {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
   }
 
   @media (max-width: 639.98px) {
