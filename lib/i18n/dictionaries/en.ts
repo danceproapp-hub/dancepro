@@ -25,7 +25,7 @@ export const en = {
     ideaEyebrow: "What it's like",
     ideaTitle: "Imagine finding your partner in an afternoon.",
     ideaBody:
-      "Say what you dance, your level, and your role, and see who's looking for exactly that — at your studio, on the other side of the world, or ready to move to wherever you are. No group posts, no waiting for a coach to ask around. Someone who trains the same way, wants the same wins, and keeps the same nights.",
+      "Say what you dance, your level, and your role, and see who's looking for exactly that — at your studio, on the other side of the world, or ready to move to wherever you are. No group posts, no waiting for a coach to ask around.",
 
     pillarsEyebrow: "More than a partner search",
     pillarsTitle: "The whole dance world, in one place.",

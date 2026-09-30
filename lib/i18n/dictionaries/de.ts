@@ -26,7 +26,7 @@ export const de: Dictionary = {
     ideaEyebrow: "Wie es sich anfühlt",
     ideaTitle: "Stell dir vor, du findest deinen Partner an einem Nachmittag.",
     ideaBody:
-      "Sag, was du tanzt, dein Niveau und deine Rolle, und sieh, wer genau das sucht — in deinem Studio, am anderen Ende der Welt oder bereit, dorthin zu ziehen, wo du bist. Keine Gruppenposts, kein Warten, bis ein Trainer sich umhört. Jemand, der auf dieselbe Art trainiert, dieselben Siege will und an denselben Abenden Zeit hat.",
+      "Sag, was du tanzt, dein Niveau und deine Rolle, und sieh, wer genau das sucht — in deinem Studio, am anderen Ende der Welt oder bereit, dorthin zu ziehen, wo du bist. Keine Gruppenposts, kein Warten, bis ein Trainer sich umhört.",
 
     pillarsEyebrow: "Mehr als eine Partnersuche",
     pillarsTitle: "Die ganze Tanzwelt, an einem Ort.",
