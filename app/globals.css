@@ -248,6 +248,9 @@
     line-height: 1.5;
     text-align: center;
     cursor: pointer;
+    /* Waives the browser's wait for a possible double-tap-to-zoom. */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     transition:
       background-color 0.3s var(--ease-out-soft),
       border-color 0.3s var(--ease-out-soft),
@@ -266,26 +269,57 @@
     color: var(--color-ground);
   }
 
-  .btn-primary:hover:not(:disabled) {
-    background-color: var(--color-gold-lt);
-  }
-
   .btn-secondary {
     background-color: transparent;
     border: 1px solid var(--color-gold);
     color: var(--color-gold);
   }
 
-  .btn-secondary:hover:not(:disabled) {
-    background-color: var(--color-gold);
-    color: var(--color-ground);
+  /*
+   * Hover belongs to pointers only. On a touchscreen :hover sticks after
+   * a tap until something else is touched, so without this gate the
+   * button sits there lit long after the thumb has gone.
+   */
+  @media (hover: hover) {
+    .btn-primary:hover:not(:disabled) {
+      background-color: var(--color-gold-lt);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background-color: var(--color-gold);
+      color: var(--color-ground);
+    }
+
+    /* The hero and form CTAs lift a little; the glow uses the brand gold. */
+    .btn-lift:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -8px
+        color-mix(in srgb, var(--color-gold) 35%, transparent);
+    }
   }
 
-  /* The hero and form CTAs lift a little; the glow uses the brand gold. */
-  .btn-lift:hover:not(:disabled) {
+  /*
+   * The same thing for a thumb. A tap is over long before the 0.3s ease
+   * would finish, so the press lands instantly and only the release
+   * eases back out — otherwise the glow never arrives before the finger
+   * has lifted and the button looks dead on a phone.
+   */
+  .btn-primary:active:not(:disabled) {
+    background-color: var(--color-gold-lt);
+    transition-duration: 0s;
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    background-color: var(--color-gold);
+    color: var(--color-ground);
+    transition-duration: 0s;
+  }
+
+  .btn-lift:active:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 12px 32px -8px
       color-mix(in srgb, var(--color-gold) 35%, transparent);
+    transition-duration: 0s;
   }
 
   /* Inputs — ground background, hairline border, gold-dp focus */
@@ -575,7 +609,8 @@
       animation: none;
     }
 
-    .btn-lift:hover:not(:disabled) {
+    .btn-lift:hover:not(:disabled),
+    .btn-lift:active:not(:disabled) {
       transform: none;
     }
 
