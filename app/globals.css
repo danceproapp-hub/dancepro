@@ -310,16 +310,10 @@
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 11px;
-    /*
-     * 0.1em, not the 0.2em the other small caps use. On a control this
-     * narrow the tracking cost more width than the letters did.
-     */
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.5;
-    /* em, so the padding follows the font size instead of being a second
-       set of numbers to keep in step with it. */
-    padding: 0.8em 0.96em;
+    padding: 0.55rem 1rem;
     border: 1px solid var(--color-line);
     color: var(--color-gold);
     background-color: transparent;
@@ -355,6 +349,8 @@
   @media (max-width: 639.98px) {
     .chip {
       font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 0.6rem;
     }
   }
 
