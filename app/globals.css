@@ -349,7 +349,7 @@
      * button never got much past a third lit before the finger left. Less
      * happened, not more. The softness belongs entirely on the way out.
      */
-    transition-duration: 0.04s;
+    transition-duration: 0.09s;
   }
 
   /*
@@ -359,16 +359,24 @@
    * the finger has gone.
    */
   .btn-gentle {
-    transition-duration: 0.95s;
+    transition-duration: 1.1s;
   }
 
   /*
-   * And a smaller rise. 2px is right under a cursor, which hovers and
-   * holds; under a thumb the same distance arrives all at once and reads
-   * as a hop. Half of it is a nudge.
+   * No movement at all.
+   *
+   * The rise was the jumpiness, and shaving it from 2px to 1px only made
+   * it a smaller jump. A cursor hovers and holds, so it can watch a
+   * button rise; a thumb arrives and leaves inside a tenth of a second,
+   * and anything that moves in that window reads as a twitch however far
+   * it travels. The hard glow behind it did the same.
+   *
+   * What is left is the one thing a tap can actually show: the gold
+   * coming up in brightness, and a second of it going back down.
    */
   .btn-lift.btn-gentle:active:not(:disabled) {
-    transform: translateY(-1px);
+    transform: none;
+    box-shadow: none;
   }
 
   /* Inputs — ground background, hairline border, gold-dp focus */
