@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
 import { Eyebrow } from "@/components/Eyebrow";
@@ -80,12 +81,12 @@ export default async function FoundingMembersPage({
       </div>
 
       <div className="text-center">
-        <a
+        <Link
           href={`/${locale}#join`}
           className="btn btn-primary btn-lift btn-gentle inline-block px-8 py-4"
         >
           {t.foundingMembers.cta}
-        </a>
+        </Link>
       </div>
     </div>
   );
