@@ -413,9 +413,15 @@
    */
   @media (hover: none) {
     .btn:not(.btn-gentle) {
-      transition-duration: 0.7s;
-      /* Holds at full before it starts leaving, as the sub-pages do. */
-      transition-delay: 0.12s;
+      /*
+       * Between the 0.3s of a cursor and the 0.85s the sub-page CTAs take.
+       * Those have no lift, so a long dim is all there is to watch; this
+       * one also has 2px to travel back down, and at 0.7s the descent
+       * outstayed itself.
+       */
+      transition-duration: 0.45s;
+      /* Still holds at full first, just briefly. */
+      transition-delay: 0.08s;
     }
 
     .btn:not(.btn-gentle):active:not(:disabled) {
