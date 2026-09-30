@@ -82,7 +82,7 @@ export default async function FoundingMembersPage({
       <div className="text-center">
         <a
           href={`/${locale}#join`}
-          className="btn btn-primary btn-lift inline-block px-8 py-4"
+          className="btn btn-primary btn-lift btn-gentle inline-block px-8 py-4"
         >
           {t.foundingMembers.cta}
         </a>

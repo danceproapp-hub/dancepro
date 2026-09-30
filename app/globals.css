@@ -331,6 +331,21 @@
     transition-duration: 0s;
   }
 
+  /*
+   * A press that eases instead of snapping, for the CTAs that leave the
+   * page. On the form's own button the instant answer is right — the tap
+   * does something and you stay to see it. On a sub-page the tap is the
+   * last thing before everything changes, and a flash and a jump at that
+   * moment read as a flinch rather than a response.
+   *
+   * Same end state, reached over a quarter second. Defined after the
+   * rules it softens, which is what lets it win: the specificity is
+   * identical, so source order decides.
+   */
+  .btn-gentle:active:not(:disabled) {
+    transition-duration: 0.26s;
+  }
+
   /* Inputs — ground background, hairline border, gold-dp focus */
   .input {
     display: block;

@@ -103,7 +103,7 @@ export default async function DanceStylesPage({
         <p className="mx-auto mb-6 text-muted">{t.danceStyles.closing}</p>
         <Link
           href={`/${locale}#join`}
-          className="btn btn-primary btn-lift inline-block px-8 py-4"
+          className="btn btn-primary btn-lift btn-gentle inline-block px-8 py-4"
         >
           {t.danceStyles.cta}
         </Link>
