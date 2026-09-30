@@ -491,15 +491,18 @@ export function WaitlistForm({
         {submitting ? t.submitting : t.submit}
       </button>
 
-      <p className="caption mx-auto text-center">
-        {t.footnote}{" "}
+      {/* The privacy link sits on its own line rather than running on from
+          the footnote: the two say different things, and side by side the
+          sentence and the link ran into each other. */}
+      <div className="flex flex-col items-center gap-1 text-center">
+        <p className="caption">{t.footnote}</p>
         <a
           href={`/${locale}/privacy`}
-          className="underline-offset-4 transition hover:text-paper hover:underline"
+          className="caption underline-offset-4 transition hover:text-paper hover:underline"
         >
           {t.privacyLink}
         </a>
-      </p>
+      </div>
     </form>
   );
 }
