@@ -350,6 +350,19 @@
      * happened, not more. The softness belongs entirely on the way out.
      */
     transition-duration: 0.09s;
+    transition-delay: 0s;
+    /*
+     * Brighter than the gold-lt a cursor gets. A thumb covers most of the
+     * button, so the only thing left to read is a rim around a fingertip
+     * — it has to be lighter to register at all. Tinted toward --paper,
+     * which is already in the palette, rather than inventing a gold: the
+     * brand golds are sampled from the logo and are not mine to replace.
+     */
+    background-color: color-mix(
+      in srgb,
+      var(--color-gold-lt) 75%,
+      var(--color-paper)
+    );
   }
 
   /*
@@ -360,6 +373,13 @@
    */
   .btn-gentle {
     transition-duration: 1.1s;
+    /*
+     * Holds at full brightness for a beat after the thumb leaves. Without
+     * it the fade starts the instant contact breaks, so the peak is
+     * something passed through rather than something seen — which is what
+     * made it look dim however bright it actually got.
+     */
+    transition-delay: 0.14s;
   }
 
   /*
