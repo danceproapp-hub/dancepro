@@ -381,8 +381,16 @@
       color 0.09s var(--ease-out-soft);
   }
 
-  .chip:hover {
-    border-color: var(--color-gold);
+  /*
+   * Pointers only. A touchscreen leaves :hover applied after a tap until
+   * something else is touched, so a chip tapped off kept the gold ring
+   * of a chip that was still on — the deselect looked like it had not
+   * taken. The press below is what a thumb gets instead.
+   */
+  @media (hover: hover) {
+    .chip:hover {
+      border-color: var(--color-gold);
+    }
   }
 
   /*
