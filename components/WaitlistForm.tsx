@@ -414,9 +414,9 @@ export function WaitlistForm({
          * take, or they are stranded with no way to reach anyone.
          */
         <div className="border border-gold/40 bg-ground p-5 text-center">
-          <p className="caption mb-1 text-paper">{t.captchaSentTitle}</p>
-          <p className="caption mb-4">{t.captchaSentBody}</p>
-          <p className="caption mb-2">{t.captchaSentNothing}</p>
+          <p className="caption mx-auto mb-1 text-paper">{t.captchaSentTitle}</p>
+          <p className="caption mx-auto mb-4">{t.captchaSentBody}</p>
+          <p className="caption mx-auto mb-2">{t.captchaSentNothing}</p>
           <p ref={emailRef} className="mb-4 break-all text-gold select-all">
             {FALLBACK_EMAIL}
           </p>
@@ -444,7 +444,7 @@ export function WaitlistForm({
         </div>
       ) : captchaFailed ? (
         <div className="border border-line bg-ground p-5 text-center">
-          <p className="caption mb-4">{t.errCaptcha}</p>
+          <p className="caption mx-auto mb-4">{t.errCaptcha}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <button
               type="button"
