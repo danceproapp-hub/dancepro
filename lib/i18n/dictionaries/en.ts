@@ -72,6 +72,11 @@ export const en = {
     formSubtitle: "Reserve your place before we open to the public.",
   },
   signup: {
+    alreadyTitle: "You're already in",
+    alreadyBody:
+      "You joined the founding members from this device. Your place is saved — there's no need to sign up again.",
+    alreadyCta: "See my place",
+    alreadyNotYou: "Signing someone else up? Use the form instead",
     captchaEmailIntro:
       "The security check wouldn't let me through. Please add me to the founding members list:",
     errCaptcha:

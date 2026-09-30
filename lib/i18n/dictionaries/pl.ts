@@ -75,6 +75,11 @@ export const pl: Dictionary = {
     formSubtitle: "Zajmij miejsce, zanim otworzymy się dla wszystkich.",
   },
   signup: {
+    alreadyTitle: "Jesteś już na liście",
+    alreadyBody:
+      "Z tego urządzenia nastąpiło już dołączenie do członków założycieli. Miejsce jest zapisane — nie trzeba rejestrować się ponownie.",
+    alreadyCta: "Zobacz moje miejsce",
+    alreadyNotYou: "Zapisujesz kogoś innego? Otwórz formularz",
     captchaEmailIntro:
       "Sprawdzenie zabezpieczeń mnie nie przepuściło. Proszę o dodanie mnie do listy członków założycieli:",
     errCaptcha:

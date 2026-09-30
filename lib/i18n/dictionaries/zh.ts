@@ -72,6 +72,11 @@ export const zh: Dictionary = {
     formSubtitle: "在我们向公众开放之前，先占好你的位置。",
   },
   signup: {
+    alreadyTitle: "您已经在名单上了",
+    alreadyBody:
+      "您已在此设备上加入创始成员名单。位置已保存，无需重新注册。",
+    alreadyCta: "查看我的位置",
+    alreadyNotYou: "要替别人报名？请打开表单",
     captchaEmailIntro:
       "安全验证没有让我通过。请把我加入创始成员名单：",
     errCaptcha:

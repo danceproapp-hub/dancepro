@@ -75,6 +75,11 @@ export const de: Dictionary = {
     formSubtitle: "Sichere dir deinen Platz, bevor wir öffentlich öffnen.",
   },
   signup: {
+    alreadyTitle: "Du bist schon dabei",
+    alreadyBody:
+      "Du bist den Gründungsmitgliedern von diesem Gerät aus beigetreten. Dein Platz ist gesichert — eine zweite Anmeldung ist nicht nötig.",
+    alreadyCta: "Meinen Platz ansehen",
+    alreadyNotYou: "Jemand anderen anmelden? Zum Formular",
     captchaEmailIntro:
       "Die Sicherheitsprüfung hat mich nicht durchgelassen. Bitte nehmt mich in die Liste der Gründungsmitglieder auf:",
     errCaptcha:

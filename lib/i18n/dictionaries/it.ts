@@ -74,6 +74,11 @@ export const it: Dictionary = {
     formSubtitle: "Prenota il tuo posto prima che apriamo al pubblico.",
   },
   signup: {
+    alreadyTitle: "Ci sei già",
+    alreadyBody:
+      "Ti sei iscritto ai membri fondatori da questo dispositivo. Il tuo posto è salvato: non serve iscriversi di nuovo.",
+    alreadyCta: "Vedi il mio posto",
+    alreadyNotYou: "Stai iscrivendo qualcun altro? Usa il modulo",
     captchaEmailIntro:
       "Il controllo di sicurezza non mi ha fatto passare. Per favore aggiungetemi alla lista dei membri fondatori:",
     errCaptcha:

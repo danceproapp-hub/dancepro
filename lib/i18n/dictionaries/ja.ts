@@ -75,6 +75,11 @@ export const ja: Dictionary = {
     formSubtitle: "一般公開の前に、あなたの席を確保してください。",
   },
   signup: {
+    alreadyTitle: "すでに登録済みです",
+    alreadyBody:
+      "この端末から創設メンバーに登録済みです。席は確保されていますので、もう一度登録する必要はありません。",
+    alreadyCta: "自分の順位を見る",
+    alreadyNotYou: "別の方を登録しますか？フォームを開く",
     captchaEmailIntro:
       "セキュリティ確認を通過できませんでした。創設メンバーのリストに追加してください：",
     errCaptcha:

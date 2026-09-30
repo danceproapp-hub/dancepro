@@ -2,7 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { REFERRAL_STORAGE_KEY } from "@/lib/waitlistOptions";
+import {
+  REFERRAL_STORAGE_KEY,
+  SIGNUP_STORAGE_KEY,
+} from "@/lib/waitlistOptions";
 import { DANCE_STYLES } from "@/lib/danceStyles";
 import { Turnstile, TURNSTILE_TEST_SITE_KEY } from "@/components/Turnstile";
 import type { Dictionary, Locale } from "@/lib/i18n";
@@ -52,15 +55,25 @@ export function WaitlistForm({
   // Bumped to remount the widget, which is how Turnstile is retried.
   const [captchaAttempt, setCaptchaAttempt] = useState(0);
   const refCodeRef = useRef<string | null>(null);
+  // Their own code from a previous visit, if they already joined here.
+  const [joinedCode, setJoinedCode] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const refFromUrl = params.get("ref");
-    if (refFromUrl) {
-      window.localStorage.setItem(REFERRAL_STORAGE_KEY, refFromUrl);
-      refCodeRef.current = refFromUrl;
-    } else {
-      refCodeRef.current = window.localStorage.getItem(REFERRAL_STORAGE_KEY);
+    try {
+      if (refFromUrl) {
+        window.localStorage.setItem(REFERRAL_STORAGE_KEY, refFromUrl);
+        refCodeRef.current = refFromUrl;
+      } else {
+        refCodeRef.current = window.localStorage.getItem(REFERRAL_STORAGE_KEY);
+      }
+      // Checked after paint, never during render: the form is what the
+      // server sent, so a browser with storage blocked — or with no
+      // JavaScript at all — still gets a form that works.
+      setJoinedCode(window.localStorage.getItem(SIGNUP_STORAGE_KEY));
+    } catch {
+      // Private mode, or storage disabled. Nothing here is essential.
     }
   }, []);
 
@@ -137,6 +150,17 @@ export function WaitlistForm({
         return;
       }
 
+      // Remembered so that coming back to the home page shows their place
+      // instead of the form they have already filled in. Not stored for a
+      // pending minor: nothing is theirs until a parent confirms.
+      if (result.code) {
+        try {
+          window.localStorage.setItem(SIGNUP_STORAGE_KEY, result.code);
+        } catch {
+          // Storage unavailable; the redirect below still works.
+        }
+      }
+
       router.push(
         `/${locale}/welcome?code=${encodeURIComponent(result.code ?? "")}`
       );
@@ -167,6 +191,46 @@ export function WaitlistForm({
       `mailto:${FALLBACK_EMAIL}` +
       `?subject=${encodeURIComponent(t.captchaEmailSubject)}` +
       `&body=${encodeURIComponent(lines.join("\n"))}`
+    );
+  }
+
+  // Already joined from this browser. Their place, not a blank form they
+  // would only fill in a second time — and which, submitted again, would
+  // quietly overwrite the details they added on the welcome page.
+  if (joinedCode) {
+    return (
+      <div
+        id="join"
+        className="mx-auto max-w-xl border border-gold/40 bg-panel p-6 text-center sm:p-8"
+      >
+        <h2 className="text-[22px] sm:text-[26px]">{t.alreadyTitle}</h2>
+        <p className="mx-auto mt-3 max-w-md text-muted">{t.alreadyBody}</p>
+        <a
+          href={`/${locale}/welcome?code=${encodeURIComponent(joinedCode)}`}
+          className="btn btn-primary btn-lift mt-6 inline-block px-8 py-4"
+        >
+          {t.alreadyCta}
+        </a>
+        {/* A shared laptop, or a dancer signing up their partner. Without
+            this the card is a dead end for the second person. */}
+        <button
+          type="button"
+          onClick={() => {
+            try {
+              window.localStorage.removeItem(SIGNUP_STORAGE_KEY);
+            } catch {
+              // Nothing to clear; showing the form is what matters.
+            }
+            setJoinedCode(null);
+          }}
+          /* py-3 rather than bare text: the line itself is 21px, well under
+             the ~44px a thumb needs, and this is the one way out of the
+             card for a second person on a shared phone. */
+          className="caption mt-3 block w-full py-3 underline-offset-4 transition hover:text-paper hover:underline"
+        >
+          {t.alreadyNotYou}
+        </button>
+      </div>
     );
   }
 

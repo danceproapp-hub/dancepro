@@ -38,4 +38,10 @@ export const COMPETITION_DIVISION_OPTIONS = [
   "Professional",
 ] as const;
 
+// Who invited this visitor.
 export const REFERRAL_STORAGE_KEY = "dancepro_ref";
+
+// This visitor's own referral code, once they have joined — so returning
+// to the home page shows their place rather than an empty form they have
+// already filled in once.
+export const SIGNUP_STORAGE_KEY = "dancepro_code";
