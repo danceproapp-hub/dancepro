@@ -506,6 +506,23 @@
   }
 
   /*
+   * The chip is 36px tall, and a thumb wants about 44. Rather than pad it
+   * — which would change a size already settled on — an invisible pseudo
+   * element reaches 4px past the top and bottom edges. Clicks on it land
+   * on the chip, nothing moves, and the rows are 8px apart so the grown
+   * areas meet without ever overlapping.
+   */
+  .chip {
+    position: relative;
+  }
+
+  .chip::after {
+    content: "";
+    position: absolute;
+    inset: -4px 0;
+  }
+
+  /*
    * Pointers only. A touchscreen leaves :hover applied after a tap until
    * something else is touched, so a chip tapped off kept the gold ring
    * of a chip that was still on — the deselect looked like it had not
