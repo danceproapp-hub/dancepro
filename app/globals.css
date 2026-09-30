@@ -349,20 +349,20 @@
      * button never got much past a third lit before the finger left. Less
      * happened, not more. The softness belongs entirely on the way out.
      */
-    transition-duration: 0.09s;
-    transition-delay: 0s;
     /*
-     * Brighter than the gold-lt a cursor gets. A thumb covers most of the
-     * button, so the only thing left to read is a rim around a fingertip
-     * — it has to be lighter to register at all. Tinted toward --paper,
-     * which is already in the palette, rather than inventing a gold: the
-     * brand golds are sampled from the logo and are not mine to replace.
+     * Back to --gold-lt, the sampled brand gold, inherited from
+     * .btn-primary:active rather than restated here.
+     *
+     * The abruptness was the curve, not the colour. Everything else eases
+     * out, which front-loads the change: most of it lands in the first few
+     * milliseconds, so at 90ms the gold effectively snapped on. ease-in-out
+     * starts gently and settles gently, and 0.15s is still short enough to
+     * finish inside an ordinary tap — and the hold below keeps it lit even
+     * when a quick one cuts it short.
      */
-    background-color: color-mix(
-      in srgb,
-      var(--color-gold-lt) 75%,
-      var(--color-paper)
-    );
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
   }
 
   /*
