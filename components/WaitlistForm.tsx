@@ -354,7 +354,7 @@ export function WaitlistForm({
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="label">{t.ageLabel}</span>
+        <span className="field-label">{t.ageLabel}</span>
         <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t.ageLabel}>
           {([["adult", t.age16], ["minor", t.ageUnder16]] as const).map(
             ([value, label]) => (

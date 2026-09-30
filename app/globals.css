@@ -339,6 +339,21 @@
       color 0.09s var(--ease-out-soft);
   }
 
+  /*
+   * Phones. At 375px the row is 277px wide, and a chip at the desktop
+   * size costs 140–228px of it — so almost every discipline took a row to
+   * itself and the form ran long before a dancer reached the button.
+   * Smaller type, tighter tracking and less padding buy back the width.
+   * 10px is the floor: below that the uppercase tracking stops reading.
+   */
+  @media (max-width: 639.98px) {
+    .chip {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 0.5rem 0.6rem;
+    }
+  }
+
   .chip:hover {
     border-color: var(--color-gold);
   }
