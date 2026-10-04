@@ -555,25 +555,31 @@
   .lang-link,
   .lang-current {
     font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     line-height: 1.5;
-    transition: color 0.3s var(--ease-out-soft);
+    transition:
+      color 0.3s var(--ease-out-soft),
+      opacity 0.3s var(--ease-out-soft);
   }
 
+  /* The last and quietest thing in the footer. */
   .lang-link {
     color: var(--color-muted);
+    opacity: 0.7;
   }
 
   .lang-current {
     color: var(--color-gold);
+    opacity: 1;
   }
 
   @media (hover: hover) {
     .lang-link:hover {
       color: var(--color-gold);
+      opacity: 1;
     }
   }
 
@@ -581,11 +587,12 @@
   .menu-button {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 6px;
+    /* 44px of target around a 20px mark. */
     width: 44px;
     height: 44px;
-    padding: 0 10px;
     cursor: pointer;
     background: none;
     border: 0;
@@ -596,8 +603,9 @@
   .menu-bar {
     display: block;
     height: 1px;
-    width: 100%;
+    width: 20px;
     background-color: var(--color-paper);
+    opacity: 0.8;
     transition:
       transform 0.3s var(--ease-out-soft),
       opacity 0.3s var(--ease-out-soft);
@@ -628,10 +636,22 @@
     z-index: 45;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 6rem 1.5rem 2rem;
+    padding: 6rem 1.5rem 2.5rem;
     background-color: var(--color-ground);
     overflow-y: auto;
+  }
+
+  /*
+   * The links and the button are one composition, not two things at
+   * opposite ends of the screen. Auto margins top and bottom centre the
+   * group and leave the language row at the foot, rather than pinning the
+   * button to the bottom with a void above it.
+   */
+  .menu-group {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .menu-panel[hidden] {
@@ -641,17 +661,14 @@
   .menu-link {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-paper);
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--color-line);
+    /* Spacing instead of rules: full-width dividers at this size cut the
+       panel into bands and made three links look like a table. */
+    padding: 14px 0;
     transition: color 0.3s var(--ease-out-soft);
-  }
-
-  .menu-link:first-child {
-    border-top: 1px solid var(--color-line);
   }
 
   @media (hover: hover) {

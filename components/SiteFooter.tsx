@@ -18,10 +18,6 @@ export function SiteFooter({
 
   return (
     <footer className="border-t border-line">
-      {/* The language row, on its own line above the rest. */}
-      <div className="mx-auto max-w-6xl px-6 pt-10">
-        <LocaleLinks locale={locale} />
-      </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <p className="caption">
           &copy; {new Date().getFullYear()} DancePro. {t.footer.tagline}
@@ -37,6 +33,10 @@ export function SiteFooter({
             </Link>
           ))}
         </nav>
+      </div>
+      {/* Last and least: below the copyright and the nav, with air above. */}
+      <div className="mx-auto max-w-6xl px-6 pb-10">
+        <LocaleLinks locale={locale} />
       </div>
     </footer>
   );

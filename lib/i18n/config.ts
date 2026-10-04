@@ -18,6 +18,24 @@ export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 
 // Shown in the switcher, each in its own language.
+/**
+ * The short label shown in the language rows. The full name in
+ * LOCALE_NAMES stays as each link's title, so the code is never the only
+ * thing a reader has to go on.
+ */
+export const LOCALE_SHORT: Record<Locale, string> = {
+  en: "EN",
+  es: "ES",
+  it: "IT",
+  de: "DE",
+  ru: "RU",
+  uk: "UK",
+  pl: "PL",
+  // Two letters would say nothing here; these are already short.
+  zh: "中文",
+  ja: "日本語",
+};
+
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: "English",
   es: "Español",

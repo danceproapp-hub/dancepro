@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LocaleLinks } from "@/components/LocaleLinks";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 const PANEL_ID = "mobile-menu-panel";
@@ -159,33 +160,40 @@ export function MobileMenu({
             aria-modal="true"
             aria-label={t.nav.menu}
           >
-            {/* Scrolls on its own if the list is taller than the screen. */}
-            <nav className="flex flex-col">
-              {links.map((link) => (
-                /*
-                 * Closed on the click as well as on the route change. The
-                 * route effect alone misses the link for the page you are
-                 * already on: nothing navigates, so nothing fires, and the
-                 * panel stayed open over a locked page with no way out.
-                 */
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={close}
-                  className="menu-link"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+            {/* One block, centred: the links and the button belong
+                together rather than at opposite ends of the screen. */}
+            <div className="menu-group">
+              <nav className="flex flex-col">
+                {links.map((link) => (
+                  /*
+                   * Closed on the click as well as on the route change. The
+                   * route effect alone misses the link for the page you are
+                   * already on: nothing navigates, so nothing fires, and the
+                   * panel stayed open over a locked page with no way out.
+                   */
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={close}
+                    className="menu-link"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
 
-            <Link
-              href={`/${locale}#join`}
-              onClick={close}
-              className="btn btn-primary mt-auto w-full px-8 py-4"
-            >
-              {t.nav.joinWaitlist}
-            </Link>
+              <Link
+                href={`/${locale}#join`}
+                onClick={close}
+                className="btn btn-primary mt-10 w-full px-8 py-4"
+              >
+                {t.nav.joinWaitlist}
+              </Link>
+            </div>
+
+            {/* So a phone can change language without scrolling the whole
+                page to reach the footer. */}
+            <LocaleLinks locale={locale} className="justify-center" />
           </div>,
           document.body
         )}
