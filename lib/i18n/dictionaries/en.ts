@@ -3,6 +3,7 @@
 // worldwide, so translating them would obscure rather than clarify.
 export const en = {
   nav: {
+    close: "Close",
     menu: "Menu",
     openMenu: "Open menu",
     closeMenu: "Close menu",

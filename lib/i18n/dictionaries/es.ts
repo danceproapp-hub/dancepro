@@ -4,6 +4,7 @@ import type { Dictionary } from "./en";
 // international form dancers use on every floor in the world.
 export const es: Dictionary = {
   nav: {
+    close: "Cerrar",
     menu: "Menú",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",

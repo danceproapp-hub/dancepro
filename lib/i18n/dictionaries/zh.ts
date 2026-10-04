@@ -4,6 +4,7 @@ import type { Dictionary } from "./en";
 // 翻译反而会造成混淆。
 export const zh: Dictionary = {
   nav: {
+    close: "关闭",
     menu: "菜单",
     openMenu: "打开菜单",
     closeMenu: "关闭菜单",

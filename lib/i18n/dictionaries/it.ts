@@ -4,6 +4,7 @@ import type { Dictionary } from "./en";
 // internazionale che i ballerini usano su ogni pista del mondo.
 export const it: Dictionary = {
   nav: {
+    close: "Chiudi",
     menu: "Menu",
     openMenu: "Apri il menu",
     closeMenu: "Chiudi il menu",

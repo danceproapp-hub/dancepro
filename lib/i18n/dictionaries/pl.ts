@@ -4,6 +4,7 @@ import type { Dictionary } from "./en";
 // mówią o nich tancerze na każdym parkiecie na świecie.
 export const pl: Dictionary = {
   nav: {
+    close: "Zamknij",
     menu: "Menu",
     openMenu: "Otwórz menu",
     closeMenu: "Zamknij menu",

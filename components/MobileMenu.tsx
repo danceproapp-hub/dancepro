@@ -52,6 +52,25 @@ export function MobileMenu({
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
+  /*
+   * Drives the links' arrival, separately from the panel's own fade.
+   *
+   * Set a frame after opening, so the browser has a chance to paint the
+   * from-state and actually transition. Cleared only once the fade-out
+   * has finished — clearing it with the panel still on screen would snap
+   * every link back down 8px in full view, which is the one movement the
+   * close is meant not to have.
+   */
+  const [revealed, setRevealed] = useState(false);
+  useEffect(() => {
+    if (open) {
+      const id = requestAnimationFrame(() => setRevealed(true));
+      return () => cancelAnimationFrame(id);
+    }
+    const id = window.setTimeout(() => setRevealed(false), 280);
+    return () => window.clearTimeout(id);
+  }, [open]);
+
   // Tapping a link navigates; the panel should not still be there after.
   useEffect(() => {
     setOpen(false);
@@ -143,9 +162,9 @@ export function MobileMenu({
         aria-controls={PANEL_ID}
         className="menu-button"
       >
-        {/* Two rules that cross into an X; no border, no box. */}
-        <span className={`menu-bar ${open ? "is-open-top" : ""}`} />
-        <span className={`menu-bar ${open ? "is-open-bottom" : ""}`} />
+        {/* The word is short; the longer phrase stays as the
+            accessible name on aria-label above. */}
+        {open ? t.nav.close : t.nav.menu}
       </button>
 
       {mounted &&
@@ -153,8 +172,10 @@ export function MobileMenu({
           <div
             id={PANEL_ID}
             ref={panelRef}
-            hidden={!open}
-            className="menu-panel"
+            className={`menu-panel${open ? " is-open" : ""}${
+              revealed ? " is-revealed" : ""
+            }`}
+            aria-hidden={!open}
             role="dialog"
             aria-modal="true"
             aria-label={t.nav.menu}
@@ -163,7 +184,7 @@ export function MobileMenu({
                 together rather than at opposite ends of the screen. */}
             <div className="menu-group">
               <nav className="flex flex-col gap-y-[10px]">
-                {links.map((link) => (
+                {links.map((link, index) => (
                   /*
                    * Closed on the click as well as on the route change. The
                    * route effect alone misses the link for the page you are
@@ -174,7 +195,8 @@ export function MobileMenu({
                     key={link.href}
                     href={link.href}
                     onClick={close}
-                    className="menu-link"
+                    className="menu-link menu-item"
+                    style={{ transitionDelay: open ? `${index * 60}ms` : "0ms" }}
                   >
                     {link.label}
                   </Link>
@@ -189,7 +211,10 @@ export function MobileMenu({
                  * not stretched across the panel. Full width was most of
                  * what made the menu shout.
                  */
-                className="btn btn-primary mt-9 self-start px-8 py-4"
+                className="btn btn-primary menu-item mt-9 self-start px-8 py-4"
+                style={{
+                  transitionDelay: open ? `${links.length * 60}ms` : "0ms",
+                }}
               >
                 {t.nav.joinWaitlist}
               </Link>

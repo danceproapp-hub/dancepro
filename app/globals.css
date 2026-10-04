@@ -585,39 +585,39 @@
   }
 
   /* Two rules that cross into an X. No border, no box. */
+  /*
+   * The word, not an icon. MENU and CLOSE are set identically and sit in
+   * the same place, so the header cannot shift between the two states —
+   * only the word changes.
+   */
   .menu-button {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    /* 44px of target around a 20px mark. */
-    width: 44px;
-    height: 44px;
+    justify-content: flex-end;
+    min-height: 44px;
+    /* One box for both words, so swapping MENU for CLOSE cannot move
+       anything beside it however the two measure. */
+    min-width: 5rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-paper);
+    opacity: 0.85;
     cursor: pointer;
     background: none;
     border: 0;
+    padding: 0;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.3s var(--ease-out-soft);
   }
 
-  .menu-bar {
-    display: block;
-    height: 1px;
-    width: 20px;
-    background-color: var(--color-paper);
-    opacity: 0.8;
-    transition:
-      transform 0.3s var(--ease-out-soft),
-      opacity 0.3s var(--ease-out-soft);
-  }
-
-  .menu-bar.is-open-top {
-    transform: translateY(3.5px) rotate(45deg);
-  }
-
-  .menu-bar.is-open-bottom {
-    transform: translateY(-3.5px) rotate(-45deg);
+  @media (hover: hover) {
+    .menu-button:hover {
+      opacity: 1;
+    }
   }
 
   /*
@@ -661,8 +661,25 @@
     flex-direction: column;
   }
 
-  .menu-panel[hidden] {
-    display: none;
+  /*
+   * Faded, not toggled. display:none cannot be transitioned, so the panel
+   * stays in the tree and visibility carries it out of reach of a cursor
+   * and of a screen reader once it has finished fading.
+   */
+  .menu-panel {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 280ms ease-out,
+      visibility 0s linear 280ms;
+  }
+
+  .menu-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 420ms ease-out,
+      visibility 0s;
   }
 
   .menu-link {
@@ -688,6 +705,30 @@
     .menu-link:hover {
       color: var(--color-gold);
     }
+  }
+
+  /*
+   * Declared after .menu-link and .btn on purpose. Both set a transition
+   * of their own, and at equal specificity the last one wins — so where
+   * this sat earlier the links took .menu-link's "color 0.3s", which
+   * animates no opacity and no transform at all. They snapped in at the
+   * end of their delay instead of arriving.
+   *
+   * Colour is restated here so the hover and press states above survive.
+   */
+  .menu-item {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 380ms ease-out,
+      transform 380ms ease-out,
+      color 0.3s var(--ease-out-soft),
+      background-color 0.3s var(--ease-out-soft);
+  }
+
+  .menu-panel.is-revealed .menu-item {
+    opacity: 1;
+    transform: none;
   }
 
   .menu-link:active {
@@ -922,7 +963,9 @@
       transform: none;
     }
 
-    .menu-bar,
+    .menu-panel,
+    .menu-panel.is-open,
+    .menu-item,
     .pillar-mark,
     .pillar[open] > .pillar-body {
       animation: none;
