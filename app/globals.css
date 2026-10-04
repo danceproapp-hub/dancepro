@@ -556,8 +556,8 @@
   .lang-current {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     line-height: 1.5;
     transition:
@@ -565,10 +565,11 @@
       opacity 0.3s var(--ease-out-soft);
   }
 
-  /* The last and quietest thing in the footer. */
+  /* The last and quietest thing in the footer — a lesser tier than the
+     nav above it, not a fourth row of it. */
   .lang-link {
     color: var(--color-muted);
-    opacity: 0.7;
+    opacity: 0.55;
   }
 
   .lang-current {
@@ -636,7 +637,13 @@
     z-index: 45;
     display: flex;
     flex-direction: column;
-    padding: 6rem 1.5rem 2.5rem;
+    /*
+     * The top clears the sticky header, which sits over the panel, so it
+     * is the bottom padding plus the header's own height. Matching them
+     * is what puts equal air above and below the centred group — with a
+     * flat 6rem the group sat noticeably low.
+     */
+    padding: calc(2.5rem + 76px) 1.5rem 2.5rem;
     background-color: var(--color-ground);
     overflow-y: auto;
   }
@@ -661,13 +668,19 @@
   .menu-link {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 0.06em;
+    font-size: 17px;
+    /* Wider tracking at a smaller size: more spaced and smaller reads
+       more considered than large and tight. */
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-paper);
-    /* Spacing instead of rules: full-width dividers at this size cut the
-       panel into bands and made three links look like a table. */
-    padding: 14px 0;
+    /*
+     * 11px of padding against the nav's 10px gap puts 32px between one
+     * line of text and the next, while keeping each link 44px tall for a
+     * thumb. Spacing instead of rules: dividers cut the panel into bands
+     * and made three links look like a table.
+     */
+    padding: 11px 0;
     transition: color 0.3s var(--ease-out-soft);
   }
 

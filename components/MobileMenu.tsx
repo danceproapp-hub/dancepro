@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LocaleLinks } from "@/components/LocaleLinks";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 const PANEL_ID = "mobile-menu-panel";
@@ -163,7 +162,7 @@ export function MobileMenu({
             {/* One block, centred: the links and the button belong
                 together rather than at opposite ends of the screen. */}
             <div className="menu-group">
-              <nav className="flex flex-col">
+              <nav className="flex flex-col gap-y-[10px]">
                 {links.map((link) => (
                   /*
                    * Closed on the click as well as on the route change. The
@@ -185,15 +184,17 @@ export function MobileMenu({
               <Link
                 href={`/${locale}#join`}
                 onClick={close}
-                className="btn btn-primary mt-10 w-full px-8 py-4"
+                /*
+                 * Sized to its own words and aligned to the links above,
+                 * not stretched across the panel. Full width was most of
+                 * what made the menu shout.
+                 */
+                className="btn btn-primary mt-9 self-start px-8 py-4"
               >
                 {t.nav.joinWaitlist}
               </Link>
             </div>
 
-            {/* So a phone can change language without scrolling the whole
-                page to reach the footer. */}
-            <LocaleLinks locale={locale} className="justify-center" />
           </div>,
           document.body
         )}
