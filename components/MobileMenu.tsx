@@ -30,6 +30,17 @@ export function MobileMenu({
    * down. A click happens once however many times the effect does.
    */
   const scrollRef = useRef(0);
+  /*
+   * Set when the menu is closing because a link was followed.
+   *
+   * Putting the old scroll position back then would drop the reader 600px
+   * into the page they just arrived at, looking as though it had loaded
+   * wrong. Comparing pathnames instead does not work: a client-side
+   * navigation has not updated location.pathname by the time this effect
+   * tears down, so the old path still matches and the restore still runs.
+   * A flag set in the click is the only part of this that is certain.
+   */
+  const navigatingRef = useRef(false);
   const pathname = usePathname();
 
   const links = [
@@ -39,6 +50,12 @@ export function MobileMenu({
   ];
 
   const close = useCallback(() => setOpen(false), []);
+
+  // Closing because a link was followed: the new page decides where to land.
+  const closeForNavigation = useCallback(() => {
+    navigatingRef.current = true;
+    setOpen(false);
+  }, []);
 
   /*
    * The panel is rendered into <body>, not where it sits in the tree.
@@ -93,6 +110,7 @@ export function MobileMenu({
       width: body.style.width,
       overflow: body.style.overflow,
     };
+    navigatingRef.current = false;
     body.style.position = "fixed";
     body.style.top = `-${scrollY}px`;
     body.style.width = "100%";
@@ -138,12 +156,17 @@ export function MobileMenu({
       body.style.width = previous.width;
       body.style.overflow = previous.overflow;
       /*
-       * Instant, not smooth. The page has scroll-behavior: smooth, so the
-       * plain call animated the restore — the reader watched the page
-       * glide back to where they already were. Putting someone back is
-       * not a journey.
+       * Only when still on the same page — a navigation has its own idea
+       * of where to land, and it is not where the last page was.
+       *
+       * Instant, not smooth: the page has scroll-behavior: smooth, so the
+       * plain call animated the restore and the reader watched the page
+       * glide back to where they already were. Putting someone back is not
+       * a journey.
        */
-      window.scrollTo({ top: scrollY, behavior: "instant" });
+      if (!navigatingRef.current) {
+        window.scrollTo({ top: scrollY, behavior: "instant" });
+      }
       buttonRef.current?.focus();
     };
   }, [open, close]);
@@ -194,7 +217,7 @@ export function MobileMenu({
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={close}
+                    onClick={closeForNavigation}
                     className="menu-link menu-item"
                     style={{ transitionDelay: open ? `${index * 60}ms` : "0ms" }}
                   >
