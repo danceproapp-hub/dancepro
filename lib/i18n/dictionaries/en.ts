@@ -29,8 +29,6 @@ export const en = {
 
     pillarsEyebrow: "More than a partner search",
     pillarsTitle: "The whole dance world, in one place.",
-    pillarsIntro:
-      "Finding a partner is where DancePro starts, not where it ends. It's a network for everything a dancer needs.",
     pillarPartnerTitle: "Partner search",
     pillarPartnerBody:
       "Find a competition, practice, or social partner by style, level, role, and where they dance.",

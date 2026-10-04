@@ -30,8 +30,6 @@ export const ja: Dictionary = {
 
     pillarsEyebrow: "パートナー探しだけではありません",
     pillarsTitle: "ダンスの世界すべてを、ひとつの場所に。",
-    pillarsIntro:
-      "パートナー探しは DancePro の出発点であって、終点ではありません。ダンサーに必要なものすべてのためのネットワークです。",
     pillarPartnerTitle: "パートナー探し",
     pillarPartnerBody:
       "種目・レベル・ロール・活動地域から、競技用、練習用、ソーシャル用のパートナーを探せます。",

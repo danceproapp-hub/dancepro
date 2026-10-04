@@ -120,10 +120,9 @@ export default async function HomePage({
       <section className="mx-auto max-w-4xl px-6 py-14 sm:py-24">
         <Reveal>
           <Eyebrow>{t.home.pillarsEyebrow}</Eyebrow>
-          <h2 className="mb-6">
+          <h2 className="mb-12">
             {t.home.pillarsTitle}
           </h2>
-          <p className="mb-12 max-w-2xl text-muted">{t.home.pillarsIntro}</p>
         </Reveal>
         <div className="grid gap-8 sm:grid-cols-2">
           <Pillars items={pillars} />

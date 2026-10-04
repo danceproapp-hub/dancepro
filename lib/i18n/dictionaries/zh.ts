@@ -30,8 +30,6 @@ export const zh: Dictionary = {
 
     pillarsEyebrow: "不只是找舞伴",
     pillarsTitle: "整个舞蹈世界，都在一处。",
-    pillarsIntro:
-      "找到舞伴是 DancePro 的起点，而不是终点。这是一个满足舞者各种需求的网络。",
     pillarPartnerTitle: "寻找舞伴",
     pillarPartnerBody:
       "按舞种、水平、角色和所在城市，寻找比赛、练习或社交舞的搭档。",

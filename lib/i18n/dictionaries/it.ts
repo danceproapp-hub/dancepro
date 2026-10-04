@@ -30,8 +30,6 @@ export const it: Dictionary = {
 
     pillarsEyebrow: "Più di una ricerca di partner",
     pillarsTitle: "Tutto il mondo della danza, in un unico posto.",
-    pillarsIntro:
-      "Trovare un partner è dove DancePro inizia, non dove finisce. È una rete per tutto ciò di cui un ballerino ha bisogno.",
     pillarPartnerTitle: "Ricerca del partner",
     pillarPartnerBody:
       "Trova un partner da gara, da allenamento o sociale per stile, livello, ruolo e città in cui balla.",
