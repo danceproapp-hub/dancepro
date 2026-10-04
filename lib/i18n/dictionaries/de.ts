@@ -4,6 +4,9 @@ import type { Dictionary } from "./en";
 // Tänzer auf jedem Parkett der Welt verwenden.
 export const de: Dictionary = {
   nav: {
+    menu: "Menü",
+    openMenu: "Menü öffnen",
+    closeMenu: "Menü schließen",
     howItWorks: "So funktioniert's",
     danceStyles: "Tanzstile",
     foundingMembers: "Gründungsmitglieder",

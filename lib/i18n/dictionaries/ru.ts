@@ -4,6 +4,9 @@ import type { Dictionary } from "./en";
 // именно так их называют танцоры на любом паркете мира.
 export const ru: Dictionary = {
   nav: {
+    menu: "Меню",
+    openMenu: "Открыть меню",
+    closeMenu: "Закрыть меню",
     howItWorks: "Как это работает",
     danceStyles: "Танцевальные стили",
     foundingMembers: "Основатели",

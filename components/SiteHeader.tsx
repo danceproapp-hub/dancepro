@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import mark from "@/public/mark.png";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { MobileMenu } from "@/components/MobileMenu";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 export function SiteHeader({
@@ -52,19 +52,17 @@ export function SiteHeader({
         </nav>
 
         <div className="flex shrink-0 items-center gap-3">
-          <LanguageSwitcher locale={locale} label={t.language.label} />
           {/*
-            Hidden on phones: translated labels like "Dołącz do listy" wrap to
-            two lines next to the language control at 375px, and the hero's
-            own call to action sits just below anyway. The language control
-            has no such duplicate, so it is the one that stays.
+            Shown from lg, where the nav beside it appears. Below that the
+            menu carries both, so the two never compete for the same space.
           */}
           <Link
             href={`/${locale}#join`}
-            className="btn btn-secondary hidden whitespace-nowrap px-5 py-3 sm:inline-block"
+            className="btn btn-secondary hidden whitespace-nowrap px-5 py-3 lg:inline-block"
           >
             {t.nav.joinWaitlist}
           </Link>
+          <MobileMenu locale={locale} t={t} />
         </div>
       </div>
     </header>

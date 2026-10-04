@@ -4,6 +4,9 @@ import type { Dictionary } from "./en";
 // フロアでも競技者はこの呼び方をするため、訳すとかえって伝わりません。
 export const ja: Dictionary = {
   nav: {
+    menu: "メニュー",
+    openMenu: "メニューを開く",
+    closeMenu: "メニューを閉じる",
     howItWorks: "使い方",
     danceStyles: "種目",
     foundingMembers: "ファウンディングメンバー",

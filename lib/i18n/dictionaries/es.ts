@@ -4,6 +4,9 @@ import type { Dictionary } from "./en";
 // international form dancers use on every floor in the world.
 export const es: Dictionary = {
   nav: {
+    menu: "Menú",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
     howItWorks: "Cómo funciona",
     danceStyles: "Estilos de baile",
     foundingMembers: "Miembros fundadores",
