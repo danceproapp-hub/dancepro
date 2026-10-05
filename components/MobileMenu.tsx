@@ -22,6 +22,25 @@ export function MobileMenu({
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  /*
+   * Where the page was when the menu was opened, taken in the click
+   * rather than in the effect. React runs effects twice in development,
+   * and the second run would read the position back as 0 — closing the
+   * menu then returned the reader to the top of a page they were halfway
+   * down. A click happens once however many times the effect does.
+   */
+  const scrollRef = useRef(0);
+  /*
+   * Set when the menu is closing because a link was followed.
+   *
+   * Putting the old scroll position back then would drop the reader 600px
+   * into the page they just arrived at, looking as though it had loaded
+   * wrong. Comparing pathnames instead does not work: a client-side
+   * navigation has not updated location.pathname by the time this effect
+   * tears down, so the old path still matches and the restore still runs.
+   * A flag set in the click is the only part of this that is certain.
+   */
+  const navigatingRef = useRef(false);
   const pathname = usePathname();
 
   const links = [
@@ -31,6 +50,12 @@ export function MobileMenu({
   ];
 
   const close = useCallback(() => setOpen(false), []);
+
+  // Closing because a link was followed: the new page decides where to land.
+  const closeForNavigation = useCallback(() => {
+    navigatingRef.current = true;
+    setOpen(false);
+  }, []);
 
   /*
    * The panel is rendered into <body>, not where it sits in the tree.
@@ -72,39 +97,24 @@ export function MobileMenu({
     if (!open) return;
 
     /*
-     * Hold the page still behind the panel — without moving it.
-     *
-     * This used to pin the body with position: fixed and top: -scrollY,
-     * which is the usual recipe and is wrong on iOS. Fixing the body
-     * collapses the document to roughly one screen, so Safari decides the
-     * page is no longer scrollable and expands its floating toolbar back
-     * to full height; the visual viewport shrinks, and the strip the
-     * toolbar used to overlap appears as a band along the bottom. Closing
-     * the menu un-fixed the body and the toolbar collapsed again, which
-     * is why the band vanished all at once instead of fading with the
-     * rest of the panel.
-     *
-     * overflow: hidden on the root instead. The scroll position is never
-     * touched, so there is nothing to put back and nothing for Safari to
-     * react to: the document keeps its height and the toolbar keeps its
-     * state. It is also why Escape still returns you exactly where you
-     * were — you were never taken anywhere.
-     *
-     * On the root only, and deliberately not on body as well. Hidden
-     * overflow makes an element a scroll container, and a sticky child
-     * sticks to its nearest one — so locking body too moved the header's
-     * frame of reference off the viewport and onto a box that was itself
-     * scrolled 600px away. The header went with it, taking the button
-     * that closes this menu off the top of the screen. The root is the
-     * viewport's own scroller, so locking it changes nobody's ancestry.
-     *
-     * Programmatic scrolling still works through an overflow: hidden
-     * root, which is what lets a navigation out of this menu land at the
-     * top of the page it goes to.
+     * Hold the page still behind the panel. Overflow alone lets iOS scroll
+     * the body under a fixed overlay, so the scroll position is pinned and
+     * put back on close — otherwise closing the menu returns you to the
+     * top of the page you were halfway down.
      */
-    const root = document.documentElement;
-    const previousOverflow = root.style.overflow;
-    root.style.overflow = "hidden";
+    const { body } = document;
+    const scrollY = scrollRef.current;
+    const previous = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+    navigatingRef.current = false;
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
 
     const focusable = () =>
       Array.from(
@@ -141,7 +151,22 @@ export function MobileMenu({
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      root.style.overflow = previousOverflow;
+      body.style.position = previous.position;
+      body.style.top = previous.top;
+      body.style.width = previous.width;
+      body.style.overflow = previous.overflow;
+      /*
+       * Only when still on the same page — a navigation has its own idea
+       * of where to land, and it is not where the last page was.
+       *
+       * Instant, not smooth: the page has scroll-behavior: smooth, so the
+       * plain call animated the restore and the reader watched the page
+       * glide back to where they already were. Putting someone back is not
+       * a journey.
+       */
+      if (!navigatingRef.current) {
+        window.scrollTo({ top: scrollY, behavior: "instant" });
+      }
       buttonRef.current?.focus();
     };
   }, [open, close]);
@@ -151,7 +176,10 @@ export function MobileMenu({
       <button
         ref={buttonRef}
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (!open) scrollRef.current = window.scrollY;
+          setOpen((v) => !v);
+        }}
         aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
         aria-expanded={open}
         aria-controls={PANEL_ID}
@@ -189,7 +217,7 @@ export function MobileMenu({
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={close}
+                    onClick={closeForNavigation}
                     className="menu-link menu-item"
                     style={{ transitionDelay: open ? `${index * 60}ms` : "0ms" }}
                   >
