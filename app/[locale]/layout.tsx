@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -11,6 +11,26 @@ import { siteUrl } from "@/lib/siteUrl";
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
+
+/*
+ * This is the only layout in the app, so this applies site-wide and
+ * nothing overrides it per route — which matters, because iOS Safari
+ * tints its toolbars from theme-color and from the colour of the page
+ * near the edges. Left unset it samples the page and re-tints whenever a
+ * new layer appears, which is how opening the menu could put a band of a
+ * slightly different black along the bottom of the screen.
+ *
+ * viewport-fit: cover is what makes env(safe-area-inset-*) report real
+ * numbers rather than 0 — see the insets used in globals.css. It also
+ * extends the layout viewport into the notch and the home-indicator
+ * strip, which is why those insets are then applied as padding on body
+ * and on the menu panel: the backgrounds reach the physical edge, the
+ * words stay inside the safe area.
+ */
+export const viewport: Viewport = {
+  themeColor: "#101010",
+  viewportFit: "cover",
+};
 
 export async function generateMetadata({
   params,
@@ -76,7 +96,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} data-script={script} className={fontClasses}>
-      <body className="flex min-h-screen flex-col font-body antialiased">
+      {/* min-height is in globals.css, not min-h-screen: it needs a dvh
+          value with a vh fallback, which one utility cannot express. */}
+      <body className="flex flex-col font-body antialiased">
         <HydrationMark />
         <SiteHeader locale={locale} t={t} />
         <main className="flex-1">{children}</main>

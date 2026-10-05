@@ -76,6 +76,16 @@
 
   html {
     scroll-behavior: smooth;
+    /*
+     * The same black as body and as the menu panel, stated here as well.
+     *
+     * body's background does propagate to the canvas when html has none,
+     * but the area iOS Safari paints behind its own floating toolbar is
+     * exactly the area that is nobody's box — so every layer that can
+     * reach the bottom edge of the screen is given the colour outright
+     * rather than inheriting it by a rule that is easy to defeat.
+     */
+    background-color: var(--color-ground);
   }
 
   /*
@@ -95,6 +105,35 @@
     font-weight: 300;
     font-size: 15px;
     line-height: 1.72;
+    /*
+     * Was Tailwind's min-h-screen. 100vh on iOS is the viewport with the
+     * toolbars hidden, so a page sized by it is always a little taller
+     * than the screen actually showing it. The live height is 100dvh,
+     * applied just below.
+     *
+     * The fallback is a separate @supports rule rather than two
+     * min-height lines in here, because two lines is what this was
+     * first: the minifier saw one property set twice in one rule and
+     * kept only the last, so the build shipped dvh with no fallback at
+     * all. An at-rule it cannot flatten away survives.
+     */
+    min-height: 100vh;
+    /*
+     * viewport-fit: cover extends the layout viewport under the notch, so
+     * the sides have to be held off it by hand. Zero on every device
+     * without a notch, and zero in portrait on the ones that have one.
+     * The background still covers the padding, so the colour reaches the
+     * edge even where the words do not.
+     */
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  /* The real height, where it is known. See the note on min-height above. */
+  @supports (min-height: 100dvh) {
+    body {
+      min-height: 100dvh;
+    }
   }
 
   p {
@@ -643,9 +682,24 @@
      * is what puts equal air above and below the centred group — with a
      * flat 6rem the group sat noticeably low.
      */
-    padding: calc(2.5rem + 76px) 1.5rem 2.5rem;
+    /*
+     * The insets are on the padding, not on the box: the panel itself
+     * stays inset-0 so its black runs to the physical bottom edge, under
+     * the home indicator and under Safari's floating toolbar, while the
+     * words it holds stop short of both. A panel sized to the safe area
+     * instead would end in a strip of whatever is behind it.
+     *
+     * The panel is fixed, so body's own left/right insets do not reach
+     * it and it has to repeat them.
+     */
+    padding: calc(2.5rem + 76px) calc(1.5rem + env(safe-area-inset-right, 0px))
+      calc(2.5rem + env(safe-area-inset-bottom, 0px))
+      calc(1.5rem + env(safe-area-inset-left, 0px));
     background-color: var(--color-ground);
     overflow-y: auto;
+    /* A drag that runs past the end of this list stops here rather than
+       handing the rest of itself to the page underneath. */
+    overscroll-behavior: contain;
   }
 
   /*
