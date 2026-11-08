@@ -284,55 +284,55 @@ export const de: Dictionary = {
   privacy: {
     metaTitle: "Datenschutz",
     metaDescription:
-      "Was DancePro erhebt, wenn du der Liste der Gründungsmitglieder beitrittst, warum wir es erheben und wer es sonst noch sieht.",
+      "Wie DancePro die personenbezogenen Daten erhebt, verwendet, speichert und weitergibt, die du bei der Eintragung in die Liste der Gründungsmitglieder angibst.",
     eyebrow: "Datenschutz",
     title: "Datenschutzerklärung",
     updated: "Zuletzt aktualisiert am 26. September 2026",
-    intro:
-      "DancePro ist eine Warteliste für ein Netzwerk, das noch nicht geöffnet hat. Diese Seite beschreibt, was die Website tatsächlich tut — nicht, was eine längere Erklärung ihr später erlauben könnte.",
 
-    collectTitle: "Was wir erheben",
+    collectTitle: "Erhobene Daten",
     collectBody:
-      "Beim Beitritt: deinen Vornamen, deine E-Mail-Adresse und die Tanzstile, die du ausgewählt hast. Danach kannst du Stadt und Land, deine Rolle, dein Niveau oder deine Turnierklassen und das, wonach du suchst, ergänzen. Alle diese späteren Angaben sind freiwillig, und die Liste funktioniert auch ohne sie.",
+      "Bei der Eintragung in die Liste erheben wir deinen Vornamen, deine E-Mail-Adresse und die von dir ausgewählten Tanzstile. Darüber hinaus kannst du Stadt und Land, deine Rolle, dein Niveau oder deine Turnierklassen sowie dein Suchziel angeben. Diese zusätzlichen Angaben sind freiwillig.",
     collectAgeBody:
-      "Wir fragen außerdem nach deiner Altersgruppe. Wenn du unter 16 bist, fragen wir nach der E-Mail-Adresse eines Elternteils oder einer erziehungsberechtigten Person — und sonst nichts über diese Person.",
+      "Wir erheben außerdem die von dir ausgewählte Altersgruppe. Gibst du an, unter 16 Jahre alt zu sein, erheben wir die E-Mail-Adresse eines Elternteils oder einer erziehungsberechtigten Person. Weitere Daten zu dieser Person erheben wir nicht.",
     collectRefBody:
-      "Wenn du über den Einladungslink einer anderen tanzenden Person gekommen bist, halten wir fest, um welchen Link es sich handelte, damit deren Einladungen zählen.",
+      "Gelangst du über den Einladungslink eines anderen Mitglieds auf die Website, halten wir fest, welcher Link verwendet wurde, um die Empfehlung zuzuordnen.",
 
-    whyTitle: "Warum wir es erheben",
+    whyTitle: "Verwendung der Daten",
     whyBody:
-      "Um dir zu sagen, wann DancePro öffnet, und um gelegentlich über den Fortschritt zu berichten. Wenn du deine Tanzangaben ergänzt hast, nutzen wir sie, um passende Partnerinnen und Partner vorzubereiten, bevor du Zugang bekommst. Wir bewerben dir nichts anderes, und wir verkaufen, vermieten oder tauschen deine Adresse nicht.",
+      "Wir verwenden deine Daten, um dich zu benachrichtigen, sobald DancePro verfügbar ist, und um dir in regelmäßigen Abständen Informationen zum Entwicklungsstand zu senden. Soweit du Angaben zum Tanzen gemacht hast, verwenden wir diese, um bereits vor deinem Zugang passende Partnerinnen und Partner zu ermitteln. Wir verwenden deine Daten nicht zu Werbezwecken und verkaufen, vermieten oder tauschen sie nicht.",
 
-    sharingTitle: "Wer es sonst sieht",
+    sharingTitle: "Dienstleister",
     sharingBody:
-      "Niemand erhält diese Angaben für eigene Zwecke. Sie laufen über die Unternehmen, die die Website für uns betreiben, und nur damit diese ihre Arbeit tun können:",
-    sharingSupabase: "Supabase — speichert die Datenbank der Warteliste.",
+      "Wir geben deine Daten nicht zu eigenen Zwecken Dritter weiter. Sie werden von den folgenden Dienstleistern ausschließlich zum Betrieb der Website in unserem Auftrag verarbeitet:",
+    sharingSupabase:
+      "Supabase — betreibt die Datenbank, in der die Liste gespeichert wird.",
     sharingVercel: "Vercel — hostet die Website und liefert diese Seiten aus.",
     sharingCloudflare:
-      "Cloudflare — führt die Prüfung \"bestätige, dass du ein Mensch bist\" im Formular aus. Cloudflare sieht deine IP-Adresse, nicht das, was du eingegeben hast.",
+      "Cloudflare — stellt die Bot-Prüfung des Anmeldeformulars bereit. Dabei wird deine IP-Adresse übermittelt, nicht jedoch der von dir eingegebene Inhalt.",
     sharingOpenMeteo:
-      "Open-Meteo — wenn du das freiwillige Städtefeld nutzt, wird der eingegebene Text an deren Dienst gesendet, um passende Ortsnamen zu finden.",
+      "Open-Meteo — stellt die Ortsnamensuche bereit. Nutzt du das optionale Feld für die Stadt, wird der eingegebene Text an diesen Dienst übermittelt, um passende Orte zurückzugeben.",
     sharingGmail:
-      "Gmail — stellt die Bestätigungs-E-Mail an einen Elternteil oder eine erziehungsberechtigte Person zu, im einzigen Fall, in dem wir eine versenden.",
+      "Gmail — stellt die Bestätigungs-E-Mail an einen Elternteil oder eine erziehungsberechtigte Person zu, in den unten beschriebenen Fällen.",
 
-    minorsTitle: "Tanzende unter 16",
+    minorsTitle: "Nutzerinnen und Nutzer unter 16 Jahren",
     minorsBody:
-      "Wenn du angibst, unter 16 zu sein, wird dein Platz freigehalten, zählt aber für nichts, bis ein Elternteil oder eine erziehungsberechtigte Person ihn per E-Mail bestätigt. Bis dahin erscheinst du nicht in der Mitgliederzahl, hast keine Position auf der Liste und zählst für niemandes Einladungen. Bestätigt niemand, bleibt der Eintrag wirkungslos. Ein Elternteil oder eine erziehungsberechtigte Person kann uns jederzeit schreiben, um ihn löschen zu lassen, ohne Begründung.",
+      "Gibst du an, unter 16 Jahre alt zu sein, wird dein Eintrag gespeichert, bleibt jedoch inaktiv, bis ein Elternteil oder eine erziehungsberechtigte Person ihn per E-Mail bestätigt. Bis zum Eingang der Bestätigung wird der Eintrag nicht in die Mitgliederzahl einbezogen, belegt keinen Platz auf der Liste und wird keiner Empfehlung zugeordnet. Nicht bestätigte Einträge bleiben dauerhaft inaktiv. Ein Elternteil oder eine erziehungsberechtigte Person kann die Löschung des Eintrags jederzeit und ohne Angabe von Gründen verlangen.",
 
-    keepTitle: "Wie lange wir es aufbewahren",
+    keepTitle: "Speicherdauer",
     keepBody:
-      "Bis DancePro öffnet und du eine faire Gelegenheit hattest, ein Konto anzulegen, oder bis du uns bittest, es zu löschen — je nachdem, was zuerst eintritt. Wird das Projekt nicht weitergeführt, wird die gesamte Liste gelöscht.",
+      "Wir speichern deine Daten, bis DancePro verfügbar ist und du angemessene Gelegenheit hattest, ein Konto anzulegen, oder bis du ihre Löschung verlangst — je nachdem, was zuerst eintritt. Wird das Projekt nicht weitergeführt, wird die Liste vollständig gelöscht.",
 
-    cookiesTitle: "Cookies und das Zählen von Besuchen",
+    cookiesTitle: "Cookies und Reichweitenmessung",
     cookiesBody:
-      "Ein einziges Cookie, das sich merkt, in welcher Sprache du die Website liest. Außerdem zählen wir Seitenaufrufe über Vercel Analytics, damit wir wissen, wie viele Tanzende die Seite gefunden haben — gezählt werden Besuche, nicht Personen: kein Cookie, kein Fingerabdruck, nichts, was dir auf eine andere Seite folgt oder dich hier identifiziert. Werbung gibt es auf dieser Website nirgends.",
+      "Wir setzen ein einziges Cookie ein, das die Sprache speichert, in der du die Website ansiehst. Außerdem messen wir Seitenaufrufe über Vercel Analytics. Diese Messung erfolgt aggregiert und zählt Aufrufe, nicht Personen: Sie setzt kein Cookie, erstellt keinen Geräte-Fingerabdruck und identifiziert dich weder hier noch auf anderen Websites. Die Website enthält keine Werbung.",
 
-    rightsTitle: "Deine Möglichkeiten",
+    rightsTitle: "Deine Rechte",
     rightsBody:
-      "Schreib uns, und wir sagen dir, was wir über dich gespeichert haben, berichtigen es oder löschen es. Du musst keinen Grund nennen, und Löschen heißt Löschen — wir behalten keine stille Kopie.",
+      "Du kannst Auskunft über die zu deiner Person gespeicherten Daten, deren Berichtigung oder deren Löschung verlangen. Eine Begründung ist nicht erforderlich. Die Löschung ist endgültig; wir behalten keine Kopie.",
 
     contactTitle: "Kontakt",
-    contactBody: "Für alles auf dieser Seite oder alles, was wir hier nicht beantwortet haben:",
+    contactBody:
+      "Bei Fragen zu dieser Erklärung oder zu Punkten, die auf dieser Seite nicht behandelt werden, wende dich an:",
 
     link: "Datenschutz",
   },

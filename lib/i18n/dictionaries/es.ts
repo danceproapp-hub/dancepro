@@ -287,55 +287,55 @@ export const es: Dictionary = {
   privacy: {
     metaTitle: "Privacidad",
     metaDescription:
-      "Qué recoge DancePro cuando te unes a la lista de miembros fundadores, por qué lo recoge y quién más puede verlo.",
+      "Cómo DancePro recopila, utiliza, conserva y comunica los datos personales que facilitas al unirte a la lista de miembros fundadores.",
     eyebrow: "Privacidad",
     title: "Política de privacidad",
     updated: "Última actualización: 26 de septiembre de 2026",
-    intro:
-      "DancePro es una lista de espera para una red que todavía no ha abierto. Esta página describe lo que el sitio hace realmente, no lo que una política más larga podría permitirle hacer más adelante.",
 
-    collectTitle: "Qué recogemos",
+    collectTitle: "Información que recopilamos",
     collectBody:
-      "Al unirte: tu nombre, tu dirección de correo y los estilos que elegiste. Después puedes añadir tu ciudad y país, tu rol, tu nivel o tus divisiones de competición, y lo que buscas. Todos esos campos posteriores son opcionales, y la lista funciona sin ellos.",
+      "Al unirte a la lista recopilamos tu nombre, tu dirección de correo electrónico y los estilos de baile que selecciones. También puedes facilitar tu ciudad y tu país, tu rol, tu nivel o tus divisiones de competición y lo que buscas. Estos campos adicionales son opcionales.",
     collectAgeBody:
-      "También preguntamos en qué grupo de edad estás. Si eres menor de 16 años, pedimos el correo de un padre, madre o tutor, y nada más sobre esa persona.",
+      "Recopilamos asimismo el grupo de edad que selecciones. Si indicas que tienes menos de 16 años, recopilamos la dirección de correo electrónico de un padre, una madre o un tutor. No recopilamos ningún otro dato sobre esa persona.",
     collectRefBody:
-      "Si llegaste por el enlace de invitación de otro bailarín, registramos de qué enlace se trata, para que sus invitaciones cuenten.",
+      "Si accedes al sitio a través del enlace de invitación de otro miembro, registramos qué enlace se utilizó con el fin de atribuir la recomendación.",
 
-    whyTitle: "Por qué lo recogemos",
+    whyTitle: "Cómo utilizamos tu información",
     whyBody:
-      "Para avisarte cuando DancePro abra y para enviarte alguna novedad mientras se construye. Si añadiste tus datos de baile, los usamos para preparar parejas compatibles antes de que entres. No te anunciamos nada más, y no vendemos, alquilamos ni intercambiamos tu dirección.",
+      "Utilizamos tu información para avisarte cuando DancePro esté disponible y para enviarte información periódica sobre su desarrollo. Cuando hayas facilitado datos de baile, los utilizamos para identificar parejas compatibles antes de que recibas acceso. No utilizamos tu información con fines publicitarios y no la vendemos, alquilamos ni comerciamos con ella.",
 
-    sharingTitle: "Quién más lo ve",
+    sharingTitle: "Proveedores de servicios",
     sharingBody:
-      "Nadie recibe esta información para sus propios fines. Pasa por las empresas que hacen funcionar el sitio, y solo para que puedan hacerlo:",
-    sharingSupabase: "Supabase — guarda la base de datos de la lista de espera.",
+      "No comunicamos tu información a terceros para sus propios fines. La tratan los siguientes proveedores de servicios con la única finalidad de operar el sitio por cuenta nuestra:",
+    sharingSupabase:
+      "Supabase — aloja la base de datos en la que se almacena la lista.",
     sharingVercel: "Vercel — aloja el sitio y sirve estas páginas.",
     sharingCloudflare:
-      "Cloudflare — ejecuta la comprobación de \"confirma que eres humano\" en el formulario. Ve tu dirección IP, no lo que escribiste.",
+      "Cloudflare — proporciona la verificación antibots del formulario de registro. Recibe tu dirección IP y no recibe la información que envías.",
     sharingOpenMeteo:
-      "Open-Meteo — si usas el campo opcional de ciudad, el texto que escribes se envía a su servicio para encontrar nombres de lugares que coincidan.",
+      "Open-Meteo — proporciona la búsqueda de nombres de lugares. Si utilizas el campo opcional de ciudad, el texto que escribes se transmite a ese servicio para obtener las ubicaciones coincidentes.",
     sharingGmail:
-      "Gmail — entrega el correo de confirmación a un padre, madre o tutor, en el único caso en que enviamos uno.",
+      "Gmail — entrega el correo de confirmación dirigido a un padre, una madre o un tutor, en los supuestos descritos más abajo.",
 
-    minorsTitle: "Bailarines menores de 16 años",
+    minorsTitle: "Usuarios menores de 16 años",
     minorsBody:
-      "Si nos dices que tienes menos de 16 años, tu plaza queda reservada pero no cuenta para nada hasta que un padre, madre o tutor lo confirme por correo. Hasta entonces no apareces en el recuento de miembros, no tienes posición en la lista y no cuentas para las invitaciones de nadie. Si nadie lo confirma, la entrada permanece inactiva. Un padre, madre o tutor puede escribirnos para borrarla en cualquier momento, sin dar explicaciones.",
+      "Si indicas que tienes menos de 16 años, tu registro queda guardado pero permanece inactivo hasta que un padre, una madre o un tutor lo confirme por correo electrónico. Hasta que se reciba la confirmación, el registro queda excluido del recuento de miembros, no ocupa ninguna posición en la lista y no se atribuye a ninguna recomendación. Los registros que nunca se confirmen permanecen inactivos. Un padre, una madre o un tutor puede solicitar su supresión en cualquier momento, sin necesidad de indicar un motivo.",
 
-    keepTitle: "Cuánto tiempo lo guardamos",
+    keepTitle: "Conservación",
     keepBody:
-      "Hasta que DancePro abra y hayas tenido una oportunidad razonable de crear una cuenta, o hasta que nos pidas que lo borremos, lo que ocurra antes. Si el proyecto no sigue adelante, se borra la lista entera.",
+      "Conservamos tu información hasta que DancePro esté disponible y hayas tenido una oportunidad razonable de crear una cuenta, o hasta que solicites su supresión, lo que ocurra primero. Si el proyecto no sigue adelante, la lista se elimina en su totalidad.",
 
-    cookiesTitle: "Cookies y recuento de visitas",
+    cookiesTitle: "Cookies y analítica",
     cookiesBody:
-      "Una sola cookie, que recuerda el idioma en el que estás leyendo el sitio. También contamos las visitas a las páginas, mediante Vercel Analytics, para saber cuántos bailarines han encontrado el sitio; pero cuenta visitas, no personas: sin cookies, sin huella digital, sin nada que te siga a otro sitio ni que te identifique aquí. En este sitio no hay publicidad de ningún tipo.",
+      "Utilizamos una única cookie, que registra el idioma en el que consultas el sitio. Medimos además las visitas a las páginas mediante Vercel Analytics. Esa medición es agregada y contabiliza visitas, no personas: no instala ninguna cookie, no crea ninguna huella digital del dispositivo y no te identifica aquí ni te rastrea en otros sitios. El sitio no contiene publicidad.",
 
-    rightsTitle: "Tus opciones",
+    rightsTitle: "Tus derechos",
     rightsBody:
-      "Escríbenos y te diremos qué tenemos sobre ti, lo corregiremos o lo borraremos. No tienes que dar motivos, y borrar significa borrar: no guardamos una copia discreta.",
+      "Puedes solicitar el acceso a la información que conservamos sobre ti, su rectificación o su supresión. No es necesario que indiques un motivo. La supresión es definitiva; no conservamos ninguna copia.",
 
     contactTitle: "Contacto",
-    contactBody: "Para cualquier cosa de esta página, o cualquier cosa que no hayamos respondido aquí:",
+    contactBody:
+      "Para cualquier consulta sobre esta política, o sobre cualquier asunto no contemplado en esta página, escríbenos a:",
 
     link: "Privacidad",
   },

@@ -49,8 +49,7 @@ export default async function PrivacyPage({
       <Reveal>
         <Eyebrow>{t.privacy.eyebrow}</Eyebrow>
         <h1 className="mb-3">{t.privacy.title}</h1>
-        <p className="caption mb-8">{t.privacy.updated}</p>
-        <p className="lead mb-14 text-muted">{t.privacy.intro}</p>
+        <p className="caption mb-14">{t.privacy.updated}</p>
       </Reveal>
 
       <Section title={t.privacy.collectTitle}>

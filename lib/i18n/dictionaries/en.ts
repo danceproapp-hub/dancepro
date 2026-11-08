@@ -283,55 +283,55 @@ export const en = {
   privacy: {
     metaTitle: "Privacy",
     metaDescription:
-      "What DancePro collects when you join the founding members list, why we collect it, and who else can see it.",
+      "How DancePro collects, uses, retains and discloses the personal information you provide when you join the founding members list.",
     eyebrow: "Privacy",
     title: "Privacy policy",
     updated: "Last updated 26 September 2026",
-    intro:
-      "DancePro is a waitlist for a network that hasn't opened yet. This page describes what the site actually does — not what a longer policy might allow it to do later.",
 
-    collectTitle: "What we collect",
+    collectTitle: "Information we collect",
     collectBody:
-      "When you join: your first name, your email address, and the dance styles you picked. Afterwards you can add your city and country, your role, your level or competition divisions, and what you are looking for. Every one of those later fields is optional, and the list works without them.",
+      "When you join the list, we collect your first name, your email address and the dance styles you select. You may also provide your city and country, your role, your level or competition divisions, and what you are looking for. These additional fields are optional.",
     collectAgeBody:
-      "We also ask which age group you are in. If you are under 16, we ask for a parent or guardian's email address and nothing else about them.",
+      "We also collect the age group you select. If you indicate that you are under 16, we collect the email address of a parent or guardian. We collect no other information about that person.",
     collectRefBody:
-      "If you arrived through another dancer's invitation link, we record which link it was, so that their invitations count.",
+      "If you reach the site through another member's invitation link, we record which link was used in order to attribute the referral.",
 
-    whyTitle: "Why we collect it",
+    whyTitle: "How we use your information",
     whyBody:
-      "To tell you when DancePro opens, and to send occasional updates while it is being built. If you added your dance details, we use them to line up compatible partners before you get access. We do not advertise anything else to you, and we do not sell, rent or trade your address.",
+      "We use your information to notify you when DancePro becomes available and to send periodic updates on its development. Where you have provided dance details, we use them to identify compatible partners in advance of your receiving access. We do not use your information for advertising, and we do not sell, rent or otherwise trade it.",
 
-    sharingTitle: "Who else sees it",
+    sharingTitle: "Service providers",
     sharingBody:
-      "Nobody receives this information for their own purposes. It passes through the companies that run the site for us, and only so that they can do that:",
-    sharingSupabase: "Supabase — stores the waitlist database.",
+      "We do not disclose your information to third parties for their own purposes. It is processed by the following service providers solely in order to operate the site on our behalf:",
+    sharingSupabase:
+      "Supabase — hosts the database in which the list is stored.",
     sharingVercel: "Vercel — hosts the site and serves these pages.",
     sharingCloudflare:
-      "Cloudflare — runs the \"confirm you are human\" check on the signup form. It sees your IP address, not what you typed.",
+      "Cloudflare — provides the anti-bot verification on the signup form. It receives your IP address and does not receive the information you submit.",
     sharingOpenMeteo:
-      "Open-Meteo — if you use the optional city box, the text you type there is sent to their service to find matching place names.",
+      "Open-Meteo — provides place-name lookup. Where you use the optional city field, the text you enter is transmitted to that service in order to return matching locations.",
     sharingGmail:
-      "Gmail — delivers the confirmation email to a parent or guardian, in the one case where we send one.",
+      "Gmail — delivers the confirmation email sent to a parent or guardian, in the circumstances described below.",
 
-    minorsTitle: "Dancers under 16",
+    minorsTitle: "Users under the age of 16",
     minorsBody:
-      "If you tell us you are under 16, your place is held but counts for nothing until a parent or guardian confirms it by email. Until then you are not in the member count, you have no position on the list, and you do not count toward anyone's invitations. If nobody ever confirms, the entry stays inert. A parent or guardian can write to us to have it deleted at any time, without explaining why.",
+      "If you indicate that you are under 16, your entry is recorded but remains inactive until a parent or guardian confirms it by email. Until confirmation is received, the entry is excluded from the member count, holds no position on the list, and is not attributed to any referral. Entries that are never confirmed remain inactive. A parent or guardian may request deletion of the entry at any time, without providing a reason.",
 
-    keepTitle: "How long we keep it",
+    keepTitle: "Retention",
     keepBody:
-      "Until DancePro opens and you have had a fair chance to make an account, or until you ask us to delete it — whichever comes first. If the project does not go ahead, the whole list is deleted.",
+      "We retain your information until DancePro becomes available and you have had a reasonable opportunity to create an account, or until you request its deletion, whichever occurs first. If the project does not proceed, the list is deleted in its entirety.",
 
-    cookiesTitle: "Cookies and counting visits",
+    cookiesTitle: "Cookies and analytics",
     cookiesBody:
-      "One cookie, which remembers the language you are reading the site in. We also count page views, through Vercel Analytics, so we can tell how many dancers found the site — but it counts visits, not people: no cookie, no fingerprint, nothing that follows you to another site or identifies you here. There is no advertising anywhere on this site.",
+      "We use a single cookie, which records the language in which you are viewing the site. We also measure page views through Vercel Analytics. That measurement is aggregate and counts visits rather than individuals: it sets no cookie, creates no device fingerprint, and does not identify you here or track you across other sites. The site carries no advertising.",
 
-    rightsTitle: "Your choices",
+    rightsTitle: "Your rights",
     rightsBody:
-      "Write to us and we will tell you what we hold about you, correct it, or delete it. You do not have to give a reason, and deleting means deleting — we do not keep a quiet copy.",
+      "You may request access to the information we hold about you, its correction, or its deletion. You are not required to give a reason. Deletion is permanent; we do not retain a copy.",
 
     contactTitle: "Contact",
-    contactBody: "Anything on this page, or anything we have not answered here:",
+    contactBody:
+      "For questions about this policy, or about any matter not addressed on this page, contact us at:",
 
     link: "Privacy",
   },

@@ -289,55 +289,55 @@ export const pl: Dictionary = {
   privacy: {
     metaTitle: "Prywatność",
     metaDescription:
-      "Co DancePro zbiera przy zapisie na listę członków założycieli, po co to zbiera i kto jeszcze to widzi.",
+      "W jaki sposób DancePro zbiera, wykorzystuje, przechowuje i udostępnia dane osobowe podawane przy zapisie na listę członków założycieli.",
     eyebrow: "Prywatność",
     title: "Polityka prywatności",
     updated: "Ostatnia aktualizacja: 26 września 2026",
-    intro:
-      "DancePro to lista oczekujących na sieć, która jeszcze nie ruszyła. Ta strona opisuje to, co serwis naprawdę robi — a nie to, na co dłuższy dokument mógłby mu pozwolić w przyszłości.",
 
-    collectTitle: "Co zbieramy",
+    collectTitle: "Zbierane dane",
     collectBody:
-      "Przy zapisie: imię, adres e-mail oraz wybrane style. Później można dodać miasto i kraj, rolę, poziom lub klasy turniejowe i to, czego się szuka. Wszystkie te późniejsze pola są nieobowiązkowe, a lista działa i bez nich.",
+      "Przy zapisie na listę zbieramy imię, adres e-mail oraz wybrane style taneczne. Dodatkowo można podać miasto i kraj, rolę, poziom lub klasy turniejowe oraz informację o tym, czego się szuka. Podanie tych dodatkowych danych jest dobrowolne.",
     collectAgeBody:
-      "Pytamy również o grupę wiekową. Osoby poniżej 16 lat proszone są o adres e-mail rodzica lub opiekuna — i o nic więcej na temat tej osoby.",
+      "Zbieramy również wskazaną grupę wiekową. W razie wskazania wieku poniżej 16 lat zbieramy adres e-mail rodzica lub opiekuna. Nie zbieramy żadnych innych danych dotyczących tej osoby.",
     collectRefBody:
-      "Jeśli wejście nastąpiło przez link zapraszający innej osoby tańczącej, zapisujemy, który to był link, aby jej zaproszenia zostały policzone.",
+      "W razie wejścia na stronę przez link zapraszający innego członka rejestrujemy, który link został użyty, w celu przypisania polecenia.",
 
-    whyTitle: "Po co to zbieramy",
+    whyTitle: "Cele wykorzystania danych",
     whyBody:
-      "Aby dać znać, kiedy DancePro ruszy, i od czasu do czasu napisać o postępach. Jeśli dane taneczne zostały uzupełnione, wykorzystujemy je, żeby przygotować pasujących partnerów jeszcze przed uzyskaniem dostępu. Niczego innego nie reklamujemy i nie sprzedajemy, nie wynajmujemy ani nie wymieniamy adresów.",
+      "Wykorzystujemy dane, aby powiadomić o uruchomieniu DancePro oraz przesyłać okresowe informacje o postępie prac. Jeżeli podano dane taneczne, wykorzystujemy je do wskazania pasujących partnerów jeszcze przed uzyskaniem dostępu. Nie wykorzystujemy danych do celów reklamowych ani ich nie sprzedajemy, nie wynajmujemy i nie udostępniamy odpłatnie.",
 
-    sharingTitle: "Kto jeszcze to widzi",
+    sharingTitle: "Dostawcy usług",
     sharingBody:
-      "Nikt nie otrzymuje tych informacji do własnych celów. Przechodzą przez firmy, które prowadzą dla nas serwis, i wyłącznie po to, by mogły wykonać swoją pracę:",
-    sharingSupabase: "Supabase — przechowuje bazę danych listy oczekujących.",
-    sharingVercel: "Vercel — hostuje serwis i serwuje te strony.",
+      "Nie udostępniamy danych podmiotom trzecim do ich własnych celów. Dane są przetwarzane przez następujących dostawców usług wyłącznie w celu prowadzenia serwisu na nasze zlecenie:",
+    sharingSupabase:
+      "Supabase — utrzymuje bazę danych, w której przechowywana jest lista.",
+    sharingVercel: "Vercel — hostuje serwis i udostępnia te strony.",
     sharingCloudflare:
-      "Cloudflare — przeprowadza w formularzu sprawdzenie \"potwierdź, że jesteś człowiekiem\". Widzi adres IP, a nie wpisaną treść.",
+      "Cloudflare — zapewnia weryfikację antybotową formularza zapisu. Otrzymuje adres IP i nie otrzymuje przesyłanych treści.",
     sharingOpenMeteo:
-      "Open-Meteo — przy korzystaniu z nieobowiązkowego pola miasta wpisywany tekst trafia do ich usługi, aby znaleźć pasujące nazwy miejsc.",
+      "Open-Meteo — zapewnia wyszukiwanie nazw miejscowości. W razie skorzystania z nieobowiązkowego pola miasta wpisywany tekst jest przekazywany do tej usługi w celu zwrócenia pasujących lokalizacji.",
     sharingGmail:
-      "Gmail — dostarcza e-mail potwierdzający rodzicowi lub opiekunowi, w jedynym przypadku, w którym go wysyłamy.",
+      "Gmail — dostarcza wiadomość potwierdzającą do rodzica lub opiekuna w przypadkach opisanych poniżej.",
 
-    minorsTitle: "Osoby tańczące poniżej 16 lat",
+    minorsTitle: "Użytkownicy poniżej 16 roku życia",
     minorsBody:
-      "Po wskazaniu wieku poniżej 16 lat miejsce zostaje zachowane, ale nie liczy się do niczego, dopóki rodzic lub opiekun nie potwierdzi go e-mailem. Do tego czasu taka osoba nie pojawia się w liczniku członków, nie ma pozycji na liście i nie liczy się do niczyich zaproszeń. Jeśli nikt nie potwierdzi, wpis pozostaje bezczynny. Rodzic lub opiekun może napisać do nas i usunąć go w dowolnej chwili, bez podawania powodu.",
+      "W razie wskazania wieku poniżej 16 lat zgłoszenie zostaje zapisane, lecz pozostaje nieaktywne do czasu potwierdzenia go przez rodzica lub opiekuna pocztą elektroniczną. Do chwili otrzymania potwierdzenia zgłoszenie nie jest wliczane do liczby członków, nie zajmuje pozycji na liście i nie jest przypisywane do żadnego polecenia. Zgłoszenia niepotwierdzone pozostają nieaktywne. Rodzic lub opiekun może w każdej chwili zażądać usunięcia zgłoszenia, bez podania przyczyny.",
 
-    keepTitle: "Jak długo to przechowujemy",
+    keepTitle: "Okres przechowywania",
     keepBody:
-      "Do czasu uruchomienia DancePro i realnej możliwości założenia konta albo do momentu prośby o usunięcie — zależnie od tego, co nastąpi wcześniej. Jeśli projekt nie dojdzie do skutku, cała lista zostanie usunięta.",
+      "Przechowujemy dane do czasu uruchomienia DancePro i zapewnienia rozsądnej możliwości założenia konta albo do czasu zgłoszenia żądania ich usunięcia — w zależności od tego, co nastąpi wcześniej. Jeżeli projekt nie zostanie zrealizowany, lista jest usuwana w całości.",
 
-    cookiesTitle: "Pliki cookie i liczenie odwiedzin",
+    cookiesTitle: "Pliki cookie i analityka",
     cookiesBody:
-      "Jedno jedyne ciasteczko, które zapamiętuje język, w jakim czytana jest strona. Liczymy też odsłony, przez Vercel Analytics, żeby wiedzieć, ile osób tańczących trafiło na stronę. Liczone są odwiedziny, a nie osoby: bez ciasteczek, bez odcisku przeglądarki, bez niczego, co pójdzie za kimś na inną stronę albo rozpozna go tutaj. Reklam nie ma tu nigdzie.",
+      "Stosujemy jeden plik cookie, w którym zapisywany jest język przeglądania serwisu. Mierzymy również liczbę odsłon za pośrednictwem Vercel Analytics. Pomiar ma charakter zbiorczy i zlicza wizyty, a nie osoby: nie zapisuje pliku cookie, nie tworzy odcisku urządzenia oraz nie identyfikuje użytkownika tutaj ani nie śledzi go w innych serwisach. Serwis nie zawiera reklam.",
 
-    rightsTitle: "Twoje możliwości",
+    rightsTitle: "Prawa użytkownika",
     rightsBody:
-      "Napisz do nas, a powiemy, co przechowujemy, poprawimy to albo usuniemy. Nie trzeba podawać powodu, a usunięcie znaczy usunięcie — nie zostawiamy cichej kopii.",
+      "Można zażądać dostępu do posiadanych przez nas danych, ich sprostowania lub usunięcia. Podanie przyczyny nie jest wymagane. Usunięcie jest trwałe; nie zachowujemy kopii.",
 
     contactTitle: "Kontakt",
-    contactBody: "W każdej sprawie z tej strony lub w sprawie, na którą tu nie odpowiedzieliśmy:",
+    contactBody:
+      "W sprawach dotyczących niniejszej polityki oraz w kwestiach nieujętych na tej stronie prosimy o kontakt:",
 
     link: "Prywatność",
   },

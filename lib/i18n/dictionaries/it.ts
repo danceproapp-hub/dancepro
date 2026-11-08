@@ -286,55 +286,55 @@ export const it: Dictionary = {
   privacy: {
     metaTitle: "Privacy",
     metaDescription:
-      "Cosa raccoglie DancePro quando entri nella lista dei membri fondatori, perché lo raccoglie e chi altro può vederlo.",
+      "Come DancePro raccoglie, utilizza, conserva e comunica i dati personali forniti al momento dell'iscrizione alla lista dei membri fondatori.",
     eyebrow: "Privacy",
     title: "Informativa sulla privacy",
     updated: "Ultimo aggiornamento: 26 settembre 2026",
-    intro:
-      "DancePro è una lista d'attesa per una rete che non ha ancora aperto. Questa pagina descrive ciò che il sito fa davvero, non ciò che un'informativa più lunga potrebbe permettergli di fare in futuro.",
 
-    collectTitle: "Cosa raccogliamo",
+    collectTitle: "Informazioni che raccogliamo",
     collectBody:
-      "Quando entri: il tuo nome, il tuo indirizzo email e gli stili che hai scelto. Dopo puoi aggiungere città e paese, il tuo ruolo, il tuo livello o le divisioni di gara e che cosa cerchi. Tutti questi campi successivi sono facoltativi e la lista funziona anche senza.",
+      "Al momento dell'iscrizione raccogliamo il tuo nome, il tuo indirizzo e-mail e gli stili di ballo che selezioni. Puoi inoltre fornire la tua città e il tuo paese, il tuo ruolo, il tuo livello o le tue divisioni di gara e ciò che stai cercando. Questi campi aggiuntivi sono facoltativi.",
     collectAgeBody:
-      "Chiediamo anche a quale fascia d'età appartieni. Se hai meno di 16 anni, chiediamo l'indirizzo email di un genitore o di chi ne fa le veci, e nient'altro su quella persona.",
+      "Raccogliamo inoltre la fascia d'età che selezioni. Se indichi di avere meno di 16 anni, raccogliamo l'indirizzo e-mail di un genitore o di un tutore. Non raccogliamo alcun altro dato relativo a tale persona.",
     collectRefBody:
-      "Se sei arrivato tramite il link di invito di un altro ballerino, registriamo di quale link si tratta, così i suoi inviti vengono contati.",
+      "Se accedi al sito tramite il link di invito di un altro membro, registriamo quale link è stato utilizzato al fine di attribuire la segnalazione.",
 
-    whyTitle: "Perché lo raccogliamo",
+    whyTitle: "Come utilizziamo le tue informazioni",
     whyBody:
-      "Per avvisarti quando DancePro apre e per mandarti qualche aggiornamento mentre viene costruito. Se hai aggiunto i tuoi dati di ballo, li usiamo per preparare partner compatibili prima che tu entri. Non ti pubblicizziamo nient'altro e non vendiamo, noleggiamo né scambiamo il tuo indirizzo.",
+      "Utilizziamo le tue informazioni per avvisarti quando DancePro sarà disponibile e per inviarti aggiornamenti periodici sul suo sviluppo. Laddove tu abbia fornito dati relativi al ballo, li utilizziamo per individuare partner compatibili prima che tu ottenga l'accesso. Non utilizziamo le tue informazioni a fini pubblicitari e non le vendiamo, cediamo né scambiamo.",
 
-    sharingTitle: "Chi altro lo vede",
+    sharingTitle: "Fornitori di servizi",
     sharingBody:
-      "Nessuno riceve queste informazioni per scopi propri. Passano attraverso le aziende che fanno funzionare il sito, e soltanto perché possano farlo:",
-    sharingSupabase: "Supabase — conserva il database della lista d'attesa.",
-    sharingVercel: "Vercel — ospita il sito e serve queste pagine.",
+      "Non comunichiamo le tue informazioni a terzi per finalità proprie di questi ultimi. Esse sono trattate dai seguenti fornitori di servizi al solo scopo di gestire il sito per nostro conto:",
+    sharingSupabase:
+      "Supabase — ospita il database in cui è conservata la lista.",
+    sharingVercel: "Vercel — ospita il sito e distribuisce queste pagine.",
     sharingCloudflare:
-      "Cloudflare — esegue il controllo \"conferma di essere umano\" sul modulo. Vede il tuo indirizzo IP, non quello che hai scritto.",
+      "Cloudflare — fornisce la verifica anti-bot del modulo di iscrizione. Riceve il tuo indirizzo IP e non riceve le informazioni che invii.",
     sharingOpenMeteo:
-      "Open-Meteo — se usi il campo facoltativo della città, il testo che digiti viene inviato al loro servizio per trovare nomi di luoghi corrispondenti.",
+      "Open-Meteo — fornisce la ricerca dei nomi di località. Se utilizzi il campo facoltativo della città, il testo che digiti viene trasmesso a tale servizio per ottenere le località corrispondenti.",
     sharingGmail:
-      "Gmail — consegna l'email di conferma a un genitore o a chi ne fa le veci, nell'unico caso in cui ne inviamo una.",
+      "Gmail — recapita l'e-mail di conferma inviata a un genitore o a un tutore, nei casi descritti di seguito.",
 
-    minorsTitle: "Ballerini sotto i 16 anni",
+    minorsTitle: "Utenti di età inferiore a 16 anni",
     minorsBody:
-      "Se ci dici di avere meno di 16 anni, il tuo posto viene tenuto ma non conta finché un genitore o chi ne fa le veci non lo conferma via email. Fino ad allora non compari nel conteggio dei membri, non hai una posizione in lista e non conti per gli inviti di nessuno. Se nessuno conferma, la voce resta inattiva. Un genitore o chi ne fa le veci può scriverci per farla cancellare in qualsiasi momento, senza spiegare il motivo.",
+      "Se indichi di avere meno di 16 anni, la tua iscrizione viene registrata ma resta inattiva finché un genitore o un tutore non la conferma via e-mail. Fino al ricevimento della conferma, l'iscrizione è esclusa dal conteggio dei membri, non occupa alcuna posizione nella lista e non è attribuita ad alcuna segnalazione. Le iscrizioni mai confermate restano inattive. Un genitore o un tutore può chiederne la cancellazione in qualsiasi momento, senza doverne indicare il motivo.",
 
-    keepTitle: "Per quanto tempo lo conserviamo",
+    keepTitle: "Conservazione",
     keepBody:
-      "Finché DancePro non apre e hai avuto una reale possibilità di creare un account, oppure finché non ci chiedi di cancellarlo — a seconda di cosa avviene prima. Se il progetto non va avanti, l'intera lista viene cancellata.",
+      "Conserviamo le tue informazioni fino a quando DancePro sarà disponibile e avrai avuto una ragionevole possibilità di creare un account, oppure fino a quando ne richiederai la cancellazione, a seconda di quale evento si verifichi per primo. Se il progetto non dovesse proseguire, la lista viene cancellata integralmente.",
 
-    cookiesTitle: "Cookie e conteggio delle visite",
+    cookiesTitle: "Cookie e analisi",
     cookiesBody:
-      "Un solo cookie, che ricorda la lingua in cui stai leggendo il sito. Contiamo anche le visite alle pagine, tramite Vercel Analytics, per sapere quanti ballerini hanno trovato il sito; ma conta le visite, non le persone: nessun cookie, nessuna impronta digitale, niente che ti segua su un altro sito o che ti identifichi qui. Su questo sito non c'è alcuna pubblicità.",
+      "Utilizziamo un solo cookie, che registra la lingua in cui consulti il sito. Misuriamo inoltre le visualizzazioni di pagina tramite Vercel Analytics. Tale misurazione è aggregata e conteggia le visite, non le persone: non imposta alcun cookie, non crea alcuna impronta del dispositivo e non ti identifica qui né ti traccia su altri siti. Il sito non ospita alcuna pubblicità.",
 
-    rightsTitle: "Le tue scelte",
+    rightsTitle: "I tuoi diritti",
     rightsBody:
-      "Scrivici e ti diremo che cosa conserviamo su di te, lo correggeremo o lo cancelleremo. Non devi dare una motivazione, e cancellare vuol dire cancellare: non teniamo una copia di riserva.",
+      "Puoi richiedere l'accesso alle informazioni che conserviamo sul tuo conto, la loro rettifica o la loro cancellazione. Non sei tenuto a indicarne il motivo. La cancellazione è definitiva: non ne conserviamo copia.",
 
     contactTitle: "Contatti",
-    contactBody: "Per qualsiasi cosa in questa pagina, o qualsiasi cosa a cui non abbiamo risposto qui:",
+    contactBody:
+      "Per domande su questa informativa, o su qualsiasi aspetto non trattato in questa pagina, scrivi a:",
 
     link: "Privacy",
   },
